@@ -96,8 +96,7 @@
 
         /* --- Content Styling --- */
         .content-wrapper { padding: 50px 40px; }
-        @media (max-width: 600px) { .content-wrapper { padding: 30px 20px; } }
-
+        
         .section-label {
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -234,7 +233,7 @@
         }
         textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 120px; /* Increased default height */
         }
 
         /* Premium Radio Tiles */
@@ -303,13 +302,37 @@
         }
         #successMsg h2 { font-family: 'Cinzel Decorative', serif; color: var(--accent-deep-green); margin-top:0; font-size: 2rem;}
 
+        /* ============================= */
+        /* MOBILE OPTIMIZATIONS (FIXES)  */
+        /* ============================= */
+        @media (max-width: 600px) {
+            
+            /* 1. Fix Cramped Notes: Give inputs more horizontal space */
+            .content-wrapper { padding: 30px 15px; }
+            .form-container { padding: 25px 15px; }
+            
+            /* 2. Fix Cramped Timeline: Shrink gaps and boxes to fit 4 in a row */
+            .countdown-timer { gap: 8px; }
+            .time-box { min-width: auto; flex: 1; padding: 8px 4px; }
+            .time-val { font-size: 1.2rem; }
+            .time-unit { font-size: 0.6rem; }
+
+            /* 3. Fix Cramped Yes/No: Stack them vertically on mobile */
+            .radio-tile-group { flex-direction: column; gap: 10px; }
+            .radio-tile-wrapper { width: 100%; height: 55px; }
+            
+            /* Adjust fonts slightly for mobile readability */
+            .hero-banner h1 { font-size: 2.5rem; }
+            .hero-banner { padding: 40px 20px; }
+        }
+
     </style>
 </head>
 <body>
 
 <div class="container">
     <div class="hero-banner">
-     
+        <img src="https://raw.githubusercontent.com/bmns1/gzring/main/logo_gz.png?v=1" alt="Event Logo" class="event-logo">
         
         <h1>Eid Mubarak!</h1>
         <div class="ornament-divider">
