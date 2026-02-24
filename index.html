@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Eid Al-Fitr 2026 Celebration RSVP</title>
     
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/bmns1/gzring/refs/heads/main/logo_gz.png">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/bmns1/gzring/main/logo_gz.png?v=1">
+    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/bmns1/gzring/main/logo_gz.png?v=1">
     
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
     <style>
@@ -161,6 +162,50 @@
         }
         .badge:hover { background: var(--accent-deep-green); color: var(--accent-gold); transform: translateY(-2px);}
 
+        /* --- COUNTDOWN STYLES --- */
+        .countdown-wrapper {
+            margin: 0 auto 30px auto;
+            text-align: center;
+            max-width: 400px;
+        }
+        .countdown-label {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .time-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fff;
+            border: 1px solid var(--accent-gold);
+            border-radius: 8px;
+            padding: 10px;
+            min-width: 60px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .time-val {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.5rem;
+            color: var(--accent-deep-green);
+            font-weight: 700;
+            line-height: 1;
+        }
+        .time-unit {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+
         /* --- Form Styling --- */
         .form-container {
             background: #fcfbf9;
@@ -264,6 +309,7 @@
 
 <div class="container">
     <div class="hero-banner">
+     
         
         <h1>Eid Mubarak!</h1>
         <div class="ornament-divider">
@@ -332,8 +378,34 @@
 
         <div class="section-header" style="margin-top: 60px;">
             <h3>Kindly RSVP</h3>
+            <div class="ornament-divider" style="margin: 10px 0 20px;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" fill="currentColor" width="30">
+                    <circle cx="50" cy="5" r="3"/>
+                </svg>
+            </div>
         </div>
         
+        <div class="countdown-wrapper">
+            <div class="countdown-label">Please let us know within</div>
+            <div class="countdown-timer" id="timer">
+                <div class="time-box">
+                    <span class="time-val" id="days">00</span>
+                    <span class="time-unit">Days</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-val" id="hours">00</span>
+                    <span class="time-unit">Hours</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-val" id="minutes">00</span>
+                    <span class="time-unit">Minutes</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-val" id="seconds">00</span>
+                    <span class="time-unit">Seconds</span>
+                </div>
+            </div>
+        </div>
         <div class="form-container">
             <form id="rsvpForm">
                 <div class="form-group">
@@ -464,6 +536,35 @@
         pmMsg.style.display = (val === 'Afternoon') ? 'block' : 'none';
         eveMsg.style.display = (val === 'Evening') ? 'block' : 'none';
     }
+
+    // --- COUNTDOWN LOGIC ---
+    function updateCountdown() {
+        // DEADLINE: March 7, 2026 at 11:59:59 PM
+        const deadline = new Date("March 7, 2026 23:59:59").getTime();
+        const now = new Date().getTime();
+        const t = deadline - now;
+
+        if (t < 0) {
+            document.querySelector('.countdown-wrapper').innerHTML = 
+                "<div style='color:#737373; font-style:italic;'>The RSVP deadline has passed, but we'd still love to hear from you.</div>";
+            return;
+        }
+
+        const days = Math.floor(t / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((t % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+        document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+        document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+        document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+    }
+    
+    // Run once immediately, then every second
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+    // -----------------------
 
     const form = document.getElementById('rsvpForm');
     form.addEventListener('submit', e => {
