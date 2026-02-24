@@ -12,7 +12,6 @@
     <style>
         :root {
             /* Elegant Islamic Theme Palette */
-            
             --bg-warm: #F7F5F0;    /* Warm off-white */
             --card-bg: #FFFFFF;    
             --accent-gold: #C5A059; /* Rich, metallic gold */
@@ -29,7 +28,6 @@
             margin: 0;
             padding: 30px 15px;
             line-height: 1.7;
-            /* Subtle Islamic Geometric Pattern Background (SVG Data URI) */
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l15 30-15 30L0 30z' fill='%23C5A059' fill-opacity='0.05'/%3E%3Cpath d='M30 0L0 30h60z' fill='%231E3D33' fill-opacity='0.03'/%3E%3C/svg%3E");
             background-blend-mode: multiply;
         }
@@ -39,14 +37,12 @@
             margin: 0 auto;
             background: var(--card-bg);
             border-radius: 12px;
-            /* "Heavy Cardstock" shadow effect */
             box-shadow: 0 2px 10px rgba(0,0,0,0.05), 0 20px 40px rgba(197, 160, 89, 0.15);
             overflow: hidden;
             border-top: 4px solid var(--accent-gold);
             position: relative;
         }
         
-        /* Decorative corner element */
         .container::before {
             content: ''; position: absolute; top: 0; right: 0;
             width: 100px; height: 100px;
@@ -64,7 +60,6 @@
             position: relative;
         }
         
-        /* New Logo Style */
         .event-logo {
             max-width: 120px;
             height: auto;
@@ -88,7 +83,6 @@
             letter-spacing: 1px;
         }
         
-        /* Ornamental divider below title */
         .ornament-divider {
             text-align: center; margin: 20px 0;
             color: var(--accent-gold);
@@ -152,7 +146,7 @@
             display: inline-block; background: #fff;
             border: 1px solid var(--accent-gold);
             padding: 10px 20px;
-            border-radius: 4px; /* A bit more squared for elegance */
+            border-radius: 4px;
             font-size: 0.9rem;
             margin: 8px;
             color: var(--accent-deep-green);
@@ -206,6 +200,60 @@
             letter-spacing: 1px;
         }
 
+        /* --- PROGRESS BAR STYLES (NEW) --- */
+        .capacity-section {
+            margin: 40px auto;
+            max-width: 500px;
+            text-align: center;
+        }
+        .capacity-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+        .progress-container {
+            background-color: #E8E4DA;
+            border-radius: 20px;
+            height: 14px;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #D4AF37, #FEE180);
+            height: 100%;
+            width: 0%; /* JS will update this */
+            border-radius: 20px;
+            transition: width 1s ease-in-out;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+        }
+        .capacity-note {
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* --- SOLD OUT MESSAGE STYLES (NEW) --- */
+        #soldOutMessage {
+            display: none; /* Hidden by default */
+            text-align: center;
+            padding: 40px;
+            background: #fffbf0;
+            border: 2px solid var(--accent-gold);
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+        .sold-out-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 2rem;
+            color: var(--accent-deep-green);
+            margin-bottom: 15px;
+        }
+
         /* --- Form Styling --- */
         .form-container {
             background: #fcfbf9;
@@ -234,7 +282,7 @@
         }
         textarea {
             resize: vertical;
-            min-height: 120px; /* Increased default height */
+            min-height: 120px;
         }
 
         /* Premium Radio Tiles */
@@ -307,22 +355,19 @@
         /* MOBILE OPTIMIZATIONS (FIXES)  */
         /* ============================= */
         @media (max-width: 600px) {
-            
-            /* 1. Fix Cramped Notes: Give inputs more horizontal space */
             .content-wrapper { padding: 30px 15px; }
             .form-container { padding: 25px 15px; }
             
-            /* 2. Fix Cramped Timeline: Shrink gaps and boxes to fit 4 in a row */
+            /* Timeline Fix */
             .countdown-timer { gap: 8px; }
             .time-box { min-width: auto; flex: 1; padding: 8px 4px; }
             .time-val { font-size: 1.2rem; }
             .time-unit { font-size: 0.6rem; }
 
-            /* 3. Fix Cramped Yes/No: Stack them vertically on mobile */
+            /* Radio Group Fix */
             .radio-tile-group { flex-direction: column; gap: 10px; }
             .radio-tile-wrapper { width: 100%; height: 55px; }
             
-            /* Adjust fonts slightly for mobile readability */
             .hero-banner h1 { font-size: 2.5rem; }
             .hero-banner { padding: 40px 20px; }
         }
@@ -333,6 +378,7 @@
 
 <div class="container">
     <div class="hero-banner">
+    
         
         <h1>Eid Mubarak!</h1>
         <div class="ornament-divider">
@@ -399,126 +445,144 @@
             <span class="badge">⚽ Gaint Soccer Games</span>
         </div>
 
-        <div class="section-header" style="margin-top: 60px;">
-            <h3>Kindly RSVP</h3>
-            <div class="ornament-divider" style="margin: 10px 0 20px;">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" fill="currentColor" width="30">
-                    <circle cx="50" cy="5" r="3"/>
-                </svg>
+        <div class="capacity-section" id="capacitySection">
+            <div class="capacity-label">
+                <span id="attendeeCount">Checking...</span> Guests Confirmed
             </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="capacity-note">Limited to 120 guests for comfort & safety</div>
         </div>
         
-        <div class="countdown-wrapper">
-            <div class="countdown-label">Please let us know within</div>
-            <div class="countdown-timer" id="timer">
-                <div class="time-box">
-                    <span class="time-val" id="days">00</span>
-                    <span class="time-unit">Days</span>
-                </div>
-                <div class="time-box">
-                    <span class="time-val" id="hours">00</span>
-                    <span class="time-unit">Hours</span>
-                </div>
-                <div class="time-box">
-                    <span class="time-val" id="minutes">00</span>
-                    <span class="time-unit">Minutes</span>
-                </div>
-                <div class="time-box">
-                    <span class="time-val" id="seconds">00</span>
-                    <span class="time-unit">Seconds</span>
+        <div id="soldOutMessage">
+            <div class="sold-out-title">We are at Capacity</div>
+            <p>SubhanAllah! The response has been overwhelming, and we have reached our limit of 120 guests.</p>
+            <p>We are truly grateful for your interest and enthusiasm. We hope to celebrate with you at future community events inshallah.</p>
+        </div>
+
+        <div id="rsvpSection">
+            <div class="section-header" style="margin-top: 40px;">
+                <h3>Kindly RSVP</h3>
+                <div class="ornament-divider" style="margin: 10px 0 20px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" fill="currentColor" width="30">
+                        <circle cx="50" cy="5" r="3"/>
+                    </svg>
                 </div>
             </div>
-        </div>
-        <div class="form-container">
-            <form id="rsvpForm">
-                <div class="form-group">
-                    <label for="name">Household Name</label>
-                    <input type="text" id="name" name="name" required placeholder="e.g., Sawaby Family" style="font-family: 'Playfair Display', serif;">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email Address (for confirmation)</label>
-                    <input type="email" id="email" name="email" required placeholder="name@example.com">
-                </div>
-
-                <div style="display: flex; gap: 25px;">
-                    <div class="form-group" style="flex:1;">
-                        <label for="adults">Adults</label>
-                        <input type="number" id="adults" name="adults" min="1" value="1" required>
+            
+            <div class="countdown-wrapper">
+                <div class="countdown-label">Please let us know within</div>
+                <div class="countdown-timer" id="timer">
+                    <div class="time-box">
+                        <span class="time-val" id="days">00</span>
+                        <span class="time-unit">Days</span>
                     </div>
-                    <div class="form-group" style="flex:1;">
-                        <label for="kids">Children</label>
-                        <input type="number" id="kids" name="kids" min="0" value="0" required>
+                    <div class="time-box">
+                        <span class="time-val" id="hours">00</span>
+                        <span class="time-unit">Hours</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="time-val" id="minutes">00</span>
+                        <span class="time-unit">Minutes</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="time-val" id="seconds">00</span>
+                        <span class="time-unit">Seconds</span>
                     </div>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label>Participate in Eideyaa (Money Gift for Kids)?</label>
-                    <div class="radio-tile-group">
-                        <div class="radio-tile-wrapper">
-                            <input type="radio" name="eideyaa" value="Yes" onclick="toggleEideyaa(true)">
-                            <div class="radio-tile">YES, Count us in</div>
+            <div class="form-container">
+                <form id="rsvpForm">
+                    <div class="form-group">
+                        <label for="name">Household Name</label>
+                        <input type="text" id="name" name="name" required placeholder="e.g., Sawaby Family" style="font-family: 'Playfair Display', serif;">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address (for confirmation)</label>
+                        <input type="email" id="email" name="email" required placeholder="name@example.com">
+                    </div>
+
+                    <div style="display: flex; gap: 25px;">
+                        <div class="form-group" style="flex:1;">
+                            <label for="adults">Adults</label>
+                            <input type="number" id="adults" name="adults" min="1" value="1" required>
                         </div>
-                        <div class="radio-tile-wrapper">
-                             <input type="radio" name="eideyaa" value="No" checked onclick="toggleEideyaa(false)">
-                            <div class="radio-tile">NO, Thank you</div>
+                        <div class="form-group" style="flex:1;">
+                            <label for="kids">Children</label>
+                            <input type="number" id="kids" name="kids" min="0" value="0" required>
                         </div>
                     </div>
 
-                    <div id="eideyaaMsg" class="dynamic-msg">
-                        ✨ Wonderful! We will provide fresh $1 bills for every child attending. Please calculate your total ($1 per child) and Venmo it to us at the event.
-                    </div>
-                </div>
+                    <div class="form-group">
+                        <label>Participate in Eideyaa (Money Gift for Kids)?</label>
+                        <div class="radio-tile-group">
+                            <div class="radio-tile-wrapper">
+                                <input type="radio" name="eideyaa" value="Yes" onclick="toggleEideyaa(true)">
+                                <div class="radio-tile">YES, Count us in</div>
+                            </div>
+                            <div class="radio-tile-wrapper">
+                                 <input type="radio" name="eideyaa" value="No" checked onclick="toggleEideyaa(false)">
+                                <div class="radio-tile">NO, Thank you</div>
+                            </div>
+                        </div>
 
-                <div class="form-group">
-                    <label for="arrival">Expected Arrival Window</label>
-                    <select name="arrival" id="arrival" onchange="checkTime()" required>
-                        <option value="" disabled selected>Select arrival time...</option>
-                        <option value="Morning">Morning (10:00 AM - 12:00 PM)</option>
-                        <option value="Afternoon">Afternoon (12:00 PM - 3:00 PM)</option>
-                        <option value="Evening">Evening (3:00 PM - 6:00 PM)</option>
-                    </select>
-                    <div id="afternoonMsg" class="dynamic-msg">
-                        🍽️ Noted! Lunch will be served right after Jummauh prayers, followed immediately by Eideyaa distribution.
+                        <div id="eideyaaMsg" class="dynamic-msg">
+                            ✨ Wonderful! We will provide fresh $1 bills for every child attending. Please calculate your total ($1 per child) and Venmo it to us at the event.
+                        </div>
                     </div>
-                    <div id="eveningMsg" class="dynamic-msg">
-                        🕰️ Just a heads up: Arriving in the evening means you may miss face painting, henna, Eideyaa, and lunch. We look forward to enjoying the rest of the event with you!
+
+                    <div class="form-group">
+                        <label for="arrival">Expected Arrival Window</label>
+                        <select name="arrival" id="arrival" onchange="checkTime()" required>
+                            <option value="" disabled selected>Select arrival time...</option>
+                            <option value="Morning">Morning (10:00 AM - 12:00 PM)</option>
+                            <option value="Afternoon">Afternoon (12:00 PM - 3:00 PM)</option>
+                            <option value="Evening">Evening (3:00 PM - 6:00 PM)</option>
+                        </select>
+                        <div id="afternoonMsg" class="dynamic-msg">
+                            🍽️ Noted! Lunch will be served right after Jummauh prayers, followed immediately by Eideyaa distribution.
+                        </div>
+                        <div id="eveningMsg" class="dynamic-msg">
+                            🕰️ Just a heads up: Arriving in the evening means you may miss face painting, henna, Eideyaa, and lunch. We look forward to enjoying the rest of the event with you!
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group" style="margin-bottom: 25px;">
-                    <label for="volunteer">Volunteering Opportunities</label>
-                    <select name="volunteer" id="volunteer" style="cursor: pointer;">
-                        <option value="None" selected>No thanks, just attending!</option>
-                        <optgroup label="Help Needed">
-                            <option value="Setup">Setup (arrive early)</option>
-                            <option value="Cleanup">Clean up (stay late)</option>
-                             <option value="Henna">Henna Artist (supplies provided)</option>
-                        </optgroup>
-                        <optgroup label="Items to Bring">
-                            <option value="Popsicles">lollipops (50 count)</option>
-                            <option value="Juice">Juice (for 50+)</option>
-                            <option value="TeaCoffee">Tea and Coffee thermos</option>
-                            <option value="Dessert">Homemade Dessert of your choice</option>
-                            <option value="Cupcakes">Cupcakes (30 - no vanilla extract)</option>
-                            <option value="Cake">Cake (for 40 - no vanilla extract)</option>
-                            <option value="JuiceBox">Juice boxes (50+ for kids)</option>
-                        </optgroup>
-                        <optgroup label="Not decided">
-                            <option value="Surprise">it'll be a surprise</option>
-                        </optgroup>
-                    </select>
-                </div>
-                
-                <div class="form-group" style="margin-top: 25px;">
-                    <label for="notes">Additional Notes or Dietary Restrictions</label>
-                    <textarea id="notes" name="notes" placeholder="Optional: All food is Zabiha Halal, but let us know if you have any questions or specific requirements..."></textarea>
-                </div>
+                    <div class="form-group" style="margin-bottom: 25px;">
+                        <label for="volunteer">Volunteering Opportunities</label>
+                        <select name="volunteer" id="volunteer" style="cursor: pointer;">
+                            <option value="None" selected>No thanks, just attending!</option>
+                            <optgroup label="Help Needed">
+                                <option value="Setup">Setup (arrive early)</option>
+                                <option value="Cleanup">Clean up (stay late)</option>
+                                 <option value="Henna">Henna Artist (supplies provided)</option>
+                            </optgroup>
+                            <optgroup label="Items to Bring">
+                                <option value="Popsicles">lollipops (50 count)</option>
+                                <option value="Juice">Juice (for 50+)</option>
+                                <option value="TeaCoffee">Tea and Coffee thermos</option>
+                                <option value="Dessert">Homemade Dessert of your choice</option>
+                                <option value="Cupcakes">Cupcakes (30 - no vanilla extract)</option>
+                                <option value="Cake">Cake (for 40 - no vanilla extract)</option>
+                                <option value="JuiceBox">Juice boxes (50+ for kids)</option>
+                            </optgroup>
+                            <optgroup label="Not decided">
+                                <option value="Surprise">it'll be a surprise</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: 25px;">
+                        <label for="notes">Additional Notes or Dietary Restrictions</label>
+                        <textarea id="notes" name="notes" placeholder="Optional: All food is Zabiha Halal, but let us know if you have any questions or specific requirements..."></textarea>
+                    </div>
 
-                <button type="submit" class="submit-btn" style="margin-top: 10px;">CONFIRM RSVP</button>
-            </form>
-        </div>
-    </div>
+                    <button type="submit" class="submit-btn" style="margin-top: 10px;">CONFIRM RSVP</button>
+                </form>
+            </div>
+        </div> </div>
     
     <div class="footer">
         We look forward to celebrating this joyous occasion together.
@@ -540,6 +604,38 @@
     // REPLACE THIS URL WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
     // ---------------------------------------------------------
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwOF0GqlAGNGNxxByOI9xD9HUGH_I7IbZVdhfkn53JPaBvKj7zyNVhZZtYO6evlig3Okw/exec'; 
+
+    // 1. FETCH CAPACITY ON LOAD
+    document.addEventListener('DOMContentLoaded', fetchCapacity);
+
+    function fetchCapacity() {
+        fetch(SCRIPT_URL)
+        .then(response => response.json())
+        .then(data => {
+            if(data.result === 'success') {
+                const count = data.count;
+                const capacity = data.capacity;
+                const percentage = Math.min((count / capacity) * 100, 100);
+
+                // Update Progress Bar
+                document.getElementById('attendeeCount').innerText = `${count} / ${capacity}`;
+                document.getElementById('progressBar').style.width = `${percentage}%`;
+
+                // Check Capacity
+                if (count >= capacity) {
+                    showSoldOut();
+                }
+            }
+        })
+        .catch(err => console.error("Error fetching capacity", err));
+    }
+
+    function showSoldOut() {
+        // Hide form, show message
+        document.getElementById('rsvpSection').style.display = 'none';
+        document.getElementById('soldOutMessage').style.display = 'block';
+        document.getElementById('capacitySection').style.opacity = '0.6';
+    }
 
     function toggleEideyaa(show) {
         const msg = document.getElementById('eideyaaMsg');
@@ -595,13 +691,26 @@
         
         document.getElementById('overlay').style.display = 'flex';
         
+        // Use JSON response handling for the updated backend
         fetch(SCRIPT_URL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
+        .then(response => response.json())
+        .then(data => {
             document.getElementById('loader').style.display = 'none';
-            document.getElementById('successMsg').style.display = 'block';
-            form.reset();
-            toggleEideyaa(false);
-            checkTime();
+            
+            if (data.result === 'full') {
+                // Backend says full during submit
+                document.getElementById('overlay').style.display = 'none';
+                alert(data.message);
+                showSoldOut();
+                fetchCapacity(); // Refresh bar
+            } else {
+                // Success
+                document.getElementById('successMsg').style.display = 'block';
+                form.reset();
+                toggleEideyaa(false);
+                checkTime();
+                fetchCapacity(); // Update bar with new numbers
+            }
         })
         .catch(error => {
             alert('Unable to submit RSVP. Please check your internet connection and try again.');
