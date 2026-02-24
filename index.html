@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Eid ul-Fitr Grand Celebration RSVP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Elegant Islamic Theme Palette */
+            --bg-warm: #F7F5F0;    /* Warm off-white */
+            --card-bg: #FFFFFF;    
+            --accent-gold: #C5A059; /* Rich, metallic gold */
+            --accent-deep-green: #1E3D33; /* Deep forest/emerald green */
+            --text-dark: #2A2A2A;  
+            --text-muted: #737373; 
+            --border-subtle: #E8E4DA;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-warm);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 30px 15px;
+            line-height: 1.7;
+            /* Subtle Islamic Geometric Pattern Background (SVG Data URI) */
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l15 30-15 30L0 30z' fill='%23C5A059' fill-opacity='0.05'/%3E%3Cpath d='M30 0L0 30h60z' fill='%231E3D33' fill-opacity='0.03'/%3E%3C/svg%3E");
+            background-blend-mode: multiply;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 12px;
+            /* "Heavy Cardstock" shadow effect */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05), 0 20px 40px rgba(197, 160, 89, 0.15);
+            overflow: hidden;
+            border-top: 4px solid var(--accent-gold);
+            position: relative;
+        }
+        
+        /* Decorative corner element */
+        .container::before {
+            content: ''; position: absolute; top: 0; right: 0;
+            width: 100px; height: 100px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23C5A059' fill-opacity='0.2' d='M0 0v100h100V0H0zm90 10v80H10V10h80z'/%3E%3Cpath fill='%23C5A059' fill-opacity='0.4' d='M10 10v20h20V10H10zm60 0v20h20V10H70zM10 70v20h20V70H10zm60 0v20h20V70H70z'/%3E%3C/svg%3E");
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        /* --- Header Section --- */
+        .hero-banner {
+            background: linear-gradient(180deg, var(--accent-deep-green) 0%, #2A5245 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 30px 50px;
+            position: relative;
+        }
+        
+        .hero-banner h1 {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 3.2rem;
+            margin: 0;
+            color: var(--accent-gold);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .hero-banner p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-top: 15px;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+        
+        /* Ornamental divider below title */
+        .ornament-divider {
+            text-align: center; margin: 20px 0;
+            color: var(--accent-gold);
+        }
+        .ornament-divider svg { height: 25px; opacity: 0.7; }
+
+        /* --- Content Styling --- */
+        .content-wrapper { padding: 50px 40px; }
+        @media (max-width: 600px) { .content-wrapper { padding: 30px 20px; } }
+
+        .section-label {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .detail-item { text-align: center; }
+        .detail-icon {
+            font-size: 2rem; margin-bottom: 10px; color: var(--accent-deep-green);
+            background: #f4f7f6;
+            width: 60px; height: 60px; line-height: 60px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            border: 1px solid var(--accent-gold);
+        }
+        .detail-text strong {
+            display: block; font-family: 'Playfair Display', serif;
+            font-size: 1.2rem; color: var(--text-dark); margin-bottom: 5px;
+        }
+
+        .prayer-note {
+            text-align: center;
+            font-family: 'Playfair Display', serif; font-style: italic;
+            color: var(--accent-deep-green);
+            padding: 20px;
+            background: rgba(197, 160, 89, 0.1); /* soft gold bg */
+            border-radius: 8px;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            margin-bottom: 40px;
+        }
+
+        /* --- Activities --- */
+        .section-header {
+            text-align: center; margin-bottom: 35px; position: relative;
+        }
+        .section-header h3 {
+             font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--accent-deep-green); margin: 0;
+        }
+        
+        .activities-list { text-align: center; margin-bottom: 50px; }
+        .badge {
+            display: inline-block; background: #fff;
+            border: 1px solid var(--accent-gold);
+            padding: 10px 20px;
+            border-radius: 4px; /* A bit more squared for elegance */
+            font-size: 0.9rem;
+            margin: 8px;
+            color: var(--accent-deep-green);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .badge:hover { background: var(--accent-deep-green); color: var(--accent-gold); transform: translateY(-2px);}
+
+        /* --- Form Styling --- */
+        .form-container {
+            background: #fcfbf9;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border-subtle);
+        }
+        .form-group { margin-bottom: 30px; }
+        label {
+            display: block; margin-bottom: 12px;
+            font-weight: 700; color: var(--accent-deep-green);
+            font-size: 0.95rem; letter-spacing: 0.5px;
+        }
+
+        input[type="text"], input[type="email"], input[type="number"], select, textarea {
+            width: 100%; padding: 16px;
+            border: 2px solid var(--border-subtle);
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-sizing: border-box; font-family: 'Lato', sans-serif; font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.1); outline: none;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Premium Radio Tiles */
+        .radio-tile-group { display: flex; gap: 20px; }
+        .radio-tile-wrapper { flex: 1; position: relative; height: 60px; }
+        .radio-tile-wrapper input {
+            position: absolute; opacity: 0; cursor: pointer; height: 100%; width: 100%; z-index: 2;
+        }
+        .radio-tile {
+            display: flex; align-items: center; justify-content: center; height: 100%;
+            border: 2px solid var(--border-subtle); border-radius: 8px; background: #fff;
+            transition: all 0.3s ease; font-weight: 700; color: var(--text-muted);
+        }
+        .radio-tile-wrapper input:checked + .radio-tile {
+            border-color: var(--accent-gold);
+            background-color: var(--accent-deep-green); color: var(--accent-gold);
+            box-shadow: 0 4px 10px rgba(30, 61, 51, 0.2);
+        }
+
+        /* Dynamic Messages */
+        .dynamic-msg {
+            background: #fffdf5; color: #7a5e2a;
+            padding: 15px 20px; border-radius: 8px;
+            font-size: 0.95rem; margin-top: 15px; display: none;
+            border-left: 4px solid var(--accent-gold); box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%; padding: 20px;
+            background: linear-gradient(135deg, var(--accent-deep-green) 0%, #2A5245 100%);
+            color: var(--accent-gold);
+            border: none; border-radius: 8px;
+            font-size: 1.2rem; font-weight: 700; letter-spacing: 1px;
+            cursor: pointer; transition: all 0.3s ease;
+            box-shadow: 0 10px 20px -10px rgba(30, 61, 51, 0.5);
+            font-family: 'Cinzel Decorative', serif;
+        }
+        .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 25px -10px rgba(30, 61, 51, 0.7); }
+        
+        .footer {
+            text-align: center; padding: 30px; font-size: 0.9rem;
+            color: var(--text-muted); background: #fbfaf8;
+            border-top: 1px solid var(--border-subtle);
+            font-family: 'Playfair Display', serif; font-style: italic;
+        }
+
+        /* Loading Overlay */
+        #overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(247, 245, 240, 0.96);
+            backdrop-filter: blur(5px); display: none;
+            justify-content: center; align-items: center; z-index: 1000;
+        }
+        .spinner {
+            border: 4px solid rgba(197, 160, 89, 0.2);
+            border-top: 4px solid var(--accent-gold);
+            border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        #successMsg {
+            text-align: center; background: white; padding: 50px 40px;
+            border-radius: 12px; box-shadow: var(--shadow-soft);
+            border: 2px solid var(--accent-gold);
+        }
+        #successMsg h2 { font-family: 'Cinzel Decorative', serif; color: var(--accent-deep-green); margin-top:0; font-size: 2rem;}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="hero-banner">
+        <h1>Eid Mubarak!</h1>
+        <div class="ornament-divider">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 25" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 12.5 C 30 5, 50 5, 70 12.5 C 90 20, 110 20, 130 12.5 C 150 5, 170 5, 190 12.5"/>
+                <circle cx="100" cy="12.5" r="3" fill="currentColor"/>
+            </svg>
+        </div>
+        <p>A Family Celebration & Picnic for Eid Al-Fitr 2026</p>
+    </div>
+
+    <div class="content-wrapper">
+        
+        <div class="details-grid">
+            <div class="detail-item">
+                <div class="detail-icon">📅</div>
+                <div class="detail-text">
+                    <span class="section-label">Date & Time</span>
+                    <strong>Friday, March 20th</strong>
+                    <span>10:00 AM - 6:00 PM</span>
+                </div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-icon">📍</div>
+                <div class="detail-text">
+                    <span class="section-label">Location</span>
+                    <strong>Hellyer Park</strong>
+                    <span>Buena Vista Group Area, San Jose</span>
+                </div>
+            </div>
+             <div class="detail-item">
+                <div class="detail-icon">💰</div>
+                <div class="detail-text">
+                    <span class="section-label">Contribution</span>
+                    <strong>TBD (Estimated)</strong>
+                    <span>~$80/family | ~$40/single</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="prayer-note">
+            "Enjoy lunch served immediately following Jummuah prayer, Inshallah."
+        </div>
+
+        <div class="section-header">
+            <h3>Festivities & Joy</h3>
+            <div class="ornament-divider" style="margin: 10px 0 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" fill="currentColor" width="50">
+                    <circle cx="50" cy="5" r="3"/>
+                </svg>
+            </div>
+        </div>
+        
+        <div class="activities-list">
+            <span class="badge">🏰 Jump House</span>
+            <span class="badge">🌸 Henna for Girls</span>
+            <span class="badge">💪 Tug-of-War</span>
+            <span class="badge">🥔 Sack Race</span>
+            <span class="badge">☁️ Cotton Candy</span>
+            <span class="badge">🔴 Giant Connect-4</span>
+            <span class="badge">🎨 Pro Face Painting</span>
+            <span class="badge">📸 Photo Booth</span>
+            <span class="badge">⚽ Gaint Soccer Games</span>
+        </div>
+
+        <div class="section-header" style="margin-top: 60px;">
+            <h3>Kindly RSVP</h3>
+        </div>
+        
+        <div class="form-container">
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label for="name">Household Name</label>
+                    <input type="text" id="name" name="name" required placeholder="e.g., Sawaby Family" style="font-family: 'Playfair Display', serif;">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address (for confirmation)</label>
+                    <input type="email" id="email" name="email" required placeholder="name@example.com">
+                </div>
+
+                <div style="display: flex; gap: 25px;">
+                    <div class="form-group" style="flex:1;">
+                        <label for="adults">Adults</label>
+                        <input type="number" id="adults" name="adults" min="1" value="1" required>
+                    </div>
+                    <div class="form-group" style="flex:1;">
+                        <label for="kids">Children</label>
+                        <input type="number" id="kids" name="kids" min="0" value="0" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Participate in Eideyaa (Money Gift for Kids)?</label>
+                    <div class="radio-tile-group">
+                        <div class="radio-tile-wrapper">
+                            <input type="radio" name="eideyaa" value="Yes" onclick="toggleEideyaa(true)">
+                            <div class="radio-tile">YES, Count us in</div>
+                        </div>
+                        <div class="radio-tile-wrapper">
+                             <input type="radio" name="eideyaa" value="No" checked onclick="toggleEideyaa(false)">
+                            <div class="radio-tile">NO, Thank you</div>
+                        </div>
+                    </div>
+
+                    <div id="eideyaaMsg" class="dynamic-msg">
+                        ✨ Wonderful! We will provide fresh $1 bills for every child attending. Please calculate your total ($1 per child) and Venmo it to us at the event.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="arrival">Expected Arrival Window</label>
+                    <select name="arrival" id="arrival" onchange="checkTime()" required>
+                        <option value="" disabled selected>Select arrival time...</option>
+                        <option value="Morning">Morning (10:00 AM - 12:00 PM)</option>
+                        <option value="Afternoon">Afternoon (12:00 PM - 3:00 PM)</option>
+                        <option value="Evening">Evening (3:00 PM - 6:00 PM)</option>
+                    </select>
+                    <div id="afternoonMsg" class="dynamic-msg">
+                        🍽️ Noted! Lunch will be served right after Jummauh prayers, followed immediately by Eideyaa distribution.
+                    </div>
+                    <div id="eveningMsg" class="dynamic-msg">
+                        🕰️ Just a heads up: Arriving in the evening means you may miss face painting, henna, Eideyaa, and lunch. We look forward to enjoying the rest of the event with you!
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 25px;">
+                    <label for="volunteer">Volunteering Opportunities</label>
+                    <select name="volunteer" id="volunteer" style="cursor: pointer;">
+                        <option value="None" selected>No thanks, just attending!</option>
+                        <optgroup label="Help Needed">
+                            <option value="Setup">Setup (arrive early)</option>
+                            <option value="Cleanup">Clean up (stay late)</option>
+                             <option value="Henna">Henna Artist (supplies provided)</option>
+                        </optgroup>
+                        <optgroup label="Items to Bring">
+                            <option value="Popsicles">Popsicles (50 count)</option>
+                            <option value="Juice">Juice (for 50+)</option>
+                            <option value="TeaCoffee">Tea and Coffee thermos</option>
+                            <option value="Dessert">Dessert of your choice</option>
+                            <option value="Cupcakes">Cupcakes (30 - no vanilla/choc)</option>
+                            <option value="Cake">Cake (for 40 - no vanilla/choc)</option>
+                            <option value="JuiceBox">Juice boxes (50+ for kids)</option>
+                        </optgroup>
+                    </select>
+                </div>
+                
+                <div class="form-group" style="margin-top: 25px;">
+                    <label for="notes">Additional Notes or Dietary Restrictions</label>
+                    <textarea id="notes" name="notes" placeholder="Optional: All food is Zabiha Halal, but let us know if you have any questions or specific requirements..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" style="margin-top: 10px;">CONFIRM RSVP</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="footer">
+        We look forward to celebrating this joyous occasion together.
+    </div>
+</div>
+
+<div id="overlay">
+    <div id="loader" class="spinner"></div>
+    <div id="successMsg" style="display:none;">
+        <h2>JazakAllah Khair!</h2>
+        <p style="font-size: 1.1rem; margin: 20px 0;">Your RSVP has been successfully received.</p>
+        <p style="color: var(--text-muted);">A confirmation email has been sent to the address provided.</p>
+        <button onclick="window.location.reload()" class="submit-btn" style="margin-top:30px; width:auto; padding: 15px 40px; background: var(--text-muted); color: white; box-shadow: none; font-family: 'Lato', sans-serif;">Submit/Edit RSVP (use same email)</button>
+    </div>
+</div>
+
+<script>
+    // ---------------------------------------------------------
+    // REPLACE THIS URL WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
+    // ---------------------------------------------------------
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwOF0GqlAGNGNxxByOI9xD9HUGH_I7IbZVdhfkn53JPaBvKj7zyNVhZZtYO6evlig3Okw/exec'; 
+
+    function toggleEideyaa(show) {
+        const msg = document.getElementById('eideyaaMsg');
+        if(show) {
+             msg.style.display = 'block';
+             msg.style.animation = 'fadeIn 0.5s';
+        } else {
+             msg.style.display = 'none';
+        }
+    }
+
+    function checkTime() {
+        const val = document.getElementById('arrival').value;
+        const pmMsg = document.getElementById('afternoonMsg');
+        const eveMsg = document.getElementById('eveningMsg');
+        
+        pmMsg.style.display = (val === 'Afternoon') ? 'block' : 'none';
+        eveMsg.style.display = (val === 'Evening') ? 'block' : 'none';
+    }
+
+    const form = document.getElementById('rsvpForm');
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        
+        document.getElementById('overlay').style.display = 'flex';
+        
+        fetch(SCRIPT_URL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('successMsg').style.display = 'block';
+            form.reset();
+            toggleEideyaa(false);
+            checkTime();
+        })
+        .catch(error => {
+            alert('Unable to submit RSVP. Please check your internet connection and try again.');
+            document.getElementById('overlay').style.display = 'none';
+        });
+    });
+</script>
+
+</body>
+</html>
