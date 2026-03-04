@@ -1,997 +1,1003 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Eid Al-Fitr 2026 Celebration RSVP</title>
-    
+    <title>Eid Al-Fitr 2026 — Event Hub</title>
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/bmns1/gzring/main/logo_gz.png?v=1">
-    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/bmns1/gzring/main/logo_gz.png?v=1">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Elegant Islamic Theme Palette */
-            --bg-warm: #F7F5F0;    /* Warm off-white */
-            --card-bg: #FFFFFF;    
-            --accent-gold: #C5A059; /* Rich, metallic gold */
-            --accent-deep-green: #1E3D33; /* Deep forest/emerald green */
-            --text-dark: #2A2A2A;  
-            --text-muted: #737373; 
-            --border-subtle: #E8E4DA;
+            --bg: #FAF8F4;
+            --card: #FFFFFF;
+            --gold: #B8962E;
+            --gold-light: #D4B44A;
+            --gold-muted: #E8D9A8;
+            --gold-bg: #FBF7EC;
+            --green: #1A3A2A;
+            --green-mid: #245840;
+            --green-light: #2D6E50;
+            --text: #1C1C1C;
+            --text-mid: #555555;
+            --text-muted: #8E8E8E;
+            --border: #E8E4DB;
+            --success: #2E8B57;
+            --danger: #C0392B;
+            --radius: 14px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.06), 0 12px 40px rgba(26,58,42,0.08);
+            --shadow-glow: 0 0 30px rgba(184,150,46,0.12);
         }
-
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Lato', sans-serif;
-            background-color: var(--bg-warm);
-            color: var(--text-dark);
-            margin: 0;
-            padding: 30px 15px;
-            line-height: 1.7;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l15 30-15 30L0 30z' fill='%23C5A059' fill-opacity='0.05'/%3E%3Cpath d='M30 0L0 30h60z' fill='%231E3D33' fill-opacity='0.03'/%3E%3C/svg%3E");
-            background-blend-mode: multiply;
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            background-image:
+                radial-gradient(ellipse at 20% 0%, rgba(184,150,46,0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 100%, rgba(26,58,42,0.04) 0%, transparent 50%);
+            min-height: 100vh;
         }
 
-        .container {
-            max-width: 700px;
+        .shell {
+            max-width: 680px;
             margin: 0 auto;
-            background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05), 0 20px 40px rgba(197, 160, 89, 0.15);
+            background: var(--card);
             overflow: hidden;
-            border-top: 4px solid var(--accent-gold);
-            position: relative;
+            box-shadow: var(--shadow-md);
+            border-top: 3px solid var(--gold);
         }
-        
-        .container::before {
-            content: ''; position: absolute; top: 0; right: 0;
-            width: 100px; height: 100px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23C5A059' fill-opacity='0.2' d='M0 0v100h100V0H0zm90 10v80H10V10h80z'/%3E%3Cpath fill='%23C5A059' fill-opacity='0.4' d='M10 10v20h20V10H10zm60 0v20h20V10H70zM10 70v20h20V70H10zm60 0v20h20V70H70z'/%3E%3C/svg%3E");
-            opacity: 0.5;
+        @media (min-width: 720px) {
+            body { padding: 28px 16px; }
+            .shell { border-radius: var(--radius); }
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(170deg, var(--green) 0%, #1F4A36 55%, var(--green-mid) 100%);
+            color: #fff;
+            text-align: center;
+            padding: 44px 24px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0L60 40L40 80L20 40Z' fill='%23ffffff' fill-opacity='0.025'/%3E%3C/svg%3E");
             pointer-events: none;
         }
-
-        /* --- Header Section --- */
-        .hero-banner {
-            background: linear-gradient(180deg, var(--accent-deep-green) 0%, #2A5245 100%);
-            color: white;
-            text-align: center;
-            padding: 60px 30px 50px;
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -1px; left: 0; right: 0;
+            height: 44px;
+            background: var(--card);
+            clip-path: ellipse(56% 100% at 50% 100%);
+        }
+        .hero h1 {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 2.6rem;
+            color: var(--gold-light);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+            letter-spacing: 1px;
             position: relative;
         }
-        
-        .event-logo {
-            max-width: 120px;
-            height: auto;
-            display: block;
-            margin: 0 auto 25px auto;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
-        }
-        
-        .hero-banner h1 {
-            font-family: 'Cinzel Decorative', serif;
-            font-size: 3.2rem;
-            margin: 0;
-            color: var(--accent-gold);
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-        .hero-banner p {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            margin-top: 15px;
+        .hero-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
             font-style: italic;
-            letter-spacing: 1px;
+            opacity: 0.85;
+            margin-top: 6px;
         }
-        
-        .ornament-divider {
-            text-align: center; margin: 20px 0;
-            color: var(--accent-gold);
-        }
-        .ornament-divider svg { height: 25px; opacity: 0.7; }
-
-        /* --- Content Styling --- */
-        .content-wrapper { padding: 50px 40px; }
-        
-        .section-label {
+        .hero-div { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 14px 0 6px; opacity: 0.5; }
+        .hero-div span { display: block; width: 40px; height: 1px; background: var(--gold-light); }
+        .hero-div em { font-size: 0.6rem; color: var(--gold-light); }
+        .cap-pill {
+            display: inline-block;
+            margin-top: 14px;
+            background: rgba(184,150,46,0.15);
+            border: 1px solid rgba(184,150,46,0.35);
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.85rem;
-            color: var(--accent-gold);
             font-weight: 700;
-            display: block;
-            margin-bottom: 5px;
+            color: var(--gold-light);
         }
+        @media (max-width: 480px) { .hero { padding: 36px 18px 70px; } .hero h1 { font-size: 2rem; } }
 
-        .details-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
+        /* ===== LOOKUP FLOAT ===== */
+        .lf {
+            position: relative;
+            margin: -48px 20px 0;
+            background: var(--card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md), var(--shadow-glow);
+            border: 1px solid var(--border);
+            padding: 28px 24px 24px;
+            text-align: center;
+            z-index: 10;
         }
-        .detail-item { text-align: center; }
-        .detail-icon {
-            font-size: 2rem; margin-bottom: 10px; color: var(--accent-deep-green);
-            background: #f4f7f6;
-            width: 60px; height: 60px; line-height: 60px;
+        .lf .lf-ico {
+            width: 56px; height: 56px;
+            background: linear-gradient(135deg, var(--green), var(--green-mid));
             border-radius: 50%;
-            margin: 0 auto 15px;
-            border: 1px solid var(--accent-gold);
-        }
-        .detail-text strong {
-            display: block; font-family: 'Playfair Display', serif;
-            font-size: 1.2rem; color: var(--text-dark); margin-bottom: 5px;
-        }
-
-        .prayer-note {
-            text-align: center;
-            font-family: 'Playfair Display', serif; font-style: italic;
-            color: var(--accent-deep-green);
-            padding: 20px;
-            background: rgba(197, 160, 89, 0.1); /* soft gold bg */
-            border-radius: 8px;
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            margin-bottom: 40px;
-        }
-
-       /* --- SLIDESHOW GALLERY STYLES (FIXED HEIGHT) --- */
-        .slideshow-container {
-            max-width: 100%;
-            position: relative;
-            margin: 40px auto 20px auto;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-            border: 2px solid var(--accent-gold);
-            
-            /* THIS FIXES THE JUMPING: */
-            height: 300px; /* Sets a strict height for the box */
-        }
-
-        .mySlides {
-            display: none;
-            height: 100%; /* Ensures slide takes full height */
-        }
-
-        .slide-img {
-            width: 100%;
-            height: 100%; /* Forces image to fill the box height */
-            object-fit: cover; /* This crops the image so it doesn't look squished */
-            display: block;
-        }
-
-        /* Adjust height for mobile phones */
-        @media (max-width: 600px) {
-            .slideshow-container {
-                height: 220px; /* Smaller height for mobile screens */
-            }
-        }
-
-        /* The Overlay Text */
-        .text-overlay {
-            color: #F7F5F0;
-            font-family: 'Cinzel Decorative', serif;
-            font-size: 1.1rem;
-            padding: 15px;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            background: linear-gradient(to top, rgba(30, 61, 51, 0.95), rgba(30, 61, 51, 0)); /* Fade up effect */
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-            box-sizing: border-box;
-        }
-
-        /* Fading animation */
-        .fade {
-            animation-name: fade;
-            animation-duration: 1.5s;
-        }
-
-        @keyframes fade {
-            from {opacity: .4} 
-            to {opacity: 1}
-        }
-
-        /* --- GUEST LIST LINK & MODAL --- */
-        .guest-list-link {
-            text-align: center;
-            margin-top: 10px;
-        }
-        .guest-list-link a {
-            color: var(--accent-gold);
-            text-decoration: none;
-            font-size: 0.9rem;
-            border-bottom: 1px dashed var(--accent-gold);
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .guest-list-link a:hover {
-            color: var(--accent-deep-green);
-            border-bottom-style: solid;
-        }
-
-        /* Modal Background (Backdrop) */
-        .modal-overlay {
-            display: none; /* Hidden by default */
-            position: fixed; 
-            z-index: 2000; 
-            left: 0;
-            top: 0;
-            width: 100%; 
-            height: 100%; 
-            background-color: rgba(30, 61, 51, 0.85); /* Deep green tint */
-            backdrop-filter: blur(5px);
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Modal Content Box */
-        .modal-content {
-            background-color: #fcfbf9;
-            margin: 20px;
-            padding: 30px;
-            border: 2px solid var(--accent-gold);
-            border-radius: 12px;
-            width: 90%;
-            max-width: 400px;
-            max-height: 70vh; /* Max height for scrolling */
-            position: relative;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .modal-header {
-            font-family: 'Cinzel Decorative', serif;
+            display: flex; align-items: center; justify-content: center;
+            margin: -52px auto 16px;
             font-size: 1.5rem;
-            color: var(--accent-deep-green);
-            text-align: center;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border-subtle);
+            box-shadow: 0 6px 20px rgba(26,58,42,0.3);
+            border: 3px solid var(--card);
         }
-
-        .guest-list-scroll {
-            overflow-y: auto; /* Scrollable list */
-            flex: 1;
-            text-align: center;
-        }
-
-        .guest-name-item {
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
-            color: var(--text-dark);
-            font-family: 'Playfair Display', serif;
-        }
-        .guest-name-item:last-child { border-bottom: none; }
-
-        .close-modal {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            color: #aaa;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            line-height: 1;
-        }
-        .close-modal:hover { color: var(--accent-gold); }
-
-        /* --- Activities --- */
-        .section-header {
-            text-align: center; margin-bottom: 35px; position: relative;
-        }
-        .section-header h3 {
-             font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--accent-deep-green); margin: 0;
-        }
-        
-        .activities-list { text-align: center; margin-bottom: 50px; }
-        .badge {
-            display: inline-block; background: #fff;
-            border: 1px solid var(--accent-gold);
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            margin: 8px;
-            color: var(--accent-deep-green);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            font-weight: 600;
-            transition: all 0.2s;
-        }
-        .badge:hover { background: var(--accent-deep-green); color: var(--accent-gold); transform: translateY(-2px);}
-
-        /* --- COUNTDOWN STYLES --- */
-        .countdown-wrapper {
-            margin: 0 auto 30px auto;
-            text-align: center;
-            max-width: 400px;
-        }
-        .countdown-label {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            color: var(--text-muted);
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-        }
-        .countdown-timer {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-        .time-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: #fff;
-            border: 1px solid var(--accent-gold);
-            border-radius: 8px;
-            padding: 10px;
-            min-width: 60px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .time-val {
-            font-family: 'Cinzel Decorative', serif;
-            font-size: 1.5rem;
-            color: var(--accent-deep-green);
+        .lf h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.45rem;
             font-weight: 700;
-            line-height: 1;
+            color: var(--green);
+            margin-bottom: 6px;
         }
-        .time-unit {
-            font-size: 0.7rem;
-            text-transform: uppercase;
+        .lf .lf-hint { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5; }
+        .lf-row { display: flex; gap: 8px; }
+        .lf-row input {
+            flex: 1; padding: 13px 16px;
+            border: 2px solid var(--border); border-radius: 10px;
+            font-size: 0.95rem; font-family: 'DM Sans', sans-serif;
+            transition: all 0.25s; background: #FDFCFA;
+        }
+        .lf-row input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184,150,46,0.12); }
+        .btn-go {
+            padding: 13px 26px;
+            background: linear-gradient(135deg, var(--green), var(--green-mid));
+            color: var(--gold-light); border: none; border-radius: 10px;
+            font-family: 'DM Sans', sans-serif; font-size: 0.85rem;
+            font-weight: 700; letter-spacing: 1px; cursor: pointer;
+            transition: all 0.25s; white-space: nowrap;
+        }
+        .btn-go:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(26,58,42,0.3); }
+        .btn-go:active { transform: translateY(0); }
+        .lf-err { color: var(--danger); font-size: 0.82rem; margin-top: 10px; display: none; }
+
+        /* ===== MAIN ===== */
+        .main { padding: 30px 24px; }
+        @media (max-width: 480px) { .main { padding: 24px 14px; } }
+
+        /* ===== WHATSAPP ===== */
+        .wa { background: linear-gradient(135deg, #ECF8F0, #D9F2E0); border: 1px solid #B8E0C4; border-radius: var(--radius); padding: 18px 20px; margin-bottom: 24px; display: none; }
+        .wa .wa-t { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 1.05rem; color: #1A6B3C; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+        .wa .wa-h { font-size: 0.8rem; color: #3D7A55; margin-bottom: 10px; }
+        .wa-ls { display: flex; flex-wrap: wrap; gap: 8px; }
+        .wa-c {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 16px; background: #fff; border: 1px solid #B8E0C4; border-radius: 50px;
+            font-size: 0.82rem; font-weight: 600; color: #1A6B3C; text-decoration: none; transition: all 0.2s;
+        }
+        .wa-c:hover { background: #1A6B3C; color: #fff; border-color: #1A6B3C; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(26,107,60,0.2); }
+        .wa-c svg { width: 16px; height: 16px; fill: currentColor; }
+
+        /* ===== SECTION HEADS ===== */
+        .sh { text-align: center; margin-bottom: 20px; }
+        .sh h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 700; color: var(--green); }
+        .sh p { font-size: 0.82rem; color: var(--text-muted); margin-top: 2px; }
+        .dot { display: block; width: 5px; height: 5px; background: var(--gold); border-radius: 50%; margin: 6px auto 0; }
+
+        /* ===== PROFILE ===== */
+        .prof {
+            background: #FDFCFA; border: 1px solid var(--border); border-radius: var(--radius);
+            padding: 24px; margin-bottom: 24px; position: relative;
+        }
+        .prof::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--green), var(--gold), var(--green)); border-radius: var(--radius) var(--radius) 0 0; }
+        .prof-top { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+        .prof-av {
+            width: 48px; height: 48px; background: var(--green); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Cinzel Decorative', serif; font-size: 1.2rem; color: var(--gold-light); flex-shrink: 0;
+        }
+        .prof-nm { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 1.25rem; color: var(--green); line-height: 1.2; }
+        .prof-em { font-size: 0.78rem; color: var(--text-muted); }
+        .prof-g { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .pc { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; }
+        .pc.w { grid-column: 1 / -1; }
+        .pc .lb { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1.2px; color: var(--gold); font-weight: 700; }
+        .pc .vl { font-size: 0.92rem; font-weight: 600; color: var(--text); margin-top: 1px; }
+        @media (max-width: 380px) { .prof-g { grid-template-columns: 1fr; } .pc.w { grid-column: auto; } }
+
+        /* ===== CONTRIB BOARD (GROUPED) ===== */
+        .cb { margin-bottom: 28px; }
+        .cg { background: #FDFCFA; border: 1px solid var(--border); border-radius: 12px; margin-bottom: 10px; overflow: hidden; transition: all 0.25s; }
+        .cg:hover { border-color: var(--gold-muted); }
+        .cg-h { display: flex; align-items: center; gap: 12px; padding: 14px 16px; }
+        .cg-e { font-size: 1.5rem; flex-shrink: 0; }
+        .cg-i { flex: 1; }
+        .cg-n { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 1rem; color: var(--green); line-height: 1.2; }
+        .cg-ct { font-size: 0.72rem; color: var(--text-muted); }
+        .cg-f { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 16px 12px; }
+        .cf { font-size: 0.73rem; padding: 4px 12px; border-radius: 20px; background: #fff; border: 1px solid var(--border); color: var(--text-mid); font-weight: 500; }
+        .cf.u { background: var(--green); color: var(--gold-light); border-color: var(--green); font-weight: 700; }
+        .cg-u { font-size: 0.68rem; padding: 3px 10px; border-radius: 20px; background: var(--gold-bg); border: 1px solid var(--gold-muted); color: var(--gold); font-weight: 700; white-space: nowrap; }
+
+        /* ===== CHANGE CONTRIBUTION ===== */
+        .cc-area { margin-bottom: 24px; }
+        .cc-btn {
+            display: flex; align-items: center; justify-content: center; gap: 6px;
+            width: 100%; padding: 12px; border: 2px dashed var(--gold-muted); background: var(--gold-bg);
+            border-radius: 10px; color: var(--gold); font-weight: 700; font-size: 0.85rem;
+            cursor: pointer; transition: all 0.25s; font-family: 'DM Sans', sans-serif;
+        }
+        .cc-btn:hover { border-color: var(--gold); background: #FFF8E1; transform: translateY(-1px); }
+        .cc-wrap { display: none; margin-top: 10px; background: #FDFCFA; border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+        .cc-wrap.open { display: block; animation: fadeUp 0.3s ease; }
+        .cc-wrap label { font-size: 0.82rem; font-weight: 700; color: var(--green); display: block; margin-bottom: 8px; }
+        .cc-wrap select { width: 100%; padding: 12px; border: 2px solid var(--border); border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; margin-bottom: 12px; background: #fff; cursor: pointer; }
+        .cc-wrap select:focus { outline: none; border-color: var(--gold); }
+        .cc-btns { display: flex; gap: 8px; justify-content: flex-end; }
+        .bs { padding: 9px 20px; border-radius: 8px; font-size: 0.8rem; font-weight: 700; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.2s; border: none; }
+        .bs.cn { background: #eee; color: var(--text-mid); }
+        .bs.cn:hover { background: #ddd; }
+        .bs.sv { background: var(--green); color: var(--gold-light); }
+        .bs.sv:hover { background: var(--green-mid); }
+
+       /* ===== HORIZONTAL TIMELINE ===== */
+        .tls { margin-bottom: 32px; }
+        .tl-sw { position: relative; overflow: hidden; margin: 0 -24px; padding: 0 24px; }
+        @media (max-width: 480px) { .tl-sw { margin: 0 -14px; padding: 0 14px; } }
+        .tl-tr {
+            display: flex; gap: 12px;
+            overflow-x: auto; scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch; scrollbar-width: none;
+            padding: 16px 0 20px; scroll-padding: 0 calc(50% - 136px);
+        }
+        .tl-tr::-webkit-scrollbar { display: none; }
+        .tc {
+            flex: 0 0 272px; min-height: 220px;
+            scroll-snap-align: center;
+            background: #FDFCFA; border: 1.5px solid var(--border); border-radius: 14px;
+            padding: 22px 20px; position: relative; cursor: default;
+            transition: background 0.4s, border-color 0.4s, box-shadow 0.4s;
+        }
+        .tc:first-child { margin-left: calc(50% - 136px); }
+        .tc:last-child { margin-right: calc(50% - 136px); }
+        .tc.ctr {
+            background: var(--green); border-color: var(--green);
+            box-shadow: 0 6px 24px rgba(26,58,42,0.22);
+        }
+        .tc-em { font-size: 1.6rem; margin-bottom: 8px; }
+        .tc-tm {
+            font-size: 0.68rem; font-weight: 700; letter-spacing: 1.2px;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+            transition: color 0.4s;
+        }
+        .tc.ctr .tc-tm { color: var(--gold-light); }
+        .tc-tt {
+            font-family: 'Cormorant Garamond', serif; font-weight: 700;
+            font-size: 1.1rem; color: var(--green); line-height: 1.25;
+            transition: color 0.4s;
+        }
+        .tc.ctr .tc-tt { color: #fff; }
+        .tc-ln {
+            width: 28px; height: 2px; background: var(--gold-muted);
+            border-radius: 2px; margin: 8px 0; transition: background 0.4s;
+        }
+        .tc.ctr .tc-ln { background: var(--gold-light); }
+        .tc-ds {
+            font-size: 0.78rem; line-height: 1.55;
             color: var(--text-muted);
-            margin-top: 5px;
-            letter-spacing: 1px;
+            opacity: 0; transition: opacity 0.4s;
+            pointer-events: none;
         }
+        .tc.ctr .tc-ds { opacity: 1; color: rgba(255,255,255,0.75); pointer-events: auto; }
+        .tc.pray { border-color: rgba(26,58,42,0.3); background: rgba(26,58,42,0.04); }
+        .tc.pray.ctr { background: linear-gradient(135deg, #132E20, var(--green)); border-color: var(--green); }
+        .tl-dt { display: flex; justify-content: center; gap: 6px; margin-top: 8px; }
+        .tl-di {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--border); transition: all 0.3s; cursor: pointer;
+        }
+        .tl-di.ac { background: var(--green); width: 18px; border-radius: 4px; }
+        .tl-ar { display: flex; justify-content: center; gap: 12px; margin-top: 12px; }
+        .tl-ab {
+            width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid var(--border);
+            background: #fff; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: all 0.2s; color: var(--green); font-size: 1rem;
+        }
+        .tl-ab:hover { background: var(--green); color: var(--gold-light); border-color: var(--green); }
 
-        /* --- PROGRESS BAR STYLES (NEW) --- */
-        .capacity-section {
-            margin: 40px auto;
-            max-width: 500px;
-            text-align: center;
+        /* ===== VOLUNTEER ===== */
+        .vs { margin-bottom: 30px; }
+        .vi-msg { text-align: center; max-width: 480px; margin: 0 auto 24px; }
+        .vi-msg .bg { font-size: 2rem; display: block; margin-bottom: 6px; }
+        .vi-msg p { font-size: 0.88rem; color: var(--text-mid); line-height: 1.6; }
+        .vi-msg .hl { background: linear-gradient(to right, rgba(184,150,46,0.25), rgba(184,150,46,0)); padding: 0 3px; color: var(--green); font-weight: 700; }
+        .vc {
+            background: #FDFCFA; border: 1.5px solid var(--border); border-radius: 12px;
+            padding: 18px; margin-bottom: 10px; transition: all 0.25s; position: relative; overflow: hidden;
         }
-        .capacity-label {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
+        .vc::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--border); transition: background 0.3s; }
+        .vc:hover { border-color: var(--gold-muted); box-shadow: var(--shadow-sm); }
+        .vc:hover::before { background: var(--gold); }
+        .vc.sg::before { background: var(--success); }
+        .vc.sg { border-color: #B8E0C4; background: linear-gradient(135deg, #F6FDF8, #EDFAF1); }
+        .vc.fl::before { background: var(--success); }
+        .vc.fl { opacity: 0.85; }
+        .vt { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 6px; }
+        .vt-e { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+        .vt-i { flex: 1; }
+        .vt-n { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 1.05rem; color: var(--green); line-height: 1.2; }
+        .vt-t { font-size: 0.72rem; color: var(--text-muted); }
+        .vt-d { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 10px; }
+        .vp { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+        .vp-bg { flex: 1; height: 6px; background: #E8E4DB; border-radius: 6px; overflow: hidden; }
+        .vp-f { height: 100%; border-radius: 6px; transition: width 0.5s ease; background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+        .vp-f.ok { background: linear-gradient(90deg, var(--success), #5CB87A); }
+        .vp-l { font-size: 0.72rem; font-weight: 700; color: var(--green); white-space: nowrap; }
+        .vch { display: flex; flex-wrap: wrap; gap: 5px; margin: 8px 0 10px; }
+        .vci { font-size: 0.7rem; padding: 3px 10px; border-radius: 20px; background: #fff; border: 1px solid var(--border); color: var(--text-muted); }
+        .vci.u { background: var(--green); color: var(--gold-light); border-color: var(--green); }
+        .va { text-align: right; }
+        .bv {
+            padding: 8px 18px; border: 2px solid var(--green); background: transparent;
+            color: var(--green); border-radius: 8px; font-size: 0.78rem; font-weight: 700;
+            cursor: pointer; transition: all 0.2s; font-family: 'DM Sans', sans-serif;
         }
-        .progress-container {
-            background-color: #E8E4DA;
-            border-radius: 20px;
-            height: 14px;
-            width: 100%;
-            overflow: hidden;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .progress-bar {
-            background: linear-gradient(90deg, #D4AF37, #FEE180);
-            height: 100%;
-            width: 0%; /* JS will update this */
-            border-radius: 20px;
-            transition: width 1s ease-in-out;
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
-        }
-        .capacity-note {
-            font-size: 0.8rem;
-            color: #999;
-            margin-top: 8px;
-            font-style: italic;
-        }
+        .bv:hover { background: var(--green); color: var(--gold-light); }
+        .bv.on { background: var(--green); color: var(--gold-light); }
+        .bv.on:hover { background: var(--danger); border-color: var(--danger); color: #fff; }
+        .bv:disabled { opacity: 0.35; cursor: default; border-style: dashed; }
+        .bv:disabled:hover { background: transparent; color: var(--green); }
 
-        /* --- SOLD OUT MESSAGE STYLES (NEW) --- */
-        #soldOutMessage {
-            display: none; /* Hidden by default */
-            text-align: center;
-            padding: 40px;
-            background: #fffbf0;
-            border: 2px solid var(--accent-gold);
-            border-radius: 12px;
-            margin-top: 30px;
+        .oa {
+            background: linear-gradient(135deg, var(--green), var(--green-mid));
+            border-radius: 12px; padding: 24px; color: #fff; text-align: center; margin-bottom: 10px;
         }
-        .sold-out-title {
-            font-family: 'Cinzel Decorative', serif;
-            font-size: 2rem;
-            color: var(--accent-deep-green);
-            margin-bottom: 15px;
+        .oa .vt-n { color: var(--gold-light); font-size: 1.15rem; }
+        .oa .vt-d { color: rgba(255,255,255,0.7); }
+        .oa-ideas { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 12px 0 16px; }
+        .oac { background: rgba(184,150,46,0.12); border: 1px solid rgba(184,150,46,0.3); color: var(--gold-light); padding: 5px 14px; border-radius: 20px; font-size: 0.8rem; }
+        .boa {
+            padding: 10px 24px; border: 2px solid var(--gold-light); background: transparent;
+            color: var(--gold-light); border-radius: 8px; font-size: 0.82rem; font-weight: 700;
+            cursor: pointer; transition: all 0.2s; font-family: 'DM Sans', sans-serif;
         }
+        .boa:hover { background: var(--gold-light); color: var(--green); }
 
-        /* --- Form Styling --- */
-        .form-container {
-            background: #fcfbf9;
-            padding: 40px;
-            border-radius: 12px;
-            border: 1px solid var(--border-subtle);
-        }
-        .form-group { margin-bottom: 30px; }
-        label {
-            display: block; margin-bottom: 12px;
-            font-weight: 700; color: var(--accent-deep-green);
-            font-size: 0.95rem; letter-spacing: 0.5px;
-        }
+        /* ===== INFO GRID ===== */
+        .ig { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 24px; }
+        .ic { text-align: center; padding: 16px 8px; background: #FDFCFA; border: 1px solid var(--border); border-radius: 12px; }
+        .ic-i { font-size: 1.5rem; margin-bottom: 6px; }
+        .ic-lb { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 1.2px; color: var(--gold); font-weight: 700; }
+        .ic-v { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 1rem; color: var(--text); line-height: 1.25; margin-top: 2px; }
+        .ic-s { font-size: 0.72rem; color: var(--text-muted); }
+        @media (max-width: 420px) { .ig { grid-template-columns: 1fr; } }
 
-        input[type="text"], input[type="email"], input[type="number"], select, textarea {
-            width: 100%; padding: 16px;
-            border: 2px solid var(--border-subtle);
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-sizing: border-box; font-family: 'Lato', sans-serif; font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        input:focus, select:focus, textarea:focus {
-            border-color: var(--accent-gold);
-            box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.1); outline: none;
-        }
-        textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
+        /* ===== BADGES ===== */
+        .bdw { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-bottom: 24px; }
+        .bd { padding: 7px 14px; background: #fff; border: 1px solid var(--border); border-radius: 6px; font-size: 0.78rem; font-weight: 600; color: var(--green); transition: all 0.2s; }
+        .bd:hover { background: var(--green); color: var(--gold-light); border-color: var(--green); transform: translateY(-2px); }
 
-        /* Premium Radio Tiles */
-        .radio-tile-group { display: flex; gap: 20px; }
-        .radio-tile-wrapper { flex: 1; position: relative; height: 60px; }
-        .radio-tile-wrapper input {
-            position: absolute; opacity: 0; cursor: pointer; height: 100%; width: 100%; z-index: 2;
-        }
-        .radio-tile {
-            display: flex; align-items: center; justify-content: center; height: 100%;
-            border: 2px solid var(--border-subtle); border-radius: 8px; background: #fff;
-            transition: all 0.3s ease; font-weight: 700; color: var(--text-muted);
-        }
-        .radio-tile-wrapper input:checked + .radio-tile {
-            border-color: var(--accent-gold);
-            background-color: var(--accent-deep-green); color: var(--accent-gold);
-            box-shadow: 0 4px 10px rgba(30, 61, 51, 0.2);
-        }
+        /* ===== SLIDESHOW ===== */
+        .ss { position: relative; height: 240px; border-radius: var(--radius); overflow: hidden; margin-bottom: 28px; border: 1.5px solid var(--gold-muted); }
+        .sl { position: absolute; inset: 0; opacity: 0; transition: opacity 1s; }
+        .sl.on { opacity: 1; }
+        .sl img { width: 100%; height: 100%; object-fit: cover; }
+        .sl-c { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 14px 12px; background: linear-gradient(to top, rgba(26,58,42,0.9), transparent); color: #F7F5F0; font-family: 'Cinzel Decorative', serif; font-size: 0.82rem; text-align: center; }
+        @media (max-width: 480px) { .ss { height: 195px; } }
 
-        /* Dynamic Messages */
-        .dynamic-msg {
-            background: #fffdf5; color: #7a5e2a;
-            padding: 15px 20px; border-radius: 8px;
-            font-size: 0.95rem; margin-top: 15px; display: none;
-            border-left: 4px solid var(--accent-gold); box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
+        /* ===== COUNTDOWN ===== */
+        .cds { text-align: center; padding: 22px 20px; background: linear-gradient(135deg, rgba(26,58,42,0.03), rgba(184,150,46,0.05)); border-radius: 12px; margin-bottom: 24px; }
+        .cds .cdl { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--text-muted); margin-bottom: 10px; font-size: 0.9rem; }
+        .cdg { display: flex; justify-content: center; gap: 10px; }
+        .cdc { background: #fff; border: 1px solid var(--gold-muted); border-radius: 8px; padding: 8px 4px; min-width: 54px; }
+        .cdn { font-family: 'Cinzel Decorative', serif; font-size: 1.3rem; color: var(--green); font-weight: 700; line-height: 1; }
+        .cdu { font-size: 0.58rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px; margin-top: 3px; }
 
-        /* Submit Button */
-        .submit-btn {
-            width: 100%; padding: 20px;
-            background: linear-gradient(135deg, var(--accent-deep-green) 0%, #2A5245 100%);
-            color: var(--accent-gold);
-            border: none; border-radius: 8px;
-            font-size: 1.2rem; font-weight: 700; letter-spacing: 1px;
-            cursor: pointer; transition: all 0.3s ease;
-            box-shadow: 0 10px 20px -10px rgba(30, 61, 51, 0.5);
-            font-family: 'Cinzel Decorative', serif;
-        }
-        .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 25px -10px rgba(30, 61, 51, 0.7); }
-        
-        .footer {
-            text-align: center; padding: 30px; font-size: 0.9rem;
-            color: var(--text-muted); background: #fbfaf8;
-            border-top: 1px solid var(--border-subtle);
-            font-family: 'Playfair Display', serif; font-style: italic;
-        }
+        /* ===== FOOTER ===== */
+        .ft { text-align: center; padding: 20px 24px; background: #FAFAF7; border-top: 1px solid var(--border); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.9rem; color: var(--text-muted); }
 
-        /* Loading Overlay */
-        #overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(247, 245, 240, 0.96);
-            backdrop-filter: blur(5px); display: none;
-            justify-content: center; align-items: center; z-index: 1000;
-        }
-        .spinner {
-            border: 4px solid rgba(197, 160, 89, 0.2);
-            border-top: 4px solid var(--accent-gold);
-            border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite;
-        }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        /* ===== DIVIDER ===== */
+        .dv { border: none; height: 1px; background: linear-gradient(to right, transparent, var(--border), transparent); margin: 28px 0; }
 
-        #successMsg {
-            text-align: center; background: white; padding: 50px 40px;
-            border-radius: 12px; box-shadow: var(--shadow-soft);
-            border: 2px solid var(--accent-gold);
-        }
-        #successMsg h2 { font-family: 'Cinzel Decorative', serif; color: var(--accent-deep-green); margin-top:0; font-size: 2rem;}
+        /* ===== HIDDEN ===== */
+        .hs { display: none; }
+        .hs.vis { display: block; }
 
-        /* ============================= */
-        /* MOBILE OPTIMIZATIONS (FIXES)  */
-        /* ============================= */
-        @media (max-width: 600px) {
-            .content-wrapper { padding: 30px 15px; }
-            .form-container { padding: 25px 15px; }
-            
-            /* Timeline Fix */
-            .countdown-timer { gap: 8px; }
-            .time-box { min-width: auto; flex: 1; padding: 8px 4px; }
-            .time-val { font-size: 1.2rem; }
-            .time-unit { font-size: 0.6rem; }
+        /* ===== OVERLAYS ===== */
+        .ol { position: fixed; inset: 0; background: rgba(250,248,244,0.9); backdrop-filter: blur(3px); display: none; justify-content: center; align-items: center; z-index: 999; }
+        .ol.on { display: flex; }
+        .sp { border: 3px solid var(--gold-muted); border-top-color: var(--gold); border-radius: 50%; width: 40px; height: 40px; animation: spin 0.8s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .tt { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(90px); background: var(--green); color: #fff; padding: 13px 26px; border-radius: 10px; font-size: 0.88rem; font-weight: 500; box-shadow: 0 8px 30px rgba(0,0,0,0.18); z-index: 2000; transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); text-align: center; max-width: 88%; }
+        .tt.on { transform: translateX(-50%) translateY(0); }
 
-            /* Radio Group Fix */
-            .radio-tile-group { flex-direction: column; gap: 10px; }
-            .radio-tile-wrapper { width: 100%; height: 55px; }
-            
-            .hero-banner h1 { font-size: 2.5rem; }
-            .hero-banner { padding: 40px 20px; }
-        }
-
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+        .an { animation: fadeUp 0.45s ease forwards; opacity: 0; }
+        .d1 { animation-delay: 0.08s; } .d2 { animation-delay: 0.16s; } .d3 { animation-delay: 0.24s; } .d4 { animation-delay: 0.32s; } .d5 { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <div class="hero-banner">
-    
-        
+<div class="shell">
+    <div class="hero">
         <h1>Eid Mubarak!</h1>
-        <div class="ornament-divider">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 25" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M10 12.5 C 30 5, 50 5, 70 12.5 C 90 20, 110 20, 130 12.5 C 150 5, 170 5, 190 12.5"/>
-                <circle cx="100" cy="12.5" r="3" fill="currentColor"/>
-            </svg>
-        </div>
-        <p>A Family Celebration & Picnic for Eid Al-Fitr 2026</p>
-        <p style="font-style: normal;">This is a private event by invitation only</p>
+        <div class="hero-div"><span></span><em>✦</em><span></span></div>
+        <p class="hero-sub">Family Celebration & Picnic — Eid Al-Fitr 2026</p>
+        <div class="cap-pill" id="capPill">Loading...</div>
     </div>
 
-    <div class="content-wrapper">
-        
-        <div class="details-grid">
-            <div class="detail-item">
-                <div class="detail-icon">📅</div>
-                <div class="detail-text">
-                    <span class="section-label">Date & Time</span>
-                    <strong>Friday, March 20th</strong>
-                    <span>10:00 AM - 6:00 PM</span>
-                </div>
-            </div>
-            <div class="detail-item">
-                <div class="detail-icon">📍</div>
-                <div class="detail-text">
-                    <span class="section-label">Location</span>
-                    <strong>Hellyer Park</strong>
-                    <span>Buena Vista Group Area, San Jose</span>
-                </div>
-            </div>
-             <div class="detail-item">
-                <div class="detail-icon">💰</div>
-                <div class="detail-text">
-                    <span class="section-label">Contribution</span>
-                    <strong>TBD (Estimated)</strong>
-                    <span>~$80/family | ~$40/single</span>
-                </div>
-            </div>
+    <div class="lf" id="lfCard">
+        <div class="lf-ico">🔑</div>
+        <h2>Access Your Event Hub</h2>
+        <p class="lf-hint">Enter the email you used to RSVP to view your reservation, event schedule, and help volunteer.</p>
+        <div class="lf-row">
+            <input type="email" id="emailIn" placeholder="your@email.com" autocomplete="email">
+            <button class="btn-go" id="goBtn" onclick="doLookup()">GO</button>
         </div>
-
-        <div class="prayer-note" style="font-style: normal; font-size: 1.3rem; line-height: 1.6;">
-    🥘 Lunch will be served immediately following <strong>Jummuah prayer</strong>, Inshallah.
-    <br>
-    ☕ 🥤 Refreshments will be available all day long!
-</div>
-
-        <div class="section-header">
-            <h3>Festivities & Joy</h3>
-            <div class="ornament-divider" style="margin: 10px 0 0;">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" fill="currentColor" width="50">
-                    <circle cx="50" cy="5" r="3"/>
-                </svg>
-            </div>
-        </div>
-        
-        <div class="activities-list">
-            <span class="badge">🏰 Jump House</span>
-            <span class="badge">🌸 Pro Henna Artist for Girls</span>
-            <span class="badge">💪 Tug-of-War</span>
-            <span class="badge">🥔 Sack Race</span>
-            <span class="badge">☁️ Cotton Candy</span>
-            <span class="badge">🔴 Giant Connect-4</span>
-            <span class="badge">🎨 Pro Face Painting Artist</span>
-            <span class="badge">📸 Photo Booth</span>
-            <span class="badge">⚽ Gaint Soccer Games</span>
-        </div>
-
-        <div class="capacity-section" id="capacitySection">
-            <div class="capacity-label">
-                <span id="attendeeCount">Checking...</span> Guests Confirmed
-            </div>
-            <div class="progress-container">
-                <div class="progress-bar" id="progressBar"></div>
-            </div>
-            <div class="capacity-note">Limited to 120 guests for comfort & safety</div>
-            
-            <div class="guest-list-link">
-                <a onclick="openGuestList()">See who is coming</a>
-            </div>
-        </div>
-        
-        <div id="soldOutMessage">
-            <div class="sold-out-title">We are at Capacity</div>
-            <p>SubhanAllah! The response has been overwhelming, and we have reached our limit of 120 guests.</p>
-            <p>We are truly grateful for your interest and enthusiasm. We hope to celebrate with you at future community events inshallah.</p>
-        </div>
-
-        <div class="slideshow-container">
-            
-            <div class="mySlides fade">
-                <img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/Kidsplaying_25.png" class="slide-img" alt="Fun Activities">
-                <div class="text-overlay">Fun & Games for All Ages</div>
-            </div>
-
-            <div class="mySlides fade">
-                <img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/tugofwar25.png" class="slide-img" alt="Fun Activities2">
-                <div class="text-overlay">Fun & Games for All Ages - Eid 2025</div>
-            </div>
-
-
-            <div class="mySlides fade">
-                <img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/halal_food24.png" class="slide-img" alt="Delicious Food">
-                <div class="text-overlay">Delicious Halal Lunch - Eid 2024</div>
-            </div>
-
-            <div class="mySlides fade">
-                <img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/joywithediyaa24.png" class="slide-img" alt="Community1">
-                <div class="text-overlay">Joy with Eidyaa - Eid 2024</div>
-            </div>
-
-            <div class="mySlides fade">
-                <img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/jumphouse25.jpeg" class="slide-img" alt="Community2">
-                <div class="text-overlay">Jump House - Eid 2025</div>
-            </div>
-
-            <div class="mySlides fade">
-                <img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/IMG_9475.jpg" class="slide-img" alt="Community3">
-                <div class="text-overlay">Venue this Eid</div>
-            </div>
-
-            <div class="mySlides fade">
-                <img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/facepaining.png" class="slide-img" alt="Community3">
-                <div class="text-overlay">Booked - Professional facepainter and henna artist 2pm - 4pm</div>
-            </div>
-
-            <div class="mySlides fade">
-                <img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/photobooth.png" class="slide-img" alt="Community3">
-                <div class="text-overlay">Photo Booth for extra fun</div>
-            </div>
-
-            
-
-        </div>
-
-        <div id="rsvpSection">
-            <div class="section-header" style="margin-top: 40px;">
-                <h3>Kindly RSVP</h3>
-                <div class="ornament-divider" style="margin: 10px 0 20px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" fill="currentColor" width="30">
-                        <circle cx="50" cy="5" r="3"/>
-                    </svg>
-                </div>
-            </div>
-            
-            <div class="countdown-wrapper">
-                <div class="countdown-label">Please let us know within</div>
-                <div class="countdown-timer" id="timer">
-                    <div class="time-box">
-                        <span class="time-val" id="days">00</span>
-                        <span class="time-unit">Days</span>
-                    </div>
-                    <div class="time-box">
-                        <span class="time-val" id="hours">00</span>
-                        <span class="time-unit">Hours</span>
-                    </div>
-                    <div class="time-box">
-                        <span class="time-val" id="minutes">00</span>
-                        <span class="time-unit">Minutes</span>
-                    </div>
-                    <div class="time-box">
-                        <span class="time-val" id="seconds">00</span>
-                        <span class="time-unit">Seconds</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-container">
-                <form id="rsvpForm">
-                    <div class="form-group">
-                        <label for="name">Household Name</label>
-                        <input type="text" id="name" name="name" required placeholder="e.g., Sawaby Family" style="font-family: 'Playfair Display', serif;">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address (for confirmation)</label>
-                        <input type="email" id="email" name="email" required placeholder="name@example.com">
-                    </div>
-
-                    <div style="display: flex; gap: 25px;">
-                        <div class="form-group" style="flex:1;">
-                            <label for="adults">Adults</label>
-                            <input type="number" id="adults" name="adults" min="1" value="1" required>
-                        </div>
-                        <div class="form-group" style="flex:1;">
-                            <label for="kids">Children</label>
-                            <input type="number" id="kids" name="kids" min="0" value="0" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Participate in Eideyaa (Money Gift for Kids)?</label>
-                        <div class="radio-tile-group">
-                            <div class="radio-tile-wrapper">
-                                <input type="radio" name="eideyaa" value="Yes" onclick="toggleEideyaa(true)">
-                                <div class="radio-tile">YES, Count us in</div>
-                            </div>
-                            <div class="radio-tile-wrapper">
-                                 <input type="radio" name="eideyaa" value="No" checked onclick="toggleEideyaa(false)">
-                                <div class="radio-tile">NO, Thank you</div>
-                            </div>
-                        </div>
-
-                        <div id="eideyaaMsg" class="dynamic-msg">
-                            ✨ Wonderful! We will provide fresh $1 bills for every child attending. Please calculate your total ($1 per child) and Venmo it to us at the event.
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="arrival">Expected Arrival Window</label>
-                        <select name="arrival" id="arrival" onchange="checkTime()" required>
-                            <option value="" disabled selected>Select arrival time...</option>
-                            <option value="Morning">Morning (10:00 AM - 12:00 PM)</option>
-                            <option value="Afternoon">Afternoon (12:00 PM - 3:00 PM)</option>
-                            <option value="Evening">Evening (3:00 PM - 6:00 PM)</option>
-                        </select>
-                        <div id="afternoonMsg" class="dynamic-msg">
-                            🍽️ Noted! Lunch will be served right after Jummauh prayers, followed immediately by Eideyaa distribution.
-                        </div>
-                        <div id="eveningMsg" class="dynamic-msg">
-                            🕰️ Just a heads up: Arriving in the evening means you may miss face painting, henna, Eideyaa, and lunch. We look forward to enjoying the rest of the event with you!
-                        </div>
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 25px;">
-                        <label for="volunteer">Volunteering Opportunities</label>
-                        <select name="volunteer" id="volunteer" style="cursor: pointer;">
-                            <option value="None" selected>No thanks, just attending!</option>
-                            <optgroup label="Help Needed">
-                                <option value="Setup">Setup (arrive early)</option>
-                                <option value="Cleanup">Clean up (stay late)</option>
-                                 <option value="Henna">Manage kids for the Henna Artist (2pm - 4pm)</option>
-                            </optgroup>
-                            <optgroup label="Items to Bring">
-                                <option value="Popsicles">lollipops (50 count)</option>
-                                <option value="Juice">Juice (for 50+)</option>
-                                <option value="TeaCoffee">Tea and Coffee thermos</option>
-                                <option value="Dessert">Homemade Dessert of your choice</option>
-                                <option value="Cupcakes">Cupcakes (30 - no vanilla extract)</option>
-                                <option value="Cake">Cake (for 40 - no vanilla extract)</option>
-                                <option value="JuiceBox">Juice boxes (50+ for kids)</option>
-                                <option value="Chips">Family-size chips (4x count)</option>
-                            </optgroup>
-                            <optgroup label="Not decided">
-                                <option value="Surprise">it'll be a surprise</option>
-                            </optgroup>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group" style="margin-top: 25px;">
-                        <label for="notes">Additional Notes or Dietary Restrictions</label>
-                        <textarea id="notes" name="notes" placeholder="Optional: All food is Zabiha Halal, but let us know if you have any questions or specific requirements..."></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-btn" style="margin-top: 10px;">CONFIRM RSVP</button>
-                </form>
-            </div>
-        </div> </div>
-    
-    <div class="footer">
-        We look forward to celebrating this joyous occasion together.
+        <div class="lf-err" id="lfErr"></div>
     </div>
-</div>
 
-<div id="overlay">
-    <div id="loader" class="spinner"></div>
-    <div id="successMsg" style="display:none;">
-        <h2>JazakAllah Khair!</h2>
-        <p style="font-size: 1.1rem; margin: 20px 0;">Your RSVP has been successfully received.</p>
-        <p style="color: var(--text-muted);">A confirmation email has been sent to the address provided.</p>
-        <button onclick="window.location.reload()" class="submit-btn" style="margin-top:30px; width:auto; padding: 15px 40px; background: var(--text-muted); color: white; box-shadow: none; font-family: 'Lato', sans-serif;">Submit/Edit RSVP (use same email)</button>
-    </div>
-</div>
+    <div class="main">
+        <!-- WHATSAPP -->
+        <div class="wa hs" id="waBox">
+            <div class="wa-t">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="#1A6B3C"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Stay Connected
+            </div>
+            <div class="wa-h">Join the WhatsApp groups for Eid this year to stay updated</div>
+            <div class="wa-ls" id="waLs"></div>
+        </div>
 
-    <div id="guestModal" class="modal-overlay">
-    <div class="modal-content">
-        <span class="close-modal" onclick="closeGuestList()">&times;</span>
-        <div class="modal-header">Confirmed Families</div>
-        <div class="guest-list-scroll" id="guestListContainer">
-            <div style="padding:20px; color:#999;">Loading...</div>
+        <!-- PROFILE -->
+        <div class="hs" id="secProf">
+            <div class="sh an"><h3>Your Reservation</h3><span class="dot"></span></div>
+            <div class="prof an d1" id="profCard"></div>
+        </div>
+
+        <!-- CONTRIBUTION BOARD -->
+        <div class="hs" id="secCont">
+            <div class="sh an d2"><h3>Community Contribution Board</h3><p>What everyone is bringing — together we make it happen</p></div>
+            <div id="cBoard" class="cb an d3"></div>
+            <div class="cc-area an d3" id="ccArea">
+                <button class="cc-btn" onclick="toggleCC()"><span>✏️</span> Change What You're Bringing</button>
+                <div class="cc-wrap" id="ccWrap">
+                    <label>Choose a different contribution</label>
+                    <select id="newCS">
+                        <option value="None">Just attending — no contribution</option>
+                        <optgroup label="Help Needed">
+                            <option value="Setup">🛠️ Setup (arrive early)</option>
+                            <option value="Cleanup">🧹 Cleanup (stay late)</option>
+                            <option value="Henna">🌸 Manage kids for Henna Artist (2–4 PM)</option>
+                        </optgroup>
+                        <optgroup label="Items to Bring">
+                            <option value="Popsicles">🍭 Lollipops (50 count)</option>
+                            <option value="Juice">🥤 Juice (for 50+)</option>
+                            <option value="TeaCoffee">☕ Tea & Coffee thermos</option>
+                            <option value="Dessert">🍰 Homemade Dessert</option>
+                            <option value="Cupcakes">🧁 Cupcakes (30 — no vanilla extract)</option>
+                            <option value="Cake">🎂 Cake (for 40 — no vanilla extract)</option>
+                            <option value="JuiceBox">🧃 Juice boxes (50+ for kids)</option>
+                            <option value="Chips">🥨 Family-size chips (4x count)</option>
+                        </optgroup>
+                        <optgroup label="Other"><option value="Surprise">🎁 It'll be a surprise!</option></optgroup>
+                    </select>
+                    <div class="cc-btns">
+                        <button class="bs cn" onclick="toggleCC()">Cancel</button>
+                        <button class="bs sv" onclick="saveCC()">Save & Notify Me</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VOLUNTEER -->
+        <div class="hs" id="secVol">
+            <hr class="dv">
+            <div class="sh an d4"><h3>We Value Your Help!</h3><span class="dot"></span></div>
+            <div class="vi-msg an d4">
+                <span class="bg">🤲</span>
+                <p>This celebration is organized by <span class="hl">all of us — together</span>. It's not one family doing everything; it's many families each doing a little. Can you spare an hour?</p>
+            </div>
+            <div id="vCards" class="an d5"></div>
+        </div>
+
+        <hr class="dv">
+
+        <!-- INFO GRID -->
+        <div class="ig an">
+            <div class="ic"><div class="ic-i">📅</div><div class="ic-lb">Date</div><div class="ic-v">March 20</div><div class="ic-s">Friday</div></div>
+            <div class="ic"><div class="ic-i">📍</div><div class="ic-lb">Location</div><div class="ic-v">Hellyer Park</div><div class="ic-s">Buena Vista Area</div></div>
+            <div class="ic"><div class="ic-i">🕙</div><div class="ic-lb">Time</div><div class="ic-v">10AM–6PM</div><div class="ic-s">Full day</div></div>
+	    <div class="ic"><div class="ic-i">💰</div><div class="ic-lb">Contribution</div><div class="ic-v">TBD</div><div class="ic-s">~$80 / family, ~$40 / single</div></div>
+        </div>
+
+        <!-- COUNTDOWN -->
+        <div class="cds an d1">
+            <div class="cdl">Celebration starts in</div>
+            <div class="cdg">
+                <div class="cdc"><div class="cdn" id="cD">--</div><div class="cdu">Days</div></div>
+                <div class="cdc"><div class="cdn" id="cH">--</div><div class="cdu">Hours</div></div>
+                <div class="cdc"><div class="cdn" id="cM">--</div><div class="cdu">Min</div></div>
+                <div class="cdc"><div class="cdn" id="cS">--</div><div class="cdu">Sec</div></div>
+            </div>
+        </div>
+
+        <!-- SLIDESHOW -->
+        <div class="ss an d2">
+            <div class="sl on"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/Kidsplaying_25.png" alt=""><div class="sl-c">Fun & Games for All Ages</div></div>
+            <div class="sl"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/tugofwar25.png" alt=""><div class="sl-c">Tug of War — Eid 2025</div></div>
+            <div class="sl"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/halal_food24.png" alt=""><div class="sl-c">Delicious Halal Lunch</div></div>
+            <div class="sl"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/joywithediyaa24.png" alt=""><div class="sl-c">Joy with Eidyaa</div></div>
+            <div class="sl"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/jumphouse25.jpeg" alt=""><div class="sl-c">Jump House Fun</div></div>
+            <div class="sl"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/IMG_9475.jpg" alt=""><div class="sl-c">This Year's Venue</div></div>
+            <div class="sl"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/facepaining.png" alt=""><div class="sl-c">Professional Face Painter</div></div>
+            <div class="sl"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/photobooth.png" alt=""><div class="sl-c">Photo Booth Memories</div></div>
+        </div>
+
+        <div class="sh"><h3>Festivities & Joy</h3><span class="dot"></span></div>
+        <div class="bdw">
+            <span class="bd">🏰 Jump House</span><span class="bd">🌸 Pro Henna</span><span class="bd">💪 Tug-of-War</span>
+            <span class="bd">🥔 Sack Race</span><span class="bd">☁️ Cotton Candy</span><span class="bd">🔴 Giant Connect-4</span>
+            <span class="bd">🎨 Face Painting</span><span class="bd">📸 Photo Booth</span><span class="bd">⚽ Giant Soccer</span>
+        </div>
+
+        <hr class="dv">
+
+        <!-- TIMELINE -->
+        <div class="tls">
+            <div class="sh"><h3>Event Day Schedule</h3><p>Swipe to explore — centered card shows full details</p></div>
+            <div class="tl-sw"><div class="tl-tr" id="tlTr"></div></div>
+            <div class="tl-dt" id="tlDt"></div>
+            <div class="tl-ar">
+                <div class="tl-ab" onclick="sT(-1)">‹</div>
+                <div class="tl-ab" onclick="sT(1)">›</div>
+            </div>
         </div>
     </div>
+    <div class="ft">We look forward to celebrating this joyous occasion together, Inshallah.</div>
 </div>
+
+<div class="ol" id="ld"><div class="sp"></div></div>
+<div class="tt" id="tt"></div>
 
 <script>
-    // ---------------------------------------------------------
-    // REPLACE THIS URL WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
-    // ---------------------------------------------------------
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwOF0GqlAGNGNxxByOI9xD9HUGH_I7IbZVdhfkn53JPaBvKj7zyNVhZZtYO6evlig3Okw/exec'; 
+const API='https://script.google.com/macros/s/AKfycbyV2ZuMg3al3VKi0czBUdsOMfcAuLoom2sa4-7qfTwmmtx8r_-sGWxkQgV5WNl5A50Kxw/exec';
+let prof=null,vRoles=[],cList=[],waG=[];
 
-    // 1. FETCH CAPACITY ON LOAD
-    document.addEventListener('DOMContentLoaded', fetchCapacity);
+const TL=[
+{t:'9:30–10:30 AM',e:'🛠️',n:'Setup & Welcome',d:'Volunteers arrive to help set up tables, decorations, bounce house, and activity stations. Every helping hand makes a real difference!',p:false},
+{t:'10:30 AM–12:30 PM',e:'🎉',n:'Open Play & Morning Fun',d:'Free play time! Jump house, giant games, outdoor activities. Eid Photo Booth open. Kahk (Eid cookies) and tea served all morning.',p:false},
+{t:'12:30–1:45 PM',e:'🕌',n:"Jumu'ah Prayers",d:'Congregational Friday prayers at Evergreen Islamic Center. Carpool organized the morning of the event.',p:true},
+{t:'2:00–3:00 PM',e:'🍽️',n:'Lunch Time',d:'Delicious halal catered lunch served fresh. All food is Zabiha Halal. Come hungry!',p:false},
+{t:'2:00–4:00 PM',e:'🎨',n:'Face Painter & Henna',d:'Professional face painting and henna artist on-site. Parent volunteers help manage the queue so everyone gets a turn!',p:false},
+{t:'2:00–2:30 PM',e:'💵',n:'Eideyaa Time!',d:'The moment kids wait for! Fresh $1 bills for every child. Participating families — please have your Venmo ready.',p:false},
+{t:'3:00–4:30 PM',e:'🏆',n:'Kids Competitions',d:'Sack races, tug-of-war, relay races, and more! Prizes for winners.',p:false},
+{t:'4:30–5:30 PM',e:'📸',n:'Open Play & Group Photos',d:"Wind-down with free play. Big group photo — don't miss it!",p:false},
+{t:'5:30–6:30 PM',e:'🧹',n:'Wrap-up & Cleanup',d:'JazakAllah Khair for celebrating! Cleanup volunteers — your help means the world.',p:false}
+];
+const VD=[
+{id:'setup',e:'🛠️',n:'Setup Crew',t:'9:30 – 10:30 AM',d:'Help set up tables, decorations, bounce house, canopies, and activity stations.',nd:3,u:'families'},
+{id:'toddler_toys',e:'🧸',n:'Toddler Play Area Toys',t:'Bring day-of',d:'Bring safe toys and play mats for the dedicated under-2 exclusive play area.',nd:2,u:'families'},
+{id:'facepainting_mgr',e:'🎨',n:'Face Paint Queue Manager',t:'2:00 – 4:00 PM',d:"Help manage the kids' line for the face painter. Keep things fun and orderly.",nd:2,u:'families'},
+{id:'cleanup',e:'🧹',n:'Cleanup Crew',t:'5:30 – 6:30 PM',d:'Help break down tables, collect trash, and leave the park spotless.',nd:3,u:'families'}
+];
+const CM={
+'Setup':{e:'🛠️',l:'Setup Help'},'Cleanup':{e:'🧹',l:'Cleanup Help'},'Henna':{e:'🌸',l:'Henna Queue Manager'},
+'Popsicles':{e:'🍭',l:'Lollipops (50 ct)'},'Juice':{e:'🥤',l:'Juice (50+)'},'TeaCoffee':{e:'☕',l:'Tea & Coffee'},
+'Dessert':{e:'🍰',l:'Homemade Dessert'},'Cupcakes':{e:'🧁',l:'Cupcakes (30)'},'Cake':{e:'🎂',l:'Cake (40 servings)'},
+'JuiceBox':{e:'🧃',l:'Juice Boxes (50+)'},'Chips':{e:'🥨',l:'Family Chips (4x)'},'Surprise':{e:'🎁',l:'Surprise!'}
+};
 
-    function fetchCapacity() {
-        fetch(SCRIPT_URL)
-        .then(response => response.json())
-        .then(data => {
-            if(data.result === 'success') {
-                const count = data.count;
-                const capacity = data.capacity;
-                const percentage = Math.min((count / capacity) * 100, 100);
+document.addEventListener('DOMContentLoaded',()=>{
+    fetchCap();cd();sls();bTL();
+    const k=new URLSearchParams(location.search).get('key');
+    if(k){document.getElementById('emailIn').value=k;setTimeout(doLookup,500);}
+});
 
-                // Update Progress Bar
-                document.getElementById('attendeeCount').innerText = `${count} / ${capacity}`;
-                document.getElementById('progressBar').style.width = `${percentage}%`;
-
-                // Check Capacity
-                if (count >= capacity) {
-                    showSoldOut();
-                }
-            }
-        })
-        .catch(err => console.error("Error fetching capacity", err));
-    }
-
-    function showSoldOut() {
-        // Hide form, show message
-        document.getElementById('rsvpSection').style.display = 'none';
-        document.getElementById('soldOutMessage').style.display = 'block';
-        document.getElementById('capacitySection').style.opacity = '0.6';
-    }
-
-    function toggleEideyaa(show) {
-        const msg = document.getElementById('eideyaaMsg');
-        if(show) {
-             msg.style.display = 'block';
-             msg.style.animation = 'fadeIn 0.5s';
-        } else {
-             msg.style.display = 'none';
+function fetchCap(){
+    fetch(API).then(r=>r.json()).then(d=>{
+        if(d.result==='success'){
+            const p=document.getElementById('capPill');
+            p.textContent=d.count>=d.capacity?'✦ EVENT AT FULL CAPACITY ✦':`✦ ${d.count} / ${d.capacity} GUESTS CONFIRMED ✦`;
         }
+    }).catch(()=>{});
+}
+
+function cd(){
+    const end=new Date('2026-03-20T10:00:00-08:00').getTime();
+    function tk(){
+        const t=end-Date.now();
+        if(t<0){document.querySelector('.cds').innerHTML='<div style="font-family:Cormorant Garamond,serif;font-style:italic;color:var(--green);font-size:1.15rem;">🎉 The celebration is here! 🎉</div>';return;}
+        document.getElementById('cD').textContent=String(Math.floor(t/864e5)).padStart(2,'0');
+        document.getElementById('cH').textContent=String(Math.floor((t%864e5)/36e5)).padStart(2,'0');
+        document.getElementById('cM').textContent=String(Math.floor((t%36e5)/6e4)).padStart(2,'0');
+        document.getElementById('cS').textContent=String(Math.floor((t%6e4)/1e3)).padStart(2,'0');
     }
+    tk();setInterval(tk,1000);
+}
 
-    function checkTime() {
-        const val = document.getElementById('arrival').value;
-        const pmMsg = document.getElementById('afternoonMsg');
-        const eveMsg = document.getElementById('eveningMsg');
-        
-        pmMsg.style.display = (val === 'Afternoon') ? 'block' : 'none';
-        eveMsg.style.display = (val === 'Evening') ? 'block' : 'none';
-    }
+function sls(){const s=document.querySelectorAll('.sl');let i=0;setInterval(()=>{s[i].classList.remove('on');i=(i+1)%s.length;s[i].classList.add('on');},4500);}
 
-    function openGuestList() {
-        // Show modal immediately
-        document.getElementById('guestModal').style.display = 'flex';
-        
-        // Fetch names from backend
-        // We append ?q=getNames so the backend knows to send the list
-        fetch(SCRIPT_URL + "?q=getNames")
-        .then(response => response.json())
-        .then(data => {
-            const container = document.getElementById('guestListContainer');
-            container.innerHTML = ""; // Clear loading text
-            
-            if (data.names && data.names.length > 0) {
-                data.names.forEach(name => {
-                    const div = document.createElement('div');
-                    div.className = 'guest-name-item';
-                    div.textContent = name;
-                    container.appendChild(div);
-                });
-            } else {
-                container.innerHTML = "<div style='padding:10px;'>No RSVPs yet!</div>";
-            }
-        })
-        .catch(err => {
-            document.getElementById('guestListContainer').innerHTML = "Error loading list.";
-        });
-    }
-
-    function closeGuestList() {
-        document.getElementById('guestModal').style.display = 'none';
-    }
-
-    // Close modal if clicking outside the box
-    window.onclick = function(event) {
-        const modal = document.getElementById('guestModal');
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-
-
-
-    let slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        
-        // Hide all slides
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-        }
-        
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}    
-        
-        // Show current slide
-        slides[slideIndex-1].style.display = "block";  
-        
-        // Change image every 5 seconds (5000ms)
-        setTimeout(showSlides, 5000); 
-    }
-
-    
-
-    // --- COUNTDOWN LOGIC ---
-    function updateCountdown() {
-        // DEADLINE: March 7, 2026 at 11:59:59 PM
-        const deadline = new Date("March 3, 2026 23:59:59").getTime();
-        const now = new Date().getTime();
-        const t = deadline - now;
-
-        if (t < 0) {
-            document.querySelector('.countdown-wrapper').innerHTML = 
-                "<div style='color:#737373; font-style:italic;'>The RSVP deadline has passed, but we'd still love to hear from you.</div>";
-            return;
-        }
-
-        const days = Math.floor(t / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((t % (1000 * 60)) / 1000);
-
-        document.getElementById("days").innerText = days < 10 ? "0" + days : days;
-        document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
-        document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
-        document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
-    }
-    
-    // Run once immediately, then every second
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-    // -----------------------
-
-    const form = document.getElementById('rsvpForm');
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        
-        document.getElementById('overlay').style.display = 'flex';
-        
-        // Use JSON response handling for the updated backend
-        fetch(SCRIPT_URL, { method: 'POST', body: new FormData(form)})
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('loader').style.display = 'none';
-            
-            if (data.result === 'full') {
-                // Backend says full during submit
-                document.getElementById('overlay').style.display = 'none';
-                alert(data.message);
-                showSoldOut();
-                fetchCapacity(); // Refresh bar
-            } else {
-                // Success
-                document.getElementById('successMsg').style.display = 'block';
-                form.reset();
-                toggleEideyaa(false);
-                checkTime();
-                fetchCapacity(); // Update bar with new numbers
-            }
-        })
-        .catch(error => {
-            alert('Unable to submit RSVP. Please check your internet connection and try again.');
-            document.getElementById('overlay').style.display = 'none';
-        });
+function bTL(){
+    const tr=document.getElementById('tlTr'),dt=document.getElementById('tlDt');
+    TL.forEach((it,idx)=>{
+        const c=document.createElement('div');
+        c.className=`tc${it.p?' pray':''}`;c.dataset.i=idx;
+        c.innerHTML=`<div class="tc-em">${it.e}</div><div class="tc-tm">${it.t}</div><div class="tc-tt">${it.n}</div><div class="tc-ln"></div><div class="tc-ds">${it.d}</div>`;
+        tr.appendChild(c);
+        const dd=document.createElement('div');dd.className='tl-di';dd.onclick=()=>sTc(idx);dt.appendChild(dd);
     });
-</script>
+    let ticking=false;
+    tr.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(()=>{uCC();ticking=false;});}},{passive:true});
+    setTimeout(()=>sTc(0),150);
+}
+function uCC(){
+    const tr=document.getElementById('tlTr'),cs=tr.querySelectorAll('.tc'),ds=document.querySelectorAll('.tl-di');
+    const cx=tr.scrollLeft+tr.clientWidth/2;
+    let ci=0,cd=Infinity;
+    cs.forEach((c,i)=>{const d=Math.abs(cx-c.offsetLeft-c.offsetWidth/2);if(d<cd){cd=d;ci=i;}});
+    cs.forEach((c,i)=>c.classList.toggle('ctr',i===ci));
+    ds.forEach((d,i)=>d.classList.toggle('ac',i===ci));
+}
+function sTc(i){
+    const tr=document.getElementById('tlTr'),c=tr.children[i];if(!c)return;
+    tr.scrollTo({left:c.offsetLeft-(tr.clientWidth/2)+(c.offsetWidth/2),behavior:'smooth'});
+}
+function sT(d){
+    const tr=document.getElementById('tlTr'),ce=tr.querySelector('.tc.ctr');
+    let i=ce?parseInt(ce.dataset.i):0;i=Math.max(0,Math.min(TL.length-1,i+d));sTc(i);
+}
 
+function doLookup(){
+    const inp=document.getElementById('emailIn'),er=document.getElementById('lfErr'),em=inp.value.trim().toLowerCase();
+    if(!em){er.textContent='Please enter your email address.';er.style.display='block';return;}
+    er.style.display='none';ld(true);
+    fetch(`${API}?q=getProfile&email=${encodeURIComponent(em)}`)
+    .then(r=>r.json()).then(d=>{
+        ld(false);
+        if(d.result==='success'&&d.profile){
+            prof=d.profile;vRoles=d.volunteerRoles||[];cList=d.contributions||[];waG=d.whatsapp||[];
+            rWA();rProf();rCB();rVC();
+            sv('secProf');sv('secCont');sv('secVol');
+            document.getElementById('lfCard').style.display='none';
+            document.getElementById('secProf').scrollIntoView({behavior:'smooth',block:'start'});
+        } else if(d.result==='not_found'){
+            er.textContent='No RSVP found with this email. Double-check and try again.';er.style.display='block';
+        } else { er.textContent='Something went wrong — please try again.';er.style.display='block'; }
+    }).catch(()=>{ld(false);document.getElementById('lfErr').textContent='Network error — check your connection.';document.getElementById('lfErr').style.display='block';});
+}
+document.getElementById('emailIn').addEventListener('keydown',e=>{if(e.key==='Enter')doLookup();});
+
+function rWA(){
+    if(!waG||!waG.length)return;
+    const bx=document.getElementById('waBox'),ls=document.getElementById('waLs');ls.innerHTML='';
+    waG.forEach(g=>{
+        const a=document.createElement('a');a.href=g.link;a.target='_blank';a.rel='noopener';a.className='wa-c';
+        a.innerHTML=`<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>${g.name}`;
+        ls.appendChild(a);
+    });
+    bx.classList.add('vis');bx.style.display='block';
+}
+
+function rProf(){
+    const p=prof,c=document.getElementById('profCard');
+    const vl=CM[p.volunteer]?`${CM[p.volunteer].e} ${CM[p.volunteer].l}`:(p.volunteer==='None'?'Nothing yet — choose below!':p.volunteer||'—');
+    c.innerHTML=`
+        <div class="prof-top"><div class="prof-av">${(p.name||'?')[0].toUpperCase()}</div><div><div class="prof-nm">${p.name}</div><div class="prof-em">${p.email}</div></div></div>
+        <div class="prof-g">
+            <div class="pc"><div class="lb">Adults</div><div class="vl">${p.adults||0}</div></div>
+            <div class="pc"><div class="lb">Children</div><div class="vl">${p.kids||0}</div></div>
+            <div class="pc"><div class="lb">Arrival</div><div class="vl">${p.arrival||'—'}</div></div>
+            <div class="pc"><div class="lb">Eideyaa</div><div class="vl">${p.eideyaa||'No'}</div></div>
+            <div class="pc w"><div class="lb">Bringing / Volunteering</div><div class="vl">${vl}</div></div>
+            ${p.notes?`<div class="pc w"><div class="lb">Notes</div><div class="vl">${p.notes}</div></div>`:''}
+        </div>`;
+}
+
+function rCB(){
+    const bd=document.getElementById('cBoard');bd.innerHTML='';
+    const gr={};
+    cList.forEach(c=>{if(!c.volunteer||c.volunteer==='None')return;if(!gr[c.volunteer])gr[c.volunteer]=[];gr[c.volunteer].push(c);});
+    const keys=Object.keys(gr);
+    if(!keys.length){bd.innerHTML='<div style="text-align:center;color:var(--text-muted);padding:24px;font-size:0.9rem;">No contributions yet — you could be the first!</div>';return;}
+    keys.forEach(k=>{
+        const fams=gr[k],m=CM[k]||{e:'✨',l:k},you=prof&&fams.some(f=>f.email===prof.email);
+        const el=document.createElement('div');el.className='cg';
+        el.innerHTML=`<div class="cg-h"><div class="cg-e">${m.e}</div><div class="cg-i"><div class="cg-n">${m.l}</div><div class="cg-ct">${fams.length} ${fams.length===1?'family':'families'} signed up</div></div>${you?'<div class="cg-u">✓ You</div>':''}</div>
+        <div class="cg-f">${fams.map(f=>`<span class="cf${prof&&f.email===prof.email?' u':''}">${f.name}</span>`).join('')}</div>`;
+        bd.appendChild(el);
+    });
+    if(prof&&prof.volunteer)document.getElementById('newCS').value=prof.volunteer;
+}
+
+function toggleCC(){document.getElementById('ccWrap').classList.toggle('open');}
+
+function saveCC(){
+    if(!prof)return;const v=document.getElementById('newCS').value;ld(true);
+    fetch(API,{method:'POST',body:new URLSearchParams({action:'updateContribution',email:prof.email,newVolunteer:v})})
+    .then(r=>r.json()).then(d=>{
+        ld(false);
+        if(d.result==='success'){prof.volunteer=v;cList=d.contributions||cList;rProf();rCB();toggleCC();toast('✅ Updated! Confirmation email sent.');}
+        else toast('Could not update — please try again.');
+    }).catch(()=>{ld(false);toast('Network error.');});
+}
+
+function rVC(){
+    const w=document.getElementById('vCards');w.innerHTML='';
+    VD.forEach(df=>{
+        const sg=vRoles.filter(v=>v.roleId===df.id),ct=sg.length,fl=ct>=df.nd,me=prof&&sg.some(v=>v.email===prof.email);
+        const c=document.createElement('div');c.className=`vc${me?' sg':''}${fl&&!me?' fl':''}`;
+        let btn;
+        if(me) btn=`<button class="bv on" onclick="tV('${df.id}',false)">✓ Signed Up</button>`;
+        else if(fl) btn=`<button class="bv" disabled>Fully Covered</button>`;
+        else btn=`<button class="bv" onclick="tV('${df.id}',true)">Count Me In</button>`;
+        c.innerHTML=`<div class="vt"><div class="vt-e">${df.e}</div><div class="vt-i"><div class="vt-n">${df.n}</div><div class="vt-t">${df.t}</div></div></div>
+        <div class="vt-d">${df.d}</div>
+        <div class="vp"><div class="vp-bg"><div class="vp-f${fl?' ok':''}" style="width:${Math.min(100,(ct/df.nd)*100)}%"></div></div><div class="vp-l">${ct} / ${df.nd} ${df.u}</div></div>
+        ${sg.length?`<div class="vch">${sg.map(v=>`<span class="vci${prof&&v.email===prof.email?' u':''}">${v.name}</span>`).join('')}</div>`:''}
+        <div class="va">${btn}</div>`;
+        w.appendChild(c);
+    });
+    const oa=document.createElement('div');oa.className='oa';
+    oa.innerHTML=`<div style="font-size:2rem;margin-bottom:6px;">✨</div><div class="vt-n" style="font-size:1.15rem;margin-bottom:4px;">Got a Fun Idea? Run an Activity!</div><div class="vt-d">Have tools for a kids' activity? Bring them and manage a station!</div>
+    <div class="oa-ideas"><span class="oac">🍬 Cotton Candy</span><span class="oac">🍡 Marshmallow Roast</span><span class="oac">🎈 Balloon Art</span><span class="oac">🫧 Bubble Station</span></div>
+    <button class="boa" onclick="oA()">I've Got Something!</button>`;
+    w.appendChild(oa);
+}
+
+function tV(id,on){
+    if(!prof)return;ld(true);
+    fetch(API,{method:'POST',body:new URLSearchParams({action:'updateVolunteerRole',email:prof.email,roleId:id,signUp:on?'yes':'no'})})
+    .then(r=>r.json()).then(d=>{ld(false);if(d.result==='success'){vRoles=d.volunteerRoles||vRoles;rVC();toast(on?'🎉 JazakAllah Khair! You\'re signed up!':'Removed — thank you anyway!');}else toast('Error — please retry.');
+    }).catch(()=>{ld(false);toast('Network error.');});
+}
+
+function oA(){
+    if(!prof){toast('Look up your RSVP first.');return;}
+    const a=prompt('What activity will you bring? (e.g. "Cotton Candy Machine")');if(!a)return;ld(true);
+    fetch(API,{method:'POST',body:new URLSearchParams({action:'updateVolunteerRole',email:prof.email,roleId:'open_activity',signUp:'yes',activityNote:a})})
+    .then(r=>r.json()).then(d=>{ld(false);toast(d.result==='success'?`🎉 "${a}" added! The kids will love it!`:'Error — please retry.');}).catch(()=>{ld(false);toast('Network error.');});
+}
+
+function sv(id){document.getElementById(id).classList.add('vis');}
+function ld(on){document.getElementById('ld').classList.toggle('on',on);}
+function toast(m){const t=document.getElementById('tt');t.textContent=m;t.classList.add('on');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('on'),4000);}
+</script>
 </body>
 </html>
