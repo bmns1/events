@@ -919,7 +919,7 @@ function rProf(){
     const p=prof,c=document.getElementById('profCard');
     const vl=CM[p.volunteer]?`${CM[p.volunteer].e} ${CM[p.volunteer].l}`:(p.volunteer==='None'?'Nothing yet — choose below!':p.volunteer||'—');
     c.innerHTML=`
-        <div class="prof-top"><div class="prof-av">${(p.name||'?')[0].toUpperCase()}</div><div><div class="prof-nm">${p.name}</div><div class="prof-em">${p.email}</div></div></div>
+        <div class="prof-top"><div class="prof-av">${(p.name||'?')[0].toUpperCase()}</div><div><div class="prof-nm">${p.name}</div></div></div>
         <div class="prof-g">
             <div class="pc"><div class="lb">Adults</div><div class="vl">${p.adults||0}</div></div>
             <div class="pc"><div class="lb">Children</div><div class="vl">${p.kids||0}</div></div>
