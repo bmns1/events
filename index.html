@@ -1,244 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 <head>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Eid Al-Fitr 2026 — Event Hub</title>
@@ -435,7 +387,6 @@
             font-family: 'Cinzel Decorative', serif; font-size: 1.2rem; color: var(--gold-light); flex-shrink: 0;
         }
         .prof-nm { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 1.25rem; color: var(--green); line-height: 1.2; }
-        .prof-em { font-size: 0.78rem; color: var(--text-muted); }
         .prof-g { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         .pc { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; }
         .pc.w { grid-column: 1 / -1; }
@@ -478,7 +429,7 @@
         .bs.sv { background: var(--green); color: var(--gold-light); }
         .bs.sv:hover { background: var(--green-mid); }
 
-       /* ===== HORIZONTAL TIMELINE ===== */
+        /* ===== HORIZONTAL TIMELINE ===== */
         .tls { margin-bottom: 32px; }
         .tl-sw { position: relative; overflow: hidden; margin: 0 -24px; padding: 0 24px; }
         @media (max-width: 480px) { .tl-sw { margin: 0 -14px; padding: 0 14px; } }
@@ -631,6 +582,52 @@
         .cdn { font-family: 'Cinzel Decorative', serif; font-size: 1.3rem; color: var(--green); font-weight: 700; line-height: 1; }
         .cdu { font-size: 0.58rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px; margin-top: 3px; }
 
+        /* ===== WAITLIST MESSAGE ===== */
+        .wl-msg {
+            display: none;
+            text-align: center;
+            padding: 36px 28px;
+            margin: 0 0 24px;
+            background: #FDFCFA;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            position: relative;
+        }
+        .wl-msg::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold-muted), var(--gold), var(--gold-muted)); border-radius: var(--radius) var(--radius) 0 0; }
+        .wl-msg .wl-icon { font-size: 2.5rem; margin-bottom: 12px; }
+        .wl-msg h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--green); margin-bottom: 8px; }
+        .wl-msg p { font-size: 0.88rem; color: var(--text-mid); line-height: 1.65; margin-bottom: 8px; }
+        .wl-msg .wl-status { display: inline-block; padding: 6px 20px; background: var(--gold-bg); border: 1px solid var(--gold-muted); border-radius: 50px; font-size: 0.78rem; font-weight: 700; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin: 12px 0; }
+
+        /* ===== COST BREAKDOWN ===== */
+        .cost-section { margin-bottom: 28px; }
+        .cost-card { background: #FDFCFA; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 14px; }
+        .cost-row { display: flex; align-items: center; gap: 10px; padding: 10px 20px; border-top: 1px solid #f0ede6; font-size: 0.85rem; }
+        .cost-row:first-child { border-top: none; }
+        .cost-row .c-emoji { font-size: 1.1rem; flex-shrink: 0; }
+        .cost-row .c-name { flex: 1; color: var(--text-mid); }
+        .cost-row .c-amt { font-weight: 600; color: var(--text); white-space: nowrap; }
+        .cost-row.total-row { background: #f8f6f0; border-top: 2px solid var(--border); padding: 14px 20px; font-size: 0.95rem; }
+        .cost-row.total-row .c-name { font-weight: 700; color: var(--green); }
+        .cost-row.total-row .c-amt { font-weight: 700; color: var(--green); font-size: 1rem; }
+        .cost-hero { background: linear-gradient(135deg, var(--green), var(--green-mid)); border-radius: 12px; padding: 24px; text-align: center; margin-bottom: 14px; }
+        .cost-hero .ch-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold-light); font-weight: 700; margin-bottom: 4px; }
+        .cost-hero .ch-amt { font-family: 'Cinzel Decorative', serif; font-size: 2.2rem; color: var(--gold-light); }
+        .cost-hero .ch-sub { font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 4px; }
+        .cost-community { background: var(--gold-bg); border: 1px solid var(--gold-muted); border-radius: 12px; padding: 18px 20px; }
+        .cost-community .cc-title { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 1rem; color: var(--gold); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+        .cost-community p { font-size: 0.82rem; color: #6B5B3A; line-height: 1.6; margin: 0; }
+        .cost-community .cc-note { font-size: 0.78rem; color: #8A7230; font-style: italic; margin-top: 8px; }
+
+        /* ===== CONFIRM COUNTDOWN ===== */
+        .confirm-cd { background: #fff; border: 2px solid var(--green); border-radius: 12px; padding: 20px; text-align: center; margin-bottom: 24px; }
+        .confirm-cd .ccd-title { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 1.1rem; color: var(--green); margin-bottom: 4px; }
+        .confirm-cd .ccd-sub { font-size: 0.82rem; color: var(--text-mid); margin-bottom: 12px; }
+        .confirm-cd .ccd-grid { display: flex; justify-content: center; gap: 8px; }
+        .confirm-cd .ccd-box { background: #f8f6f0; border: 1px solid var(--border); border-radius: 8px; padding: 8px 6px; min-width: 50px; }
+        .confirm-cd .ccd-num { font-family: 'Cinzel Decorative', serif; font-size: 1.2rem; color: var(--danger); font-weight: 700; line-height: 1; }
+        .confirm-cd .ccd-unit { font-size: 0.55rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px; margin-top: 3px; }
+
         /* ===== FOOTER ===== */
         .ft { text-align: center; padding: 20px 24px; background: #FAFAF7; border-top: 1px solid var(--border); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.9rem; color: var(--text-muted); }
 
@@ -685,18 +682,61 @@
             <div class="wa-ls" id="waLs"></div>
         </div>
 
+        <!-- WAITLIST MESSAGE -->
+        <div class="wl-msg" id="wlMsg">
+            <div class="wl-icon">🕐</div>
+            <h3 id="wlName">—</h3>
+            <div class="wl-status">Waitlisted</div>
+            <p>Due to the overwhelming response this year, we've reached our venue capacity and are unable to confirm your family's attendance at this time.</p>
+            <p>Your family is on our <strong>waitlist</strong> — should any spots open up, you'll be among the first we contact.</p>
+            <p style="font-size:0.82rem;color:var(--text-muted);margin-top:12px;font-style:italic;">If your plans change or you'd like to discuss your reservation, please reach out to us directly.</p>
+        </div>
+
         <!-- PROFILE -->
         <div class="hs" id="secProf">
             <div class="sh an"><h3>Your Reservation</h3><span class="dot"></span></div>
             <div class="prof an d1" id="profCard"></div>
         </div>
 
-        <!-- CONTRIBUTION BOARD -->
+<!-- COST BREAKDOWN -->
+        <div class="hs" id="secCost">
+            <hr class="dv">
+            <div class="sh an d3"><h3>Cost Breakdown</h3><p>Here's exactly where your contribution goes</p></div>
+
+            <div class="cost-section">
+                <div class="cost-card">
+                    <div class="cost-row"><span class="c-emoji">🏕️</span><span class="c-name">Venue Reservation</span><span class="c-amt">$337</span></div>
+                    <div class="cost-row"><span class="c-emoji">📋</span><span class="c-name">Jump House & Generator Permit</span><span class="c-amt">$40</span></div>
+                    <div class="cost-row"><span class="c-emoji">🏰</span><span class="c-name">Jump House Rental</span><span class="c-amt">$545</span></div>
+                    <div class="cost-row"><span class="c-emoji">🔋</span><span class="c-name">Generator Rental</span><span class="c-amt">$120</span></div>
+		    <div class="cost-row"><span class="c-emoji">🎨</span><span class="c-name">Professional Face Painter</span><span class="c-amt">$300</span></div>
+                    <div class="cost-row"><span class="c-emoji">🍕</span><span class="c-name">Catered Halal Pizza</span><span class="c-amt">$1,000</span></div>
+                    <div class="cost-row total-row"><span class="c-emoji">📊</span><span class="c-name">Total Event Cost</span><span class="c-amt">$2,342</span></div>
+                </div>
+
+                <div class="cost-hero">
+                    <div class="ch-label">Your Family's Share</div>
+                    <div class="ch-amt">$85</div>
+                    <div class="ch-sub">Split equally across 28 confirmed families</div>
+                </div>
+
+                <div class="cost-community">
+                    <div class="cc-title">Covered by Organizers</div>
+                    <p>The following are being contributed by the organizers at no extra cost: entertainment & kids activities, setup supplies & utensils, decorations, Photo Booth, and Under 2 Play Areas.</p>
+                    <p class="cc-note">Want to help? Check the volunteer section below or change your contribution above!</p>
+                </div>
+            </div>
+
+            <div class="confirm-cd">
+                <div class="ccd-title">Your Attendance is Confirmed</div>
+                <div class="ccd-sub"><strong style="color:var(--danger);">Changed your mind? Let us know ASAP to adjust families contributions</div>
+            </div>
+        </div>
+
         <!-- CONTRIBUTION BOARD -->
         <div class="hs" id="secCont">
-	     
             <div class="sh an d2"><h3>Family Contribution Board</h3><p>What everyone is bringing — together we make it happen</p></div>
-	    <div class="cc-area an d3" id="ccArea">
+            <div class="cc-area an d3" id="ccArea">
                 <button class="cc-btn" onclick="toggleCC()"><span>✏️</span> Change What You're Bringing</button>
                 <div class="cc-wrap" id="ccWrap">
                     <label>Choose a different contribution</label>
@@ -726,8 +766,9 @@
                 </div>
             </div>
             <div id="cBoard" class="cb an d3"></div>
-           
         </div>
+
+        
 
         <!-- VOLUNTEER -->
         <div class="hs" id="secVol">
@@ -747,7 +788,7 @@
             <div class="ic"><div class="ic-i">📅</div><div class="ic-lb">Date</div><div class="ic-v">March 20</div><div class="ic-s">Friday</div></div>
             <div class="ic"><div class="ic-i">📍</div><div class="ic-lb">Location</div><div class="ic-v">Hellyer Park</div><div class="ic-s">Buena Vista Area</div></div>
             <div class="ic"><div class="ic-i">🕙</div><div class="ic-lb">Time</div><div class="ic-v">10AM–6PM</div><div class="ic-s">Full day</div></div>
-	    <div class="ic"><div class="ic-i">💰</div><div class="ic-lb">Contribution</div><div class="ic-v">TBD</div><div class="ic-s">~$80 / family, ~$40 / single</div></div>
+            <div class="ic"><div class="ic-i">💰</div><div class="ic-lb">Contribution</div><div class="ic-v">$85 / family</div><div class="ic-s">28 families confirmed</div></div>
         </div>
 
         <!-- COUNTDOWN -->
@@ -800,7 +841,7 @@
 <div class="tt" id="tt"></div>
 
 <script>
-const API='https://script.google.com/macros/s/AKfycbyV2ZuMg3al3VKi0czBUdsOMfcAuLoom2sa4-7qfTwmmtx8r_-sGWxkQgV5WNl5A50Kxw/exec';
+const API='https://script.google.com/macros/s/AKfycbyVKlisZt7xDtM_zA7DgU8OIpGFNciK7uy03aXBUlf_xLufYXbPrxDRGu4eA8RaAPYTOg/exec';
 let prof=null,vRoles=[],cList=[],waG=[];
 
 const TL=[
@@ -894,11 +935,17 @@ function doLookup(){
     fetch(`${API}?q=getProfile&email=${encodeURIComponent(em)}`)
     .then(r=>r.json()).then(d=>{
         ld(false);
-        if(d.result==='success'&&d.profile){
+        if(d.result==='waitlisted'){
+            document.getElementById('wlName').textContent='Salam ' + (d.name || '') + ',';
+            document.getElementById('wlMsg').style.display='block';
+            document.getElementById('lfCard').style.display='none';
+            document.getElementById('wlMsg').scrollIntoView({behavior:'smooth',block:'start'});
+        } else if(d.result==='success'&&d.profile){
             prof=d.profile;vRoles=d.volunteerRoles||[];cList=d.contributions||[];waG=d.whatsapp||[];
             rWA();rProf();rCB();rVC();
-            sv('secProf');sv('secCont');sv('secVol');
+            sv('secProf');sv('secCont');sv('secCost');sv('secVol');
             document.getElementById('lfCard').style.display='none';
+            cfCD();
             document.getElementById('secProf').scrollIntoView({behavior:'smooth',block:'start'});
         } else if(d.result==='not_found'){
             er.textContent='No RSVP found with this email. Double-check and try again.';er.style.display='block';
@@ -906,6 +953,22 @@ function doLookup(){
     }).catch(()=>{ld(false);document.getElementById('lfErr').textContent='Network error — check your connection.';document.getElementById('lfErr').style.display='block';});
 }
 document.getElementById('emailIn').addEventListener('keydown',e=>{if(e.key==='Enter')doLookup();});
+
+function cfCD(){
+    const end=new Date('2026-03-16T23:59:59-08:00').getTime();
+    function tk(){
+        const t=end-Date.now();
+        if(t<0){
+            document.querySelector('.confirm-cd').innerHTML='<div style="font-family:Cormorant Garamond,serif;color:var(--danger);font-size:1rem;font-weight:700;padding:16px;">⏰ Confirmation deadline has passed — please reach out if you haven\'t confirmed.</div>';
+            return;
+        }
+        document.getElementById('cfD').textContent=String(Math.floor(t/864e5)).padStart(2,'0');
+        document.getElementById('cfH').textContent=String(Math.floor((t%864e5)/36e5)).padStart(2,'0');
+        document.getElementById('cfM').textContent=String(Math.floor((t%36e5)/6e4)).padStart(2,'0');
+        document.getElementById('cfS').textContent=String(Math.floor((t%6e4)/1e3)).padStart(2,'0');
+    }
+    tk();setInterval(tk,1000);
+}
 
 function rWA(){
     if(!waG||!waG.length)return;
@@ -940,10 +1003,10 @@ function rCB(){
     const keys=Object.keys(gr);
     if(!keys.length){bd.innerHTML='<div style="text-align:center;color:var(--text-muted);padding:24px;font-size:0.9rem;">No contributions yet — you could be the first!</div>';return;}
     keys.forEach(k=>{
-        const fams=gr[k],m=CM[k]||{e:'✨',l:k},you=prof&&fams.some(f=>f.email===prof.email);
+        const fams=gr[k],m=CM[k]||{e:'✨',l:k},you=fams.some(f=>f.isYou);
         const el=document.createElement('div');el.className='cg';
         el.innerHTML=`<div class="cg-h"><div class="cg-e">${m.e}</div><div class="cg-i"><div class="cg-n">${m.l}</div><div class="cg-ct">${fams.length} ${fams.length===1?'family':'families'} signed up</div></div>${you?'<div class="cg-u">✓ You</div>':''}</div>
-        <div class="cg-f">${fams.map(f=>`<span class="cf${prof&&f.email===prof.email?' u':''}">${f.name}</span>`).join('')}</div>`;
+        <div class="cg-f">${fams.map(f=>`<span class="cf${f.isYou?' u':''}">${f.name}</span>`).join('')}</div>`;
         bd.appendChild(el);
     });
     if(prof&&prof.volunteer)document.getElementById('newCS').value=prof.volunteer;
@@ -953,7 +1016,7 @@ function toggleCC(){document.getElementById('ccWrap').classList.toggle('open');}
 
 function saveCC(){
     if(!prof)return;const v=document.getElementById('newCS').value;ld(true);
-    fetch(API,{method:'POST',body:new URLSearchParams({action:'updateContribution',email:prof.email,newVolunteer:v})})
+    fetch(API,{method:'POST',body:new URLSearchParams({action:'updateContribution',email:prof.emailKey||document.getElementById('emailIn').value.trim().toLowerCase(),newVolunteer:v})})
     .then(r=>r.json()).then(d=>{
         ld(false);
         if(d.result==='success'){prof.volunteer=v;cList=d.contributions||cList;rProf();rCB();toggleCC();toast('✅ Updated! Confirmation email sent.');}
@@ -964,7 +1027,7 @@ function saveCC(){
 function rVC(){
     const w=document.getElementById('vCards');w.innerHTML='';
     VD.forEach(df=>{
-        const sg=vRoles.filter(v=>v.roleId===df.id),ct=sg.length,fl=ct>=df.nd,me=prof&&sg.some(v=>v.email===prof.email);
+        const sg=vRoles.filter(v=>v.roleId===df.id),ct=sg.length,fl=ct>=df.nd,me=sg.some(v=>v.isYou);
         const c=document.createElement('div');c.className=`vc${me?' sg':''}${fl&&!me?' fl':''}`;
         let btn;
         if(me) btn=`<button class="bv on" onclick="tV('${df.id}',false)">✓ Signed Up</button>`;
@@ -973,7 +1036,7 @@ function rVC(){
         c.innerHTML=`<div class="vt"><div class="vt-e">${df.e}</div><div class="vt-i"><div class="vt-n">${df.n}</div><div class="vt-t">${df.t}</div></div></div>
         <div class="vt-d">${df.d}</div>
         <div class="vp"><div class="vp-bg"><div class="vp-f${fl?' ok':''}" style="width:${Math.min(100,(ct/df.nd)*100)}%"></div></div><div class="vp-l">${ct} / ${df.nd} ${df.u}</div></div>
-        ${sg.length?`<div class="vch">${sg.map(v=>`<span class="vci${prof&&v.email===prof.email?' u':''}">${v.name}</span>`).join('')}</div>`:''}
+        ${sg.length?`<div class="vch">${sg.map(v=>`<span class="vci${v.isYou?' u':''}">${v.name}</span>`).join('')}</div>`:''}
         <div class="va">${btn}</div>`;
         w.appendChild(c);
     });
@@ -986,7 +1049,8 @@ function rVC(){
 
 function tV(id,on){
     if(!prof)return;ld(true);
-    fetch(API,{method:'POST',body:new URLSearchParams({action:'updateVolunteerRole',email:prof.email,roleId:id,signUp:on?'yes':'no'})})
+    const em=prof.emailKey||document.getElementById('emailIn').value.trim().toLowerCase();
+    fetch(API,{method:'POST',body:new URLSearchParams({action:'updateVolunteerRole',email:em,roleId:id,signUp:on?'yes':'no'})})
     .then(r=>r.json()).then(d=>{ld(false);if(d.result==='success'){vRoles=d.volunteerRoles||vRoles;rVC();toast(on?'🎉 JazakAllah Khair! You\'re signed up!':'Removed — thank you anyway!');}else toast('Error — please retry.');
     }).catch(()=>{ld(false);toast('Network error.');});
 }
@@ -994,7 +1058,8 @@ function tV(id,on){
 function oA(){
     if(!prof){toast('Look up your RSVP first.');return;}
     const a=prompt('What activity will you bring? (e.g. "Cotton Candy Machine")');if(!a)return;ld(true);
-    fetch(API,{method:'POST',body:new URLSearchParams({action:'updateVolunteerRole',email:prof.email,roleId:'open_activity',signUp:'yes',activityNote:a})})
+    const em=prof.emailKey||document.getElementById('emailIn').value.trim().toLowerCase();
+    fetch(API,{method:'POST',body:new URLSearchParams({action:'updateVolunteerRole',email:em,roleId:'open_activity',signUp:'yes',activityNote:a})})
     .then(r=>r.json()).then(d=>{ld(false);toast(d.result==='success'?`🎉 "${a}" added! The kids will love it!`:'Error — please retry.');}).catch(()=>{ld(false);toast('Network error.');});
 }
 
