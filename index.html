@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Eid Al-Fitr 2026 — Event Hub</title>
+    <title>Eid Al-Adha 2026 — Family RSVP</title>
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/bmns1/gzring/main/logo_gz.png?v=1">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -24,6 +24,7 @@
         --border: #E8E4DB;
         --success: #2E8B57;
         --danger: #C0392B;
+        --warn: #92600A;
         --radius: 14px;
         --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
         --shadow-md: 0 4px 20px rgba(0,0,0,0.06), 0 12px 40px rgba(26,58,42,0.08);
@@ -69,48 +70,43 @@
         font-family:'Cinzel Decorative',serif; font-size:2.6rem; color:var(--gold-light);
         text-shadow:0 2px 8px rgba(0,0,0,0.25); letter-spacing:1px; position:relative;
     }
-    .hero-sub { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-style:italic; opacity:0.85; margin-top:6px; }
-    .hero-div { display:flex; align-items:center; justify-content:center; gap:12px; margin:14px 0 6px; opacity:0.5; }
+    .hero-sub { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-style:italic; opacity:0.85; margin-top:6px; position:relative; }
+    .hero-div { display:flex; align-items:center; justify-content:center; gap:12px; margin:14px 0 6px; opacity:0.5; position:relative; }
     .hero-div span { display:block; width:40px; height:1px; background:var(--gold-light); }
     .hero-div em { font-size:0.6rem; color:var(--gold-light); }
     .cap-pill {
         display:inline-block; margin-top:14px; background:rgba(184,150,46,0.15);
         border:1px solid rgba(184,150,46,0.35); padding:6px 20px; border-radius:50px;
         font-size:0.75rem; letter-spacing:1.5px; text-transform:uppercase; font-weight:700; color:var(--gold-light);
+        position:relative;
     }
     @media (max-width:480px) { .hero{padding:36px 18px 70px;} .hero h1{font-size:2rem;} }
-
-    /* ===== LOOKUP ===== */
-    .lf {
-        position:relative; margin:-48px 20px 0; background:var(--card); border-radius:var(--radius);
-        box-shadow:var(--shadow-md),var(--shadow-glow); border:1px solid var(--border);
-        padding:28px 24px 24px; text-align:center; z-index:10;
-    }
-    .lf .lf-ico {
-        width:56px; height:56px; background:linear-gradient(135deg,var(--green),var(--green-mid));
-        border-radius:50%; display:flex; align-items:center; justify-content:center;
-        margin:-52px auto 16px; font-size:1.5rem; box-shadow:0 6px 20px rgba(26,58,42,0.3);
-        border:3px solid var(--card);
-    }
-    .lf h2 { font-family:'Cormorant Garamond',serif; font-size:1.45rem; font-weight:700; color:var(--green); margin-bottom:6px; }
-    .lf .lf-hint { font-size:0.82rem; color:var(--text-muted); margin-bottom:16px; line-height:1.5; }
-    .lf-row { display:flex; gap:8px; }
-    .lf-row input {
-        flex:1; padding:13px 16px; border:2px solid var(--border); border-radius:10px;
-        font-size:0.95rem; font-family:'DM Sans',sans-serif; transition:all 0.25s; background:#FDFCFA;
-    }
-    .lf-row input:focus { outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(184,150,46,0.12); }
-    .btn-go {
-        padding:13px 26px; background:linear-gradient(135deg,var(--green),var(--green-mid));
-        color:var(--gold-light); border:none; border-radius:10px; font-family:'DM Sans',sans-serif;
-        font-size:0.85rem; font-weight:700; letter-spacing:1px; cursor:pointer; transition:all 0.25s; white-space:nowrap;
-    }
-    .btn-go:hover { transform:translateY(-1px); box-shadow:0 6px 18px rgba(26,58,42,0.3); }
-    .lf-err { color:var(--danger); font-size:0.82rem; margin-top:10px; display:none; }
 
     /* ===== MAIN ===== */
     .main { padding:30px 24px; }
     @media (max-width:480px) { .main{padding:24px 14px;} }
+
+    /* ===== VIEWS ===== */
+    .view { display:none; }
+    .view.on { display:block; }
+
+    /* ===== DEADLINE BANNER ===== */
+    .deadline {
+        background:linear-gradient(135deg, #FFF8E1, #FBF1D2);
+        border:1.5px solid var(--gold-muted); border-radius:var(--radius);
+        padding:16px 20px; margin:-32px 0 22px; position:relative; z-index:10;
+        box-shadow:var(--shadow-md);
+        display:flex; align-items:center; gap:14px;
+    }
+    .deadline .dl-i { font-size:1.8rem; flex-shrink:0; }
+    .deadline .dl-c { flex:1; }
+    .deadline .dl-t {
+        font-family:'Cormorant Garamond',serif; font-weight:700;
+        font-size:1.05rem; color:var(--green); line-height:1.2;
+    }
+    .deadline .dl-s { font-size:0.78rem; color:var(--warn); font-weight:600; margin-top:2px; }
+    .deadline.closed { background:linear-gradient(135deg,#FEE2E2,#FECACA); border-color:#FCA5A5; }
+    .deadline.closed .dl-t, .deadline.closed .dl-s { color:var(--danger); }
 
     /* ===== SECTION HEADS ===== */
     .sh { text-align:center; margin-bottom:20px; }
@@ -118,17 +114,146 @@
     .sh p { font-size:0.82rem; color:var(--text-muted); margin-top:2px; }
     .dot { display:block; width:5px; height:5px; background:var(--gold); border-radius:50%; margin:6px auto 0; }
 
-    /* ===== WHATSAPP ===== */
-    .wa { background:linear-gradient(135deg,#ECF8F0,#D9F2E0); border:1px solid #B8E0C4; border-radius:var(--radius); padding:18px 20px; margin-bottom:24px; display:none; }
-    .wa .wa-t { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:1.05rem; color:#1A6B3C; margin-bottom:4px; display:flex; align-items:center; gap:8px; }
-    .wa .wa-h { font-size:0.8rem; color:#3D7A55; margin-bottom:10px; }
-    .wa-ls { display:flex; flex-wrap:wrap; gap:8px; }
-    .wa-c { display:inline-flex; align-items:center; gap:6px; padding:8px 16px; background:#fff; border:1px solid #B8E0C4; border-radius:50px; font-size:0.82rem; font-weight:600; color:#1A6B3C; text-decoration:none; transition:all 0.2s; }
-    .wa-c:hover { background:#1A6B3C; color:#fff; border-color:#1A6B3C; transform:translateY(-1px); }
-    .wa-c svg { width:16px; height:16px; fill:currentColor; }
+    /* ===== RSVP FORM ===== */
+    .intro { text-align:center; margin-bottom:22px; }
+    .intro p { font-size:0.92rem; color:var(--text-mid); line-height:1.6; max-width:520px; margin:0 auto; }
+    .intro .hl { color:var(--green); font-weight:700; }
+
+    .form-card {
+        background:#FDFCFA; border:1.5px solid var(--border);
+        border-radius:var(--radius); padding:28px 24px; margin-bottom:24px;
+        position:relative;
+    }
+    .form-card::before {
+        content:''; position:absolute; top:0; left:0; right:0; height:3px;
+        background:linear-gradient(90deg,var(--green),var(--gold),var(--green));
+        border-radius:var(--radius) var(--radius) 0 0;
+    }
+    @media (max-width:480px) { .form-card { padding:22px 16px; } }
+
+    .fg { margin-bottom:18px; }
+    .fg label {
+        display:block; font-size:0.78rem; text-transform:uppercase; letter-spacing:1.2px;
+        font-weight:700; color:var(--gold); margin-bottom:6px;
+    }
+    .fg label .req { color:var(--danger); margin-left:2px; }
+    .fg .hint { font-size:0.75rem; color:var(--text-muted); margin-top:4px; font-style:italic; }
+    .fg input, .fg select, .fg textarea {
+        width:100%; padding:13px 14px; border:2px solid var(--border); border-radius:10px;
+        font-size:0.95rem; font-family:'DM Sans',sans-serif; transition:all 0.25s;
+        background:#fff; color:var(--text);
+    }
+    .fg input:focus, .fg select:focus, .fg textarea:focus {
+        outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(184,150,46,0.12);
+    }
+    .fg textarea { resize:vertical; min-height:72px; }
+
+    .fg-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    @media (max-width:380px) { .fg-row { grid-template-columns:1fr; } }
+
+    .counter {
+        display:flex; align-items:center; gap:0; border:2px solid var(--border);
+        border-radius:10px; overflow:hidden; background:#fff;
+    }
+    .counter button {
+        width:44px; height:46px; border:none; background:#FDFCFA; cursor:pointer;
+        font-size:1.2rem; font-weight:700; color:var(--green); transition:all 0.2s;
+    }
+    .counter button:hover { background:var(--gold-bg); color:var(--gold); }
+    .counter button:disabled { opacity:0.35; cursor:default; }
+    .counter input {
+        flex:1; border:none; text-align:center; font-size:1rem; font-weight:700;
+        color:var(--green); padding:0; background:transparent; border-radius:0;
+    }
+    .counter input:focus { box-shadow:none; }
+
+    /* Radio toggle */
+    .toggle-group { display:flex; gap:8px; }
+    .toggle-opt {
+        flex:1; padding:12px 8px; border:2px solid var(--border); border-radius:10px;
+        background:#fff; cursor:pointer; text-align:center; transition:all 0.2s;
+        font-size:0.9rem; font-weight:600; color:var(--text-mid); display:flex; flex-direction:column; align-items:center; gap:4px;
+    }
+    .toggle-opt:hover { border-color:var(--gold-muted); background:var(--gold-bg); }
+    .toggle-opt.on {
+        border-color:var(--green); background:var(--green); color:var(--gold-light);
+    }
+    .toggle-opt .te { font-size:1.2rem; }
+    .toggle-opt input { display:none; }
+
+    .check-row {
+        display:flex; align-items:flex-start; gap:12px; padding:14px;
+        background:#fff; border:2px solid var(--border); border-radius:10px;
+        cursor:pointer; transition:all 0.2s;
+    }
+    .check-row:hover { border-color:var(--gold-muted); background:var(--gold-bg); }
+    .check-row.on { border-color:var(--gold); background:#FFF8E1; }
+    .check-row input { display:none; }
+    .check-row .cb {
+        width:22px; height:22px; border:2px solid var(--border); border-radius:6px;
+        flex-shrink:0; display:flex; align-items:center; justify-content:center;
+        background:#fff; transition:all 0.2s; margin-top:1px;
+    }
+    .check-row.on .cb { background:var(--gold); border-color:var(--gold); }
+    .check-row.on .cb::after { content:'✓'; color:#fff; font-weight:700; font-size:0.85rem; }
+    .check-row .cb-c { flex:1; }
+    .check-row .cb-t { font-weight:700; color:var(--green); font-size:0.92rem; }
+    .check-row .cb-d { font-size:0.78rem; color:var(--text-muted); margin-top:2px; line-height:1.4; }
+
+    .form-submit {
+        width:100%; padding:16px; border:none; border-radius:10px;
+        background:linear-gradient(135deg,var(--green),var(--green-mid));
+        color:var(--gold-light); font-family:'DM Sans',sans-serif;
+        font-size:0.95rem; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+        cursor:pointer; transition:all 0.3s; box-shadow:0 6px 20px rgba(26,58,42,0.25);
+    }
+    .form-submit:hover { transform:translateY(-2px); box-shadow:0 10px 28px rgba(26,58,42,0.35); }
+    .form-submit:disabled { opacity:0.5; cursor:default; transform:none !important; }
+
+    .form-err {
+        color:var(--danger); font-size:0.85rem; margin-top:12px; padding:10px 14px;
+        background:#FEE2E2; border:1px solid #FCA5A5; border-radius:8px;
+        display:none;
+    }
+    .form-err.on { display:block; }
+
+    /* ===== TOTAL BAR (live) ===== */
+    .totalbar {
+        background:linear-gradient(135deg,#FBF7EC,#F5EBD0);
+        border:1.5px solid var(--gold-muted); border-radius:12px;
+        padding:14px 18px; margin-bottom:18px; display:flex; align-items:center; gap:14px;
+    }
+    .totalbar .tb-i { font-size:1.6rem; flex-shrink:0; }
+    .totalbar .tb-c { flex:1; }
+    .totalbar .tb-l { font-size:0.7rem; text-transform:uppercase; letter-spacing:1.2px; color:var(--gold); font-weight:700; }
+    .totalbar .tb-v { font-family:'Cormorant Garamond',serif; font-weight:700; color:var(--green); font-size:1rem; line-height:1.2; }
+    .totalbar .tb-amt {
+        font-family:'Cinzel Decorative',serif; font-size:1.4rem; color:var(--green); font-weight:700;
+        white-space:nowrap;
+    }
+
+    /* ===== SUCCESS VIEW ===== */
+    .success-card {
+        text-align:center; padding:40px 28px; background:linear-gradient(135deg,#F0FDF4,#DCFCE7);
+        border:2px solid #86EFAC; border-radius:var(--radius); margin-bottom:24px;
+    }
+    .success-card .sc-i { font-size:3.4rem; margin-bottom:10px; }
+    .success-card h2 {
+        font-family:'Cormorant Garamond',serif; font-weight:700; font-size:1.6rem;
+        color:var(--green); margin-bottom:8px;
+    }
+    .success-card p { font-size:0.92rem; color:var(--text-mid); line-height:1.6; margin-bottom:12px; }
+    .success-card .sc-em {
+        display:inline-block; background:#fff; padding:6px 18px; border-radius:50px;
+        font-weight:700; color:var(--green); border:1px solid var(--border); margin-top:8px;
+    }
+    .success-card .sc-note {
+        font-size:0.78rem; color:var(--text-muted); margin-top:18px;
+        padding:12px 16px; background:rgba(255,255,255,0.6); border-radius:10px; font-style:italic;
+    }
 
     /* ===== WAITLIST ===== */
-    .wl-msg { display:none; text-align:center; padding:36px 28px; margin:0 0 24px; background:#FDFCFA; border:1.5px solid var(--border); border-radius:var(--radius); position:relative; }
+    .wl-msg { text-align:center; padding:36px 28px; margin:0 0 24px; background:#FDFCFA; border:1.5px solid var(--border); border-radius:var(--radius); position:relative; }
     .wl-msg::after { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--gold-muted),var(--gold),var(--gold-muted)); border-radius:var(--radius) var(--radius) 0 0; }
     .wl-msg .wl-icon { font-size:2.5rem; margin-bottom:12px; }
     .wl-msg h3 { font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--green); margin-bottom:8px; }
@@ -142,7 +267,7 @@
     }
     .pay-hero::before {
         content:''; position:absolute; top:0; left:0; right:0; height:4px;
-        background:linear-gradient(90deg,var(--green),var(--gold),var(--green));
+        background:linear-gradient(90deg,var(--green),var(--gold),var(--green)); z-index:2;
     }
     .pay-hero-top {
         background:linear-gradient(135deg,var(--green),var(--green-mid));
@@ -152,9 +277,7 @@
         font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:700;
         color:var(--gold-light); margin-bottom:4px;
     }
-    .pay-hero-top .pay-subtitle {
-        font-size:0.82rem; opacity:0.7; font-style:italic;
-    }
+    .pay-hero-top .pay-subtitle { font-size:0.82rem; opacity:0.7; font-style:italic; }
     .pay-hero-body { padding:24px; }
 
     .pay-your-status {
@@ -176,8 +299,7 @@
     .pay-status-label.unpaid-l { color:#92600A; }
     .pay-status-label.paid-l { color:var(--success); }
     .pay-status-amt {
-        font-family:'Cinzel Decorative',serif; font-size:2rem; font-weight:700;
-        line-height:1;
+        font-family:'Cinzel Decorative',serif; font-size:2rem; font-weight:700; line-height:1;
     }
     .pay-status-amt.unpaid-a { color:#92600A; }
     .pay-status-amt.paid-a { color:var(--success); }
@@ -200,46 +322,106 @@
     .pay-cta:disabled { opacity:0.5; cursor:default; transform:none !important; }
 
     .pay-method-hint {
-        text-align:center; margin-top:12px; font-size:0.78rem; color:var(--text-muted);
-        line-height:1.6;
+        text-align:center; margin-top:12px; font-size:0.78rem; color:var(--text-muted); line-height:1.6;
     }
+
+    /* ===== ATTENDEE COUNT & LIST ===== */
+    .attn-card {
+        background:linear-gradient(135deg,var(--green),var(--green-mid)); border-radius:var(--radius);
+        padding:22px 24px; margin-bottom:24px; color:#fff; cursor:pointer;
+        transition:all 0.25s; position:relative; overflow:hidden;
+    }
+    .attn-card::after {
+        content:''; position:absolute; right:-20px; bottom:-20px;
+        font-size:8rem; opacity:0.08;
+    }
+    .attn-card:hover { transform:translateY(-2px); box-shadow:0 12px 32px rgba(26,58,42,0.3); }
+    .attn-top { display:flex; align-items:center; justify-content:space-between; gap:14px; position:relative; }
+    .attn-num {
+        font-family:'Cinzel Decorative',serif; font-size:2.4rem; color:var(--gold-light); line-height:1;
+    }
+    .attn-lab {
+        font-size:0.62rem; text-transform:uppercase; letter-spacing:1.5px; font-weight:700;
+        color:var(--gold-light); opacity:0.85; margin-bottom:4px;
+    }
+    .attn-sub { font-size:0.78rem; opacity:0.75; margin-top:6px; }
+    .attn-meta { text-align:right; font-size:0.75rem; opacity:0.85; }
+    .attn-chev {
+        display:inline-flex; align-items:center; gap:5px; padding:6px 12px;
+        background:rgba(184,150,46,0.18); border:1px solid rgba(184,150,46,0.35);
+        border-radius:50px; font-size:0.7rem; font-weight:700; color:var(--gold-light);
+        margin-top:8px; letter-spacing:0.5px;
+    }
+    .attn-bar {
+        margin-top:14px; height:6px; background:rgba(255,255,255,0.15); border-radius:6px; overflow:hidden;
+        position:relative;
+    }
+    .attn-bar-fill {
+        height:100%; background:linear-gradient(90deg,var(--gold),var(--gold-light));
+        border-radius:6px; transition:width 1s cubic-bezier(0.4,0,0.2,1);
+    }
+    .attn-list-wrap {
+        display:none; background:#FDFCFA; border:1px solid var(--border); border-radius:12px;
+        padding:18px 18px 8px; margin:-16px 0 24px;
+    }
+    .attn-list-wrap.open { display:block; animation:fadeUp 0.3s ease; }
+    .attn-list-head {
+        display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;
+        padding-bottom:10px; border-bottom:1px solid var(--border);
+    }
+    .attn-list-head h4 { font-family:'Cormorant Garamond',serif; font-weight:700; color:var(--green); font-size:1.05rem; }
+    .attn-list-head .lh-cnt { font-size:0.75rem; color:var(--gold); font-weight:700; }
+    .attn-row {
+        display:flex; align-items:center; gap:10px; padding:9px 4px;
+        border-bottom:1px solid #F2EFE7; font-size:0.88rem;
+    }
+    .attn-row:last-child { border-bottom:none; }
+    .attn-row .ar-av {
+        width:32px; height:32px; border-radius:50%; background:var(--green); color:var(--gold-light);
+        display:flex; align-items:center; justify-content:center; flex-shrink:0;
+        font-family:'Cinzel Decorative',serif; font-size:0.85rem; font-weight:700;
+    }
+    .attn-row.you .ar-av { background:var(--gold); color:#fff; }
+    .attn-row .ar-name { flex:1; color:var(--text); font-weight:500; }
+    .attn-row.you .ar-name { color:var(--green); font-weight:700; }
+    .attn-row .ar-cnt {
+        font-size:0.75rem; color:var(--text-muted); font-weight:600;
+        background:#F8F6F0; padding:3px 9px; border-radius:50px; white-space:nowrap;
+    }
+    .attn-row .ar-paid {
+        font-size:0.65rem; padding:3px 8px; border-radius:50px; font-weight:700; white-space:nowrap;
+    }
+    .attn-row .ar-paid.ok { background:#DCFCE7; color:#166534; }
+    .attn-row .ar-paid.no { background:#FEF3C7; color:#92400E; }
 
     /* ===== COMMUNITY PROGRESS ===== */
     .comm-progress {
         background:#FDFCFA; border:1px solid var(--border); border-radius:var(--radius);
         padding:24px; margin-bottom:24px;
     }
-    .cp-header {
-        display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;
-    }
-    .cp-header h4 {
-        font-family:'Cormorant Garamond',serif; font-weight:700; font-size:1.1rem; color:var(--green);
-    }
+    .cp-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+    .cp-header h4 { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:1.1rem; color:var(--green); }
     .cp-stat {
         font-size:0.78rem; font-weight:700; color:var(--gold);
         background:var(--gold-bg); border:1px solid var(--gold-muted);
         padding:4px 14px; border-radius:50px;
     }
     .cp-bar-wrap {
-        height:12px; background:#E8E4DB; border-radius:12px; overflow:hidden; margin-bottom:14px;
-        position:relative;
+        height:12px; background:#E8E4DB; border-radius:12px; overflow:hidden; margin-bottom:14px; position:relative;
     }
     .cp-bar-fill {
         height:100%; border-radius:12px; transition:width 1s cubic-bezier(0.4,0,0.2,1);
-        background:linear-gradient(90deg,var(--success),#5CB87A);
-        position:relative;
+        background:linear-gradient(90deg,var(--success),#5CB87A); position:relative;
     }
     .cp-bar-fill::after {
         content:''; position:absolute; right:0; top:0; bottom:0; width:8px;
         background:rgba(255,255,255,0.4); border-radius:0 12px 12px 0;
     }
     .cp-amounts {
-        display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-muted);
-        margin-bottom:16px;
+        display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-muted); margin-bottom:16px;
     }
     .cp-amounts strong { color:var(--green); }
 
-    /* ===== FAMILY PAYMENT LIST ===== */
     .fam-list { display:flex; flex-direction:column; gap:6px; }
     .fam-row {
         display:flex; align-items:center; gap:10px; padding:10px 14px;
@@ -260,7 +442,7 @@
     .fam-badge.badge-you { background:var(--green); color:var(--gold-light); }
     .fam-row .fam-amt { font-weight:600; color:var(--text-mid); font-size:0.82rem; white-space:nowrap; }
 
-    /* ===== EIDEYAA SECTION ===== */
+    /* ===== EDIYA SECTION ===== */
     .eid-section {
         background:#FDFCFA; border:1.5px solid var(--border); border-radius:var(--radius);
         overflow:hidden; margin-bottom:24px; position:relative;
@@ -280,16 +462,16 @@
     .eid-header p { font-size:0.8rem; color:#6B5B3A; margin-top:4px; line-height:1.5; }
     .eid-body { padding:20px 24px; }
 
-    .eid-your-card {
-        text-align:center; padding:18px; border-radius:10px; margin-bottom:16px;
-    }
+    .eid-your-card { text-align:center; padding:18px; border-radius:10px; margin-bottom:16px; }
     .eid-your-card.eid-unpaid { background:#FFFBF0; border:2px dashed #F0C040; }
     .eid-your-card.eid-paid { background:#F0FDF4; border:2px solid #86EFAC; }
+    .eid-your-card.eid-tbd { background:#F5F3EF; border:2px dashed #C5BDA8; }
     .eid-your-amt {
         font-family:'Cinzel Decorative',serif; font-size:1.6rem; font-weight:700; margin:6px 0;
     }
     .eid-your-amt.e-unpaid { color:#92600A; }
     .eid-your-amt.e-paid { color:var(--success); }
+    .eid-your-amt.e-tbd { color:var(--text-mid); font-size:1.3rem; }
     .eid-fam-list { display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
     .eid-chip {
         font-size:0.75rem; padding:5px 12px; border-radius:20px;
@@ -328,20 +510,6 @@
     .pc .vl { font-size:0.92rem; font-weight:600; color:var(--text); margin-top:1px; }
     @media (max-width:380px) { .prof-g{grid-template-columns:1fr;} .pc.w{grid-column:auto;} }
 
-    /* ===== CONTRIB BOARD ===== */
-    .cb { margin-bottom:28px; }
-    .cg { background:#FDFCFA; border:1px solid var(--border); border-radius:12px; margin-bottom:10px; overflow:hidden; transition:all 0.25s; }
-    .cg:hover { border-color:var(--gold-muted); }
-    .cg-h { display:flex; align-items:center; gap:12px; padding:14px 16px; }
-    .cg-e { font-size:1.5rem; flex-shrink:0; }
-    .cg-i { flex:1; }
-    .cg-n { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:1rem; color:var(--green); line-height:1.2; }
-    .cg-ct { font-size:0.72rem; color:var(--text-muted); }
-    .cg-f { display:flex; flex-wrap:wrap; gap:6px; padding:0 16px 12px; }
-    .cf { font-size:0.73rem; padding:4px 12px; border-radius:20px; background:#fff; border:1px solid var(--border); color:var(--text-mid); font-weight:500; }
-    .cf.u { background:var(--green); color:var(--gold-light); border-color:var(--green); font-weight:700; }
-    .cg-u { font-size:0.68rem; padding:3px 10px; border-radius:20px; background:var(--gold-bg); border:1px solid var(--gold-muted); color:var(--gold); font-weight:700; white-space:nowrap; }
-
     /* ===== CHANGE CONTRIBUTION ===== */
     .cc-area { margin-bottom:24px; }
     .cc-btn { display:flex; align-items:center; justify-content:center; gap:6px; width:100%; padding:12px; border:2px dashed var(--gold-muted); background:var(--gold-bg); border-radius:10px; color:var(--gold); font-weight:700; font-size:0.85rem; cursor:pointer; transition:all 0.25s; font-family:'DM Sans',sans-serif; }
@@ -358,6 +526,20 @@
     .bs.sv { background:var(--green); color:var(--gold-light); }
     .bs.sv:hover { background:var(--green-mid); }
 
+    /* ===== CONTRIB BOARD ===== */
+    .cb { margin-bottom:28px; }
+    .cg { background:#FDFCFA; border:1px solid var(--border); border-radius:12px; margin-bottom:10px; overflow:hidden; transition:all 0.25s; }
+    .cg:hover { border-color:var(--gold-muted); }
+    .cg-h { display:flex; align-items:center; gap:12px; padding:14px 16px; }
+    .cg-e { font-size:1.5rem; flex-shrink:0; }
+    .cg-i { flex:1; }
+    .cg-n { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:1rem; color:var(--green); line-height:1.2; }
+    .cg-ct { font-size:0.72rem; color:var(--text-muted); }
+    .cg-f { display:flex; flex-wrap:wrap; gap:6px; padding:0 16px 12px; }
+    .cf { font-size:0.73rem; padding:4px 12px; border-radius:20px; background:#fff; border:1px solid var(--border); color:var(--text-mid); font-weight:500; }
+    .cf.u { background:var(--green); color:var(--gold-light); border-color:var(--green); font-weight:700; }
+    .cg-u { font-size:0.68rem; padding:3px 10px; border-radius:20px; background:var(--gold-bg); border:1px solid var(--gold-muted); color:var(--gold); font-weight:700; white-space:nowrap; }
+
     /* ===== COST BREAKDOWN ===== */
     .cost-section { margin-bottom:28px; }
     .cost-card { background:#FDFCFA; border:1px solid var(--border); border-radius:12px; overflow:hidden; margin-bottom:14px; }
@@ -366,6 +548,7 @@
     .cost-row .c-emoji { font-size:1.1rem; flex-shrink:0; }
     .cost-row .c-name { flex:1; color:var(--text-mid); }
     .cost-row .c-amt { font-weight:600; color:var(--text); white-space:nowrap; }
+    .cost-row .c-est { font-size:0.7rem; font-style:italic; color:var(--gold); margin-left:4px; }
     .cost-row.total-row { background:#f8f6f0; border-top:2px solid var(--border); padding:14px 20px; font-size:0.95rem; }
     .cost-row.total-row .c-name { font-weight:700; color:var(--green); }
     .cost-row.total-row .c-amt { font-weight:700; color:var(--green); font-size:1rem; }
@@ -377,34 +560,6 @@
     .cost-community .cc-title { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:1rem; color:var(--gold); margin-bottom:6px; display:flex; align-items:center; gap:8px; }
     .cost-community p { font-size:0.82rem; color:#6B5B3A; line-height:1.6; margin:0; }
     .cost-community .cc-note { font-size:0.78rem; color:#8A7230; font-style:italic; margin-top:8px; }
-
-    /* ===== TIMELINE ===== */
-    .tls { margin-bottom:32px; }
-    .tl-sw { position:relative; overflow:hidden; margin:0 -24px; padding:0 24px; }
-    @media (max-width:480px) { .tl-sw{margin:0 -14px; padding:0 14px;} }
-    .tl-tr { display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; padding:16px 0 20px; scroll-padding:0 calc(50% - 136px); }
-    .tl-tr::-webkit-scrollbar { display:none; }
-    .tc { flex:0 0 272px; min-height:220px; scroll-snap-align:center; background:#FDFCFA; border:1.5px solid var(--border); border-radius:14px; padding:22px 20px; position:relative; cursor:default; transition:background 0.4s,border-color 0.4s,box-shadow 0.4s; }
-    .tc:first-child { margin-left:calc(50% - 136px); }
-    .tc:last-child { margin-right:calc(50% - 136px); }
-    .tc.ctr { background:var(--green); border-color:var(--green); box-shadow:0 6px 24px rgba(26,58,42,0.22); }
-    .tc-em { font-size:1.6rem; margin-bottom:8px; }
-    .tc-tm { font-size:0.68rem; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:var(--gold); margin-bottom:4px; transition:color 0.4s; }
-    .tc.ctr .tc-tm { color:var(--gold-light); }
-    .tc-tt { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:1.1rem; color:var(--green); line-height:1.25; transition:color 0.4s; }
-    .tc.ctr .tc-tt { color:#fff; }
-    .tc-ln { width:28px; height:2px; background:var(--gold-muted); border-radius:2px; margin:8px 0; transition:background 0.4s; }
-    .tc.ctr .tc-ln { background:var(--gold-light); }
-    .tc-ds { font-size:0.78rem; line-height:1.55; color:var(--text-muted); opacity:0; transition:opacity 0.4s; pointer-events:none; }
-    .tc.ctr .tc-ds { opacity:1; color:rgba(255,255,255,0.75); pointer-events:auto; }
-    .tc.pray { border-color:rgba(26,58,42,0.3); background:rgba(26,58,42,0.04); }
-    .tc.pray.ctr { background:linear-gradient(135deg,#132E20,var(--green)); border-color:var(--green); }
-    .tl-dt { display:flex; justify-content:center; gap:6px; margin-top:8px; }
-    .tl-di { width:6px; height:6px; border-radius:50%; background:var(--border); transition:all 0.3s; cursor:pointer; }
-    .tl-di.ac { background:var(--green); width:18px; border-radius:4px; }
-    .tl-ar { display:flex; justify-content:center; gap:12px; margin-top:12px; }
-    .tl-ab { width:38px; height:38px; border-radius:50%; border:1.5px solid var(--border); background:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.2s; color:var(--green); font-size:1rem; }
-    .tl-ab:hover { background:var(--green); color:var(--gold-light); border-color:var(--green); }
 
     /* ===== VOLUNTEER ===== */
     .vs { margin-bottom:30px; }
@@ -420,11 +575,14 @@
     .vc.sg { border-color:#B8E0C4; background:linear-gradient(135deg,#F6FDF8,#EDFAF1); }
     .vc.fl::before { background:var(--success); }
     .vc.fl { opacity:0.85; }
+    .vc.urgent::before { background:var(--gold); }
+    .vc.urgent { border-color:var(--gold-muted); background:linear-gradient(135deg,#FFF8E1,#FFFDF5); }
     .vt { display:flex; align-items:flex-start; gap:12px; margin-bottom:6px; }
     .vt-e { font-size:1.5rem; flex-shrink:0; margin-top:2px; }
     .vt-i { flex:1; }
     .vt-n { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:1.05rem; color:var(--green); line-height:1.2; }
     .vt-t { font-size:0.72rem; color:var(--text-muted); }
+    .vt-badge { font-size:0.62rem; padding:3px 9px; border-radius:50px; background:var(--gold); color:#fff; font-weight:700; letter-spacing:0.6px; text-transform:uppercase; }
     .vt-d { font-size:0.82rem; color:var(--text-muted); line-height:1.5; margin-bottom:10px; }
     .vp { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
     .vp-bg { flex:1; height:6px; background:#E8E4DB; border-radius:6px; overflow:hidden; }
@@ -441,13 +599,6 @@
     .bv.on:hover { background:var(--danger); border-color:var(--danger); color:#fff; }
     .bv:disabled { opacity:0.35; cursor:default; border-style:dashed; }
     .bv:disabled:hover { background:transparent; color:var(--green); }
-    .oa { background:linear-gradient(135deg,var(--green),var(--green-mid)); border-radius:12px; padding:24px; color:#fff; text-align:center; margin-bottom:10px; }
-    .oa .vt-n { color:var(--gold-light); font-size:1.15rem; }
-    .oa .vt-d { color:rgba(255,255,255,0.7); }
-    .oa-ideas { display:flex; flex-wrap:wrap; justify-content:center; gap:6px; margin:12px 0 16px; }
-    .oac { background:rgba(184,150,46,0.12); border:1px solid rgba(184,150,46,0.3); color:var(--gold-light); padding:5px 14px; border-radius:20px; font-size:0.8rem; }
-    .boa { padding:10px 24px; border:2px solid var(--gold-light); background:transparent; color:var(--gold-light); border-radius:8px; font-size:0.82rem; font-weight:700; cursor:pointer; transition:all 0.2s; font-family:'DM Sans',sans-serif; }
-    .boa:hover { background:var(--gold-light); color:var(--green); }
 
     /* ===== INFO GRID ===== */
     .ig { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-bottom:24px; }
@@ -479,6 +630,41 @@
     .cdn { font-family:'Cinzel Decorative',serif; font-size:1.3rem; color:var(--green); font-weight:700; line-height:1; }
     .cdu { font-size:0.58rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:1px; margin-top:3px; }
 
+    /* ===== TIMELINE ===== */
+    .tls { margin-bottom:32px; }
+    .tl-sw { position:relative; overflow:hidden; margin:0 -24px; padding:0 24px; }
+    @media (max-width:480px) { .tl-sw{margin:0 -14px; padding:0 14px;} }
+    .tl-tr { display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; padding:16px 0 20px; scroll-padding:0 calc(50% - 136px); }
+    .tl-tr::-webkit-scrollbar { display:none; }
+    .tc { flex:0 0 272px; min-height:220px; scroll-snap-align:center; background:#FDFCFA; border:1.5px solid var(--border); border-radius:14px; padding:22px 20px; position:relative; cursor:default; transition:background 0.4s,border-color 0.4s,box-shadow 0.4s; }
+    .tc:first-child { margin-left:calc(50% - 136px); }
+    .tc:last-child { margin-right:calc(50% - 136px); }
+    .tc.ctr { background:var(--green); border-color:var(--green); box-shadow:0 6px 24px rgba(26,58,42,0.22); }
+    .tc-em { font-size:1.6rem; margin-bottom:8px; }
+    .tc-tm { font-size:0.68rem; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:var(--gold); margin-bottom:4px; transition:color 0.4s; }
+    .tc.ctr .tc-tm { color:var(--gold-light); }
+    .tc-tt { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:1.1rem; color:var(--green); line-height:1.25; transition:color 0.4s; }
+    .tc.ctr .tc-tt { color:#fff; }
+    .tc-ln { width:28px; height:2px; background:var(--gold-muted); border-radius:2px; margin:8px 0; transition:background 0.4s; }
+    .tc.ctr .tc-ln { background:var(--gold-light); }
+    .tc-ds { font-size:0.78rem; line-height:1.55; color:var(--text-muted); opacity:0; transition:opacity 0.4s; pointer-events:none; }
+    .tc.ctr .tc-ds { opacity:1; color:rgba(255,255,255,0.75); pointer-events:auto; }
+    .tl-dt { display:flex; justify-content:center; gap:6px; margin-top:8px; }
+    .tl-di { width:6px; height:6px; border-radius:50%; background:var(--border); transition:all 0.3s; cursor:pointer; }
+    .tl-di.ac { background:var(--green); width:18px; border-radius:4px; }
+    .tl-ar { display:flex; justify-content:center; gap:12px; margin-top:12px; }
+    .tl-ab { width:38px; height:38px; border-radius:50%; border:1.5px solid var(--border); background:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.2s; color:var(--green); font-size:1rem; }
+    .tl-ab:hover { background:var(--green); color:var(--gold-light); border-color:var(--green); }
+
+    /* ===== WHATSAPP ===== */
+    .wa { background:linear-gradient(135deg,#ECF8F0,#D9F2E0); border:1px solid #B8E0C4; border-radius:var(--radius); padding:18px 20px; margin-bottom:24px; }
+    .wa .wa-t { font-family:'Cormorant Garamond',serif; font-weight:700; font-size:1.05rem; color:#1A6B3C; margin-bottom:4px; display:flex; align-items:center; gap:8px; }
+    .wa .wa-h { font-size:0.8rem; color:#3D7A55; margin-bottom:10px; }
+    .wa-ls { display:flex; flex-wrap:wrap; gap:8px; }
+    .wa-c { display:inline-flex; align-items:center; gap:6px; padding:8px 16px; background:#fff; border:1px solid #B8E0C4; border-radius:50px; font-size:0.82rem; font-weight:600; color:#1A6B3C; text-decoration:none; transition:all 0.2s; }
+    .wa-c:hover { background:#1A6B3C; color:#fff; border-color:#1A6B3C; transform:translateY(-1px); }
+    .wa-c svg { width:16px; height:16px; fill:currentColor; }
+
     /* ===== FOOTER ===== */
     .ft { text-align:center; padding:20px 24px; background:#FAFAF7; border-top:1px solid var(--border); font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.9rem; color:var(--text-muted); }
     .dv { border:none; height:1px; background:linear-gradient(to right,transparent,var(--border),transparent); margin:28px 0; }
@@ -490,7 +676,7 @@
     .ol.on { display:flex; }
     .sp { border:3px solid var(--gold-muted); border-top-color:var(--gold); border-radius:50%; width:40px; height:40px; animation:spin 0.8s linear infinite; }
     @keyframes spin { to{transform:rotate(360deg);} }
-    .tt { position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(90px); background:var(--green); color:#fff; padding:13px 26px; border-radius:10px; font-size:0.88rem; font-weight:500; box-shadow:0 8px 30px rgba(0,0,0,0.18); z-index:2000; transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1); text-align:center; max-width:88%; }
+    .tt { position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(120px); background:var(--green); color:#fff; padding:13px 26px; border-radius:10px; font-size:0.88rem; font-weight:500; box-shadow:0 8px 30px rgba(0,0,0,0.18); z-index:2000; transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1); text-align:center; max-width:88%; }
     .tt.on { transform:translateX(-50%) translateY(0); }
     @keyframes fadeUp { from{opacity:0;transform:translateY(16px);} to{opacity:1;transform:translateY(0);} }
     .an { animation:fadeUp 0.45s ease forwards; opacity:0; }
@@ -502,123 +688,208 @@
         <div class="hero">
             <h1>Eid Mubarak!</h1>
             <div class="hero-div"><span></span><em>✦</em><span></span></div>
-            <p class="hero-sub">Family Celebration & Picnic — Eid Al-Fitr 2026</p>
+            <p class="hero-sub">Family Celebration & Picnic — Eid Al-Adha 2026</p>
             <div class="cap-pill" id="capPill">Loading...</div>
         </div>
 
-        <div class="lf" id="lfCard">
-            <div class="lf-ico">🔑</div>
-            <h2>Access Your Event Hub</h2>
-            <p class="lf-hint">Enter the email you used to RSVP to view your reservation, payments, and event details.</p>
-            <div class="lf-row">
-                <input type="email" id="emailIn" placeholder="your@email.com" autocomplete="email">
-                <button class="btn-go" id="goBtn" onclick="doLookup()">GO</button>
-            </div>
-            <div class="lf-err" id="lfErr"></div>
-        </div>
-
         <div class="main">
-            <!-- WHATSAPP -->
-            <div class="wa hs" id="waBox">
-                <div class="wa-t">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="#1A6B3C"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    Stay Connected
+
+            <!-- ============================================================ -->
+            <!-- VIEW 1: RSVP FORM (default, no token in URL)                 -->
+            <!-- ============================================================ -->
+            <div class="view on" id="viewRsvp">
+
+                <div class="deadline" id="deadlineBanner">
+                    <div class="dl-i">⏳</div>
+                    <div class="dl-c">
+                        <div class="dl-t">RSVP closes Sunday, May 18</div>
+                        <div class="dl-s" id="deadlineSub">Confirm soon — spots fill quickly</div>
+                    </div>
                 </div>
-                <div class="wa-h">Join the WhatsApp groups for Eid this year to stay updated</div>
-                <div class="wa-ls" id="waLs"></div>
+
+                <div class="intro an">
+                    <p>Join us for a joyful family celebration of <span class="hl">Eid Al-Adha</span> — full lamb feast from Holyland, kids' games &amp; prizes, jump house, and time together. <span class="hl">100 spots</span> across the community — confirm your family below.</p>
+                </div>
+
+                <div class="form-card an d1">
+                    <div class="fg">
+                        <label>Family / Head of Household <span class="req">*</span></label>
+                        <input type="text" id="fName" placeholder="Your full name" autocomplete="name">
+                    </div>
+
+                    <div class="fg">
+                        <label>Email <span class="req">*</span></label>
+                        <input type="email" id="fEmail" placeholder="your@email.com" autocomplete="email">
+                        <div class="hint">We'll email your tokenized confirmation link here.</div>
+                    </div>
+
+                    <div class="fg">
+                        <label>Phone (optional)</label>
+                        <input type="tel" id="fPhone" placeholder="(555) 123-4567" autocomplete="tel">
+                    </div>
+
+                    <div class="fg-row">
+                        <div class="fg">
+                            <label>Adults <span class="req">*</span></label>
+                            <div class="counter" data-counter="adults">
+                                <button type="button" data-step="-1">−</button>
+                                <input type="number" id="fAdults" value="2" min="1" max="12" inputmode="numeric">
+                                <button type="button" data-step="+1">+</button>
+                            </div>
+                        </div>
+                        <div class="fg">
+                            <label>Kids</label>
+                            <div class="counter" data-counter="kids">
+                                <button type="button" data-step="-1">−</button>
+                                <input type="number" id="fKids" value="0" min="0" max="12" inputmode="numeric">
+                                <button type="button" data-step="+1">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fg">
+                        <label>Will you contribute to Ediya? <span class="req">*</span></label>
+                        <div class="hint" style="margin-top:0;margin-bottom:8px;">Pooled gift of cash for every child at the celebration (amount finalized once we have a kid count).</div>
+                        <div class="toggle-group">
+                            <label class="toggle-opt" data-val="Yes">
+                                <span class="te">💵</span><span>Yes — count me in</span>
+                                <input type="radio" name="ediya" value="Yes">
+                            </label>
+                            <label class="toggle-opt on" data-val="No">
+                                <span class="te">🙏</span><span>Not this time</span>
+                                <input type="radio" name="ediya" value="No" checked>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="fg">
+                        <label>What you'll bring (optional)</label>
+                        <select id="fContrib">
+                            <option value="None">Just attending — no contribution</option>
+                            <optgroup label="Items to Bring">
+                                <option value="Popsicles">🍭 Lollipops (50 ct)</option>
+                                <option value="Juice">🥤 Juice (for 50+)</option>
+                                <option value="TeaCoffee">☕ Tea &amp; Coffee thermos</option>
+                                <option value="Dessert">🍰 Homemade Dessert</option>
+                                <option value="Cupcakes">🧁 Cupcakes (30 ct, no vanilla extract)</option>
+                                <option value="Cake">🎂 Cake (serves 40, no vanilla extract)</option>
+                                <option value="JuiceBox">🧃 Juice Boxes (50+ for kids)</option>
+                                <option value="Chips">🥨 Family-size chips (4x)</option>
+                                <option value="Water">💧 Water bottles (case)</option>
+                                <option value="Plates">🍽️ Plates &amp; utensils</option>
+                            </optgroup>
+                            <optgroup label="Other">
+                                <option value="Surprise">🎁 It'll be a surprise!</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="fg">
+                        <label class="check-row" id="fpRow">
+                            <input type="checkbox" id="fFoodPickup">
+                            <span class="cb"></span>
+                            <span class="cb-c">
+                                <span class="cb-t">🚗 I can help pick up food at 11 AM</span>
+                                <span class="cb-d">From Holyland (Um Ammar). We need 2 families — pickup happens right before the event starts.</span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="fg">
+                        <label>Notes (allergies, special requests, etc.)</label>
+                        <textarea id="fNotes" placeholder="Anything we should know"></textarea>
+                    </div>
+
+                    <div class="totalbar">
+                        <div class="tb-i">💳</div>
+                        <div class="tb-c">
+                            <div class="tb-l">Family Contribution Due</div>
+                            <div class="tb-v">Pay $120 after RSVP to confirm your spot</div>
+                        </div>
+                        <div class="tb-amt">$120</div>
+                    </div>
+
+                    <button class="form-submit" id="submitBtn" onclick="submitRsvp()">Reserve My Family's Spot</button>
+                    <div class="form-err" id="formErr"></div>
+                </div>
+
+                <div class="intro" style="margin-bottom:6px;">
+                    <p style="font-size:0.8rem;color:var(--text-muted);">Already RSVPed? Check your email for your private confirmation link. Lost it? Reach out to the event organizer.</p>
+                </div>
+
             </div>
 
-            <!-- WAITLIST -->
-            <div class="wl-msg" id="wlMsg">
-                <div class="wl-icon">🕐</div>
-                <h3 id="wlName">—</h3>
-                <div class="wl-status">Waitlisted</div>
-                <p>Due to the overwhelming response this year, we've reached our venue capacity and are unable to confirm your family's attendance at this time.</p>
-                <p>Your family is on our <strong>waitlist</strong> — should any spots open up, you'll be among the first we contact.</p>
-                <p style="font-size:0.82rem;color:var(--text-muted);margin-top:12px;font-style:italic;">If your plans change or you'd like to discuss your reservation, please reach out to us directly.</p>
+            <!-- ============================================================ -->
+            <!-- VIEW 2: SUCCESS (after form submission)                       -->
+            <!-- ============================================================ -->
+            <div class="view" id="viewSuccess">
+                <div class="success-card an">
+                    <div class="sc-i">🎉</div>
+                    <h2 id="successName">Eid Mubarak!</h2>
+                    <p>Your family's RSVP has been received, alhamdulillah.</p>
+                    <p>We've emailed you a private link to your confirmation portal — open it to track your payment, see other families, and choose what to bring.</p>
+                    <div class="sc-em" id="successEmail">—</div>
+                    <p class="sc-note">📩 If you don't see the email in a minute, check your spam folder. The link is tied to your family — don't share it.</p>
+                </div>
             </div>
 
-            <!-- ==================== PAYMENT DASHBOARD ==================== -->
-            <div class="hs" id="secPay">
-                <!-- Your Payment Status -->
+            <!-- ============================================================ -->
+            <!-- VIEW 3: WAITLIST (cap reached)                                -->
+            <!-- ============================================================ -->
+            <div class="view" id="viewWaitlist">
+                <div class="wl-msg">
+                    <div class="wl-icon">🕐</div>
+                    <h3 id="wlName">Salam,</h3>
+                    <div class="wl-status">Waitlisted</div>
+                    <p>We've reached our 100-attendee capacity. Your family is on the <strong>waitlist</strong> — if a spot opens, you'll be the first to know.</p>
+                    <p style="font-size:0.82rem;color:var(--text-muted);margin-top:12px;font-style:italic;">If your plans change or you'd like to reach out, please contact the organizer.</p>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- VIEW 4: CONFIRMATION PORTAL (with ?token=)                    -->
+            <!-- ============================================================ -->
+            <div class="view" id="viewPortal">
+
+                <!-- Payment Hero -->
                 <div class="pay-hero an" id="payHero"></div>
 
-                <!-- Community Progress -->
-                <div class="comm-progress an d1" id="commProgress"></div>
+                <!-- Attendee Count Card -->
+                <div class="attn-card an d1" id="attnCard" onclick="toggleAttnList()"></div>
+                <div class="attn-list-wrap" id="attnListWrap"></div>
 
-                <!-- Eideyaa Section (only for opted-in families) -->
-                <div class="hs" id="secEideyaa">
-                    <div class="eid-section an d2" id="eidSection"></div>
+                <!-- Community Payment Progress -->
+                <div class="comm-progress an d2" id="commProgress"></div>
+
+                <!-- Ediya Section -->
+                <div class="hs" id="secEdiya">
+                    <div class="eid-section an d3" id="ediyaSection"></div>
                 </div>
-            </div>
 
-            <!-- PROFILE -->
-            <div class="hs" id="secProf">
                 <hr class="dv">
-                <div class="sh an">
-                    <h3>Your Reservation</h3>
-                    <span class="dot"></span>
-                </div>
+
+                <!-- Profile -->
+                <div class="sh an"><h3>Your Reservation</h3><span class="dot"></span></div>
                 <div class="prof an d1" id="profCard"></div>
-            </div>
 
-            <!-- COST BREAKDOWN -->
-            <div class="hs" id="secCost">
-                <hr class="dv">
-                <div class="sh an d3">
-                    <h3>Cost Breakdown</h3>
-                    <p>Here's exactly where your contribution goes</p>
-                </div>
-                <div class="cost-section">
-                    <div class="cost-card">
-                        <div class="cost-row"><span class="c-emoji">🏕️</span><span class="c-name">Venue Reservation</span><span class="c-amt">$337</span></div>
-                        <div class="cost-row"><span class="c-emoji">📋</span><span class="c-name">Jump House & Generator Permit</span><span class="c-amt">$40</span></div>
-                        <div class="cost-row"><span class="c-emoji">🏰</span><span class="c-name">Jump House Rental</span><span class="c-amt">$545</span></div>
-                        <div class="cost-row"><span class="c-emoji">🔋</span><span class="c-name">Generator Rental</span><span class="c-amt">$120</span></div>
-                        <div class="cost-row"><span class="c-emoji">🎨</span><span class="c-name">Professional Face Painter</span><span class="c-amt">$300</span></div>
-                        <div class="cost-row"><span class="c-emoji">🍕</span><span class="c-name">Catered Halal Pizza</span><span class="c-amt">$1,000</span></div>
-                        <div class="cost-row total-row"><span class="c-emoji">📊</span><span class="c-name">Total Event Cost</span><span class="c-amt">$2,342</span></div>
-                    </div>
-                    <div class="cost-hero">
-                        <div class="ch-label">Your Family's Share</div>
-                        <div class="ch-amt" id="costAmt">$85</div>
-                        <div class="ch-sub" id="costSub">Split equally across confirmed families</div>
-                    </div>
-                    <div class="cost-community">
-                        <div class="cc-title">Covered by Organizers</div>
-                        <p>The following are being contributed by the organizers at no extra cost: entertainment & kids activities, setup supplies & utensils, decorations, Photo Booth, and Under 2 Play Areas.</p>
-                        <p class="cc-note">Want to help? Check the volunteer section below or change your contribution!</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CONTRIBUTION BOARD -->
-            <div class="hs" id="secCont">
-                <hr class="dv">
-                <div class="sh an d2">
-                    <h3>Family Contribution Board</h3>
-                    <p>What everyone is bringing — together we make it happen</p>
-                </div>
-                <div class="cc-area an d3" id="ccArea">
+                <!-- Change Contribution -->
+                <div class="cc-area an d2">
                     <button class="cc-btn" onclick="toggleCC()"><span>✏️</span> Change What You're Bringing</button>
                     <div class="cc-wrap" id="ccWrap">
                         <label>Choose a different contribution</label>
                         <select id="newCS">
                             <option value="None">Just attending — no contribution</option>
-                            <optgroup label="Help Needed">
-                                <option value="Setup">🛠️ Setup (arrive early)</option>
-                                <option value="Cleanup">🧹 Cleanup (stay late)</option>
-                                <option value="Henna">🌸 Manage kids for Henna Artist (2–4 PM)</option>
-                            </optgroup>
                             <optgroup label="Items to Bring">
-                                <option value="Popsicles">🍭 Lollipops (50 count)</option>
+                                <option value="Popsicles">🍭 Lollipops (50 ct)</option>
                                 <option value="Juice">🥤 Juice (for 50+)</option>
                                 <option value="TeaCoffee">☕ Tea & Coffee thermos</option>
                                 <option value="Dessert">🍰 Homemade Dessert</option>
-                                <option value="Cupcakes">🧁 Cupcakes (30 — no vanilla extract)</option>
-                                <option value="Cake">🎂 Cake (for 40 — no vanilla extract)</option>
-                                <option value="JuiceBox">🧃 Juice boxes (50+ for kids)</option>
-                                <option value="Chips">🥨 Family-size chips (4x count)</option>
+                                <option value="Cupcakes">🧁 Cupcakes (30 ct)</option>
+                                <option value="Cake">🎂 Cake (serves 40)</option>
+                                <option value="JuiceBox">🧃 Juice Boxes (50+)</option>
+                                <option value="Chips">🥨 Family Chips (4x)</option>
+                                <option value="Water">💧 Water bottles (case)</option>
+                                <option value="Plates">🍽️ Plates & utensils</option>
                             </optgroup>
                             <optgroup label="Other">
                                 <option value="Surprise">🎁 It'll be a surprise!</option>
@@ -626,81 +897,121 @@
                         </select>
                         <div class="cc-btns">
                             <button class="bs cn" onclick="toggleCC()">Cancel</button>
-                            <button class="bs sv" onclick="saveCC()">Save & Notify Me</button>
+                            <button class="bs sv" onclick="saveCC()">Save</button>
                         </div>
                     </div>
                 </div>
-                <div id="cBoard" class="cb an d3"></div>
-            </div>
 
-            <!-- VOLUNTEER -->
-            <div class="hs" id="secVol">
                 <hr class="dv">
-                <div class="sh an d4">
-                    <h3>We Value Your Help!</h3>
-                    <span class="dot"></span>
+
+                <!-- Cost Breakdown -->
+                <div class="sh an d3"><h3>Contribution Breakdown</h3><p>Here's exactly where your $120 goes</p></div>
+                <div class="cost-section">
+                    <div class="cost-card">
+                        <div class="cost-row"><span class="c-emoji">🏕️</span><span class="c-name">Venue Reservation</span><span class="c-amt">$370</span></div>
+                        <div class="cost-row"><span class="c-emoji">📋</span><span class="c-name">Permit</span><span class="c-amt">$40</span></div>
+                        <div class="cost-row"><span class="c-emoji">🏰</span><span class="c-name">Jump House &amp; Generator</span><span class="c-amt">$655</span></div>
+                        <div class="cost-row"><span class="c-emoji">🐑</span><span class="c-name">Holyland Catering — Full Lamb (Um Ammar) <span class="c-est">est.</span></span><span class="c-amt">$2,000</span></div>
+                        <div class="cost-row total-row"><span class="c-emoji">📊</span><span class="c-name">Total Event Contributions</span><span class="c-amt">~$3,065</span></div>
+                    </div>
+                    <div class="cost-hero">
+                        <div class="ch-label">Your Family's Contribution</div>
+                        <div class="ch-amt">$120</div>
+                        <div class="ch-sub">Flat rate — same for every family</div>
+                    </div>
+                    <div class="cost-community">
+                        <div class="cc-title">Covered by Organizers</div>
+                        <p>Setup supplies, decorations, kids' game prizes, and coordination are contributed by the organizers at no extra cost.</p>
+                        <p class="cc-note">Want to help? Volunteer for one of the slots below — every hand counts.</p>
+                    </div>
                 </div>
+
+                <hr class="dv">
+
+                <!-- Family Contribution Board -->
+                <div class="sh an d2"><h3>Family Contribution Board</h3><p>What everyone's bringing — together we make it happen</p></div>
+                <div id="cBoard" class="cb an d3"></div>
+
+                <hr class="dv">
+
+                <!-- Volunteer Roles -->
+                <div class="sh an d4"><h3>We Need Your Help!</h3><span class="dot"></span></div>
                 <div class="vi-msg an d4">
                     <span class="bg">🤲</span>
-                    <p>This celebration is organized by <span class="hl">all of us — together</span>. It's not one family doing everything; it's many families each doing a little. Can you spare an hour?</p>
+                    <p>This celebration is organized by <span class="hl">all of us — together</span>. Pick a slot that fits your day.</p>
                 </div>
-                <div id="vCards" class="an d5"></div>
+                <div id="vCards" class="vs an d5"></div>
+
+                <hr class="dv">
+
+                <!-- WhatsApp -->
+                <div class="wa an" id="waBox" style="display:none;">
+                    <div class="wa-t">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="#1A6B3C"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Stay Connected
+                    </div>
+                    <div class="wa-h">Join the WhatsApp groups for live event updates</div>
+                    <div class="wa-ls" id="waLs"></div>
+                </div>
+
             </div>
 
-            <hr class="dv">
+            <!-- ============================================================ -->
+            <!-- SHARED: Event details (shown on RSVP form view AND portal)    -->
+            <!-- ============================================================ -->
+            <div id="sharedDetails">
+                <hr class="dv">
 
-            <!-- INFO GRID -->
-            <div class="ig an">
-                <div class="ic"><div class="ic-i">📅</div><div class="ic-lb">Date</div><div class="ic-v">March 20</div><div class="ic-s">Sunday</div></div>
-                <div class="ic"><div class="ic-i">📍</div><div class="ic-lb">Location</div><div class="ic-v">Hellyer Park</div><div class="ic-s">Buena Vista Area</div></div>
-                <div class="ic"><div class="ic-i">🕙</div><div class="ic-lb">Time</div><div class="ic-v">10AM–6PM</div><div class="ic-s">Full day</div></div>
-                <div class="ic"><div class="ic-i">💰</div><div class="ic-lb">Contribution</div><div class="ic-v">$85 / family</div><div class="ic-s">$40 / single</div></div>
-            </div>
+                <div class="ig an">
+                    <div class="ic"><div class="ic-i">📅</div><div class="ic-lb">Date</div><div class="ic-v">May 27</div><div class="ic-s">Wednesday</div></div>
+                    <div class="ic"><div class="ic-i">📍</div><div class="ic-lb">Location</div><div class="ic-v">Hellyer Park</div><div class="ic-s">Buena Vista Area</div></div>
+                    <div class="ic"><div class="ic-i">🕙</div><div class="ic-lb">Time</div><div class="ic-v">11 AM – 8 PM</div><div class="ic-s">All day</div></div>
+                    <div class="ic"><div class="ic-i">💰</div><div class="ic-lb">Contribution</div><div class="ic-v">$120 / family</div><div class="ic-s">Flat rate</div></div>
+                </div>
 
-            <!-- COUNTDOWN -->
-            <div class="cds an d1">
-                <div class="cdl">Celebration starts in</div>
-                <div class="cdg">
-                    <div class="cdc"><div class="cdn" id="cD">--</div><div class="cdu">Days</div></div>
-                    <div class="cdc"><div class="cdn" id="cH">--</div><div class="cdu">Hours</div></div>
-                    <div class="cdc"><div class="cdn" id="cM">--</div><div class="cdu">Min</div></div>
-                    <div class="cdc"><div class="cdn" id="cS">--</div><div class="cdu">Sec</div></div>
+                <div class="cds an d1">
+                    <div class="cdl">Eid Al-Adha begins in</div>
+                    <div class="cdg">
+                        <div class="cdc"><div class="cdn" id="cD">--</div><div class="cdu">Days</div></div>
+                        <div class="cdc"><div class="cdn" id="cH">--</div><div class="cdu">Hours</div></div>
+                        <div class="cdc"><div class="cdn" id="cM">--</div><div class="cdu">Min</div></div>
+                        <div class="cdc"><div class="cdn" id="cS">--</div><div class="cdu">Sec</div></div>
+                    </div>
+                </div>
+
+                <div class="ss an d2">
+                    <div class="sl on"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/Kidsplaying_25.png" alt=""><div class="sl-c">Fun &amp; Games for All Ages</div></div>
+                    <div class="sl"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/tugofwar25.png" alt=""><div class="sl-c">Tug of War — Memories from Last Eid</div></div>
+                    <div class="sl"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/halal_food24.png" alt=""><div class="sl-c">Authentic Halal Feast</div></div>
+                    <div class="sl"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/joywithediyaa24.png" alt=""><div class="sl-c">Joy with Ediya</div></div>
+                    <div class="sl"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/jumphouse25.jpeg" alt=""><div class="sl-c">Jump House Fun</div></div>
+                    <div class="sl"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/IMG_9475.jpg" alt=""><div class="sl-c">Hellyer Park — Buena Vista</div></div>
+                </div>
+
+                <div class="sh"><h3>Festivities &amp; Joy</h3><span class="dot"></span></div>
+                <div class="bdw">
+                    <span class="bd">🐑 Full Lamb Feast</span>
+                    <span class="bd">🏰 Jump House</span>
+                    <span class="bd">💵 Ediya for Kids</span>
+                    <span class="bd">🏆 Kids Games &amp; Prizes</span>
+                    <span class="bd">💪 Tug-of-War</span>
+                    <span class="bd">🥔 Sack Race</span>
+                    <span class="bd">⚽ Outdoor Play</span>
+                </div>
+
+                <hr class="dv">
+
+                <div class="tls">
+                    <div class="sh"><h3>Event Day Schedule</h3><p>Swipe to explore — centered card shows full details</p></div>
+                    <div class="tl-sw"><div class="tl-tr" id="tlTr"></div></div>
+                    <div class="tl-dt" id="tlDt"></div>
+                    <div class="tl-ar">
+                        <div class="tl-ab" onclick="sT(-1)">‹</div>
+                        <div class="tl-ab" onclick="sT(1)">›</div>
+                    </div>
                 </div>
             </div>
 
-            <!-- SLIDESHOW -->
-            <div class="ss an d2">
-                <div class="sl on"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/Kidsplaying_25.png" alt=""><div class="sl-c">Fun & Games for All Ages</div></div>
-                <div class="sl"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/tugofwar25.png" alt=""><div class="sl-c">Tug of War — Eid 2025</div></div>
-                <div class="sl"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/halal_food24.png" alt=""><div class="sl-c">Delicious Halal Lunch</div></div>
-                <div class="sl"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/joywithediyaa24.png" alt=""><div class="sl-c">Joy with Eidyaa</div></div>
-                <div class="sl"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/jumphouse25.jpeg" alt=""><div class="sl-c">Jump House Fun</div></div>
-                <div class="sl"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/IMG_9475.jpg" alt=""><div class="sl-c">This Year's Venue</div></div>
-                <div class="sl"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/facepaining.png" alt=""><div class="sl-c">Professional Face Painter</div></div>
-                <div class="sl"><img src="https://raw.githubusercontent.com/bmns1/events/refs/heads/main/photobooth.png" alt=""><div class="sl-c">Photo Booth Memories</div></div>
-            </div>
-
-            <div class="sh"><h3>Festivities & Joy</h3><span class="dot"></span></div>
-            <div class="bdw">
-                <span class="bd">🏰 Jump House</span><span class="bd">🌸 Pro Henna</span>
-                <span class="bd">💪 Tug-of-War</span><span class="bd">🥔 Sack Race</span>
-                <span class="bd">☁️ Cotton Candy</span><span class="bd">🔴 Giant Connect-4</span>
-                <span class="bd">🎨 Face Painting</span><span class="bd">📸 Photo Booth</span>
-                <span class="bd">⚽ Giant Soccer</span>
-            </div>
-
-            <hr class="dv">
-
-            <!-- TIMELINE -->
-            <div class="tls">
-                <div class="sh"><h3>Event Day Schedule</h3><p>Swipe to explore — centered card shows full details</p></div>
-                <div class="tl-sw"><div class="tl-tr" id="tlTr"></div></div>
-                <div class="tl-dt" id="tlDt"></div>
-                <div class="tl-ar">
-                    <div class="tl-ab" onclick="sT(-1)">‹</div>
-                    <div class="tl-ab" onclick="sT(1)">›</div>
-                </div>
-            </div>
         </div>
         <div class="ft">We look forward to celebrating this joyous occasion together, Inshallah.</div>
     </div>
@@ -709,395 +1020,632 @@
     <div class="tt" id="tt"></div>
 
     <script>
-    const API = 'https://script.google.com/macros/s/AKfycbyVKlisZt7xDtM_zA7DgU8OIpGFNciK7uy03aXBUlf_xLufYXbPrxDRGu4eA8RaAPYTOg/exec';
-    let prof = null, vRoles = [], cList = [], waG = [], payData = null;
+    // ============================================================
+    // CONFIG — change these values to retune the event
+    // ============================================================
+    const API = 'REPLACE_WITH_YOUR_APPS_SCRIPT_WEB_APP_URL';
 
-    const TL = [
-        {t:'9:30–10:30 AM',e:'🛠️',n:'Setup & Welcome',d:'Volunteers arrive to help set up tables, decorations, bounce house, and activity stations.',p:false},
-        {t:'10:30 AM–12:30 PM',e:'🎉',n:'Open Play & Morning Fun',d:'Free play time! Jump house, giant games, outdoor activities. Eid Photo Booth open.',p:false},
-        {t:'12:30–1:45 PM',e:'🕌',n:"Jumu'ah Prayers",d:'Congregational Friday prayers at Evergreen Islamic Center. Carpool organized the morning of.',p:true},
-        {t:'2:00–3:00 PM',e:'🍽️',n:'Lunch Time',d:'Delicious halal catered lunch served fresh. All food is Zabiha Halal. Come hungry!',p:false},
-        {t:'2:00–4:00 PM',e:'🎨',n:'Face Painter & Henna',d:'Professional face painting and henna artist on-site.',p:false},
-        {t:'2:50–3:10 PM',e:'💵',n:'Eideyaa Time!',d:'Fresh $1 bills for every child. Participating families — please have your Venmo ready.',p:false},
-        {t:'3:00–4:30 PM',e:'🏆',n:'Kids Competitions',d:'Sack races, tug-of-war, relay races, and more! Prizes for winners.',p:false},
-        {t:'4:30–5:30 PM',e:'📸',n:'Open Play & Group Photos',d:"Wind-down with free play. Big group photo — don't miss it!",p:false},
-        {t:'5:30–6:30 PM',e:'🧹',n:'Wrap-up & Cleanup',d:'JazakAllah Khair for celebrating! Cleanup volunteers — your help means the world.',p:false}
-    ];
-    const VD = [
-        {id:'setup',e:'🛠️',n:'Setup Crew',t:'9:30 – 10:30 AM',d:'Help set up tables, decorations, bounce house, canopies, and activity stations.',nd:3,u:'families'},
-        {id:'toddler_toys',e:'🧸',n:'Toddler Play Area Toys',t:'Bring day-of',d:'Bring safe toys and play mats for the dedicated under-2 exclusive play area.',nd:2,u:'families'},
-        {id:'facepainting_mgr',e:'🎨',n:'Face Paint Queue Manager',t:'2:00 – 4:00 PM',d:"Help manage the kids' line for the face painter.",nd:2,u:'families'},
-        {id:'cleanup',e:'🧹',n:'Cleanup Crew',t:'5:30 – 6:30 PM',d:'Help break down tables, collect trash, and leave the park spotless.',nd:3,u:'families'}
-    ];
-    const CM = {
-        'Setup':{e:'🛠️',l:'Setup Help'},'Cleanup':{e:'🧹',l:'Cleanup Help'},
-        'Henna':{e:'🌸',l:'Henna Queue Manager'},'Popsicles':{e:'🍭',l:'Lollipops (50 ct)'},
-        'Juice':{e:'🥤',l:'Juice (50+)'},'TeaCoffee':{e:'☕',l:'Tea & Coffee'},
-        'Dessert':{e:'🍰',l:'Homemade Dessert'},'Cupcakes':{e:'🧁',l:'Cupcakes (30)'},
-        'Cake':{e:'🎂',l:'Cake (40 servings)'},'JuiceBox':{e:'🧃',l:'Juice Boxes (50+)'},
-        'Chips':{e:'🥨',l:'Family Chips (4x)'},'Surprise':{e:'🎁',l:'Surprise!'}
+    const CFG = {
+        eventName: 'Eid Al-Adha 2026',
+        eventDate: '2026-05-27T11:00:00-07:00',
+        rsvpDeadline: '2026-05-18T23:59:59-07:00',
+        capacity: 100,
+        familyContrib: 120,
+        venueName: 'Hellyer Park',
+        venueArea: 'Buena Vista Area'
     };
 
+    // Family contribution dropdown — emoji & label map
+    const CM = {
+        'Popsicles':{e:'🍭',l:'Lollipops (50 ct)'},
+        'Juice':{e:'🥤',l:'Juice (50+)'},
+        'TeaCoffee':{e:'☕',l:'Tea & Coffee'},
+        'Dessert':{e:'🍰',l:'Homemade Dessert'},
+        'Cupcakes':{e:'🧁',l:'Cupcakes (30)'},
+        'Cake':{e:'🎂',l:'Cake (40 servings)'},
+        'JuiceBox':{e:'🧃',l:'Juice Boxes (50+)'},
+        'Chips':{e:'🥨',l:'Family Chips (4x)'},
+        'Water':{e:'💧',l:'Water Bottles (case)'},
+        'Plates':{e:'🍽️',l:'Plates & Utensils'},
+        'Surprise':{e:'🎁',l:'Surprise!'}
+    };
+
+    // Volunteer roles (separate from food contributions)
+    const VD = [
+        {id:'food_pickup',e:'🚗',n:'Food Pickup',t:'11:00 AM',d:'Pick up the full lamb feast from Holyland (Um Ammar). Pickup at 11 AM, deliver to venue.',nd:2,u:'families',urgent:true},
+        {id:'setup',e:'🛠️',n:'Setup Crew',t:'10:11 – 11:00 AM',d:'Help set up tables, decorations, bounce house, and activity stations.',nd:2,u:'families'},
+        {id:'games',e:'🏆',n:'Kids Games Coordinator',t:'2:30 – 4:30 PM',d:'Run sack race, tug-of-war, prize distribution. Bring the fun!',nd:2,u:'families'},
+        {id:'ediya_time',e:'💵',n:'Ediya Time Helper',t:'2:00 – 2:30 PM',d:'Help distribute crisp $1 bills to every child.',nd:1,u:'families'},
+        {id:'cleanup',e:'🧹',n:'Cleanup Crew',t:'7:00 – 8:00 PM',d:'Help break down tables, collect trash, leave the park spotless.',nd:3,u:'families'}
+    ];
+
+    // Event day timeline
+    const TL = [
+        {t:'10:11 – 11:00 AM',e:'🛠️',n:'Setup & Welcome',d:'Volunteers arrive to help set up tables, jump house, decorations, and activity stations.'},
+        {t:'11:00 AM',e:'🚗',n:'Food Pickup',d:'2 families pick up the full lamb feast from Holyland Restaurant (Um Ammar).'},
+        {t:'11:00 AM – 1:00 PM',e:'🎉',n:'Free Play',d:'Open jump house, kids running wild, families catching up. Photo opportunities everywhere.'},
+        {t:'12:30 – 2:00 PM',e:'🐑',n:'Lunch Time',d:'Full lamb feast catered by Holyland — Um Ammar\'s signature meal. Come hungry, Zabiha Halal.'},
+        {t:'2:00 – 2:30 PM',e:'💵',n:'Ediya Time',d:'Fresh $1 bills for every child! Participating families — have your contribution ready.'},
+        {t:'2:30 – 4:30 PM',e:'🏆',n:'Kids & Family Games',d:'Sack races, tug-of-war, relay games, family competitions. Prizes for winners!'},
+        {t:'4:30 – 6:30 PM',e:'⚽',n:'Free Play',d:'Wind-down with open play, jump house round 2, group photos.'},
+        {t:'7:00 – 8:00 PM',e:'🧹',n:'Wrap-up & Cleanup',d:'JazakAllah Khair for celebrating! Cleanup volunteers — your help means everything.'}
+    ];
+
+    // ============================================================
+    // STATE
+    // ============================================================
+    let portalData = null;
+    const params = new URLSearchParams(location.search);
+    const token = params.get('token');
+
+    // ============================================================
+    // BOOT
+    // ============================================================
     document.addEventListener('DOMContentLoaded', () => {
-        fetchCap(); cd(); sls(); bTL();
-        const k = new URLSearchParams(location.search).get('key');
-        if (k) { document.getElementById('emailIn').value = k; setTimeout(doLookup, 500); }
+        cd(); sls(); bTL(); checkDeadline();
+        fetchCapacity();
+        wireForm();
+
+        if (token) {
+            // Portal view
+            loadPortal();
+        }
+        // else: form view (default, already on)
     });
 
-    function fetchCap() {
-        fetch(API).then(r=>r.json()).then(d=>{
-            if(d.result==='success'){
-                const p=document.getElementById('capPill');
-                p.textContent=d.count>=d.capacity?'✦ EVENT AT FULL CAPACITY ✦':`✦ ${d.count} / ${d.capacity} GUESTS CONFIRMED ✦`;
-            }
-        }).catch(()=>{});
+    // ============================================================
+    // FORM WIRING
+    // ============================================================
+    function wireForm() {
+        // Counters
+        document.querySelectorAll('.counter').forEach(c => {
+            const inp = c.querySelector('input');
+            const min = parseInt(inp.min);
+            const max = parseInt(inp.max);
+            c.querySelectorAll('button').forEach(b => {
+                b.addEventListener('click', () => {
+                    const step = parseInt(b.dataset.step);
+                    let v = parseInt(inp.value)||0;
+                    v = Math.min(max, Math.max(min, v+step));
+                    inp.value = v;
+                });
+            });
+        });
+
+        // Toggle group (Ediya)
+        document.querySelectorAll('.toggle-opt').forEach(opt => {
+            opt.addEventListener('click', () => {
+                opt.parentElement.querySelectorAll('.toggle-opt').forEach(o => o.classList.remove('on'));
+                opt.classList.add('on');
+                opt.querySelector('input').checked = true;
+            });
+        });
+
+        // Food pickup checkbox
+        const fp = document.getElementById('fpRow');
+        const cb = document.getElementById('fFoodPickup');
+        fp.addEventListener('click', e => {
+            // Native label/input handles state — sync class
+            setTimeout(() => fp.classList.toggle('on', cb.checked), 0);
+        });
     }
 
-    function cd() {
-        const end=new Date('2026-03-20T10:00:00-07:00').getTime();
-        function tk(){
-            const t=end-Date.now();
-            if(t<0){document.querySelector('.cds').innerHTML='<div style="font-family:Cormorant Garamond,serif;font-style:italic;color:var(--green);font-size:1.15rem;">🎉 The celebration is here! 🎉</div>';return;}
-            document.getElementById('cD').textContent=String(Math.floor(t/864e5)).padStart(2,'0');
-            document.getElementById('cH').textContent=String(Math.floor((t%864e5)/36e5)).padStart(2,'0');
-            document.getElementById('cM').textContent=String(Math.floor((t%36e5)/6e4)).padStart(2,'0');
-            document.getElementById('cS').textContent=String(Math.floor((t%6e4)/1e3)).padStart(2,'0');
+    function checkDeadline() {
+        const now = Date.now();
+        const dl = new Date(CFG.rsvpDeadline).getTime();
+        const banner = document.getElementById('deadlineBanner');
+        const sub = document.getElementById('deadlineSub');
+        if (now > dl) {
+            banner.classList.add('closed');
+            banner.querySelector('.dl-t').textContent = 'RSVP window closed';
+            sub.textContent = 'Reach out to the organizer if you still wish to attend';
+            document.getElementById('submitBtn').disabled = true;
+            document.getElementById('submitBtn').textContent = 'RSVP Closed';
+        } else {
+            const daysLeft = Math.ceil((dl - now) / 86400000);
+            if (daysLeft <= 0) sub.textContent = 'Closes today!';
+            else if (daysLeft === 1) sub.textContent = '1 day left to confirm';
+            else sub.textContent = `${daysLeft} days left to confirm`;
         }
-        tk(); setInterval(tk,1000);
     }
 
-    function sls(){const s=document.querySelectorAll('.sl');let i=0;setInterval(()=>{s[i].classList.remove('on');i=(i+1)%s.length;s[i].classList.add('on');},4500);}
-
-    function bTL(){
-        const tr=document.getElementById('tlTr'),dt=document.getElementById('tlDt');
-        TL.forEach((it,idx)=>{
-            const c=document.createElement('div');c.className=`tc${it.p?' pray':''}`;c.dataset.i=idx;
-            c.innerHTML=`<div class="tc-em">${it.e}</div><div class="tc-tm">${it.t}</div><div class="tc-tt">${it.n}</div><div class="tc-ln"></div><div class="tc-ds">${it.d}</div>`;
-            tr.appendChild(c);
-            const dd=document.createElement('div');dd.className='tl-di';dd.onclick=()=>sTc(idx);dt.appendChild(dd);
-        });
-        let ticking=false;
-        tr.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(()=>{uCC();ticking=false;});}},{passive:true});
-        setTimeout(()=>sTc(0),150);
-    }
-    function uCC(){const tr=document.getElementById('tlTr'),cs=tr.querySelectorAll('.tc'),ds=document.querySelectorAll('.tl-di');const cx=tr.scrollLeft+tr.clientWidth/2;let ci=0,cd=Infinity;cs.forEach((c,i)=>{const d=Math.abs(cx-c.offsetLeft-c.offsetWidth/2);if(d<cd){cd=d;ci=i;}});cs.forEach((c,i)=>c.classList.toggle('ctr',i===ci));ds.forEach((d,i)=>d.classList.toggle('ac',i===ci));}
-    function sTc(i){const tr=document.getElementById('tlTr'),c=tr.children[i];if(!c)return;tr.scrollTo({left:c.offsetLeft-(tr.clientWidth/2)+(c.offsetWidth/2),behavior:'smooth'});}
-    function sT(d){const tr=document.getElementById('tlTr'),ce=tr.querySelector('.tc.ctr');let i=ce?parseInt(ce.dataset.i):0;i=Math.max(0,Math.min(TL.length-1,i+d));sTc(i);}
-
     // ============================================================
-    // MAIN LOOKUP — Fetches profile + payment board in parallel
+    // FETCH CAPACITY (shown in hero pill)
     // ============================================================
-    function doLookup() {
-        const inp=document.getElementById('emailIn'),er=document.getElementById('lfErr'),em=inp.value.trim().toLowerCase();
-        if(!em){er.textContent='Please enter your email address.';er.style.display='block';return;}
-        er.style.display='none'; ld(true);
-
-        // Fetch both profile and payment board
-        Promise.all([
-            fetch(`${API}?q=getProfile&email=${encodeURIComponent(em)}`).then(r=>r.json()),
-            fetch(`${API}?q=getPaymentBoard&email=${encodeURIComponent(em)}`).then(r=>r.json())
-        ]).then(([profRes, payRes]) => {
-            ld(false);
-
-            if (profRes.result === 'waitlisted') {
-                document.getElementById('wlName').textContent = 'Salam ' + (profRes.name||'') + ',';
-                document.getElementById('wlMsg').style.display = 'block';
-                document.getElementById('lfCard').style.display = 'none';
-                document.getElementById('wlMsg').scrollIntoView({behavior:'smooth',block:'start'});
-                return;
-            }
-
-            if (profRes.result === 'success' && profRes.profile) {
-                prof = profRes.profile;
-                vRoles = profRes.volunteerRoles || [];
-                cList = profRes.contributions || [];
-                waG = profRes.whatsapp || [];
-
-                // Payment data
-                if (payRes.result === 'success') {
-                    payData = payRes;
-                    renderPaymentDashboard();
+    function fetchCapacity() {
+        if (!API || API.indexOf('REPLACE') === 0) {
+            document.getElementById('capPill').textContent = `✦ EID AL-ADHA — ${new Date(CFG.eventDate).toDateString()} ✦`;
+            return;
+        }
+        fetch(`${API}?q=capacity`).then(r=>r.json()).then(d => {
+            if (d.result === 'success') {
+                const p = document.getElementById('capPill');
+                if (d.count >= d.capacity) {
+                    p.textContent = '✦ EVENT AT FULL CAPACITY ✦';
+                } else {
+                    p.textContent = `✦ ${d.count} / ${d.capacity} ATTENDEES CONFIRMED ✦`;
                 }
-
-                rWA(); rProf(); rCB(); rVC();
-                sv('secPay'); sv('secProf'); sv('secCont'); sv('secCost'); sv('secVol');
-                document.getElementById('lfCard').style.display = 'none';
-
-                // Update cost display based on family size
-                if (payData && payData.yourFamily) {
-                    document.getElementById('costAmt').textContent = '$' + payData.yourFamily.contribAmount;
-                }
-
-                document.getElementById('secPay').scrollIntoView({behavior:'smooth',block:'start'});
-            } else if (profRes.result === 'not_found') {
-                er.textContent='No RSVP found with this email. Double-check and try again.'; er.style.display='block';
-            } else {
-                er.textContent='Something went wrong — please try again.'; er.style.display='block';
             }
-        }).catch(() => {
-            ld(false);
-            document.getElementById('lfErr').textContent='Network error — check your connection.';
-            document.getElementById('lfErr').style.display='block';
+        }).catch(()=>{
+            document.getElementById('capPill').textContent = `✦ EID AL-ADHA — MAY 27 ✦`;
         });
     }
-    document.getElementById('emailIn').addEventListener('keydown',e=>{if(e.key==='Enter')doLookup();});
 
     // ============================================================
-    // PAYMENT DASHBOARD RENDERING
+    // SUBMIT RSVP
     // ============================================================
-    function renderPaymentDashboard() {
-        if (!payData || !payData.yourFamily) return;
-        const you = payData.yourFamily;
-        const stats = payData.stats;
-        const families = payData.families;
+    function submitRsvp() {
+        const er = document.getElementById('formErr');
+        er.classList.remove('on');
 
-        // === YOUR PAYMENT STATUS ===
-        const hero = document.getElementById('payHero');
+        const name = document.getElementById('fName').value.trim();
+        const email = document.getElementById('fEmail').value.trim().toLowerCase();
+        const phone = document.getElementById('fPhone').value.trim();
+        const adults = parseInt(document.getElementById('fAdults').value)||0;
+        const kids = parseInt(document.getElementById('fKids').value)||0;
+        const ediya = document.querySelector('input[name="ediya"]:checked')?.value || 'No';
+        const contrib = document.getElementById('fContrib').value;
+        const foodPickup = document.getElementById('fFoodPickup').checked;
+        const notes = document.getElementById('fNotes').value.trim();
+
+        // Validate
+        if (!name) return showErr('Please enter your name.');
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showErr('Please enter a valid email address.');
+        if (adults < 1) return showErr('At least one adult is required.');
+        if (adults + kids === 0) return showErr('Please indicate at least one attendee.');
+
+        const payload = { action:'submitRsvp', name, email, phone, adults, kids, ediya, contribution:contrib, foodPickup:foodPickup?'Yes':'No', notes };
+
+        ld(true);
+        fetch(API, { method:'POST', body: new URLSearchParams(payload) })
+            .then(r=>r.json())
+            .then(d => {
+                ld(false);
+                if (d.result === 'success') {
+                    swap('viewSuccess');
+                    document.getElementById('successName').textContent = `Salam ${name.split(' ')[0]} — Eid Mubarak!`;
+                    document.getElementById('successEmail').textContent = `📧 ${email}`;
+                    window.scrollTo({top:0, behavior:'smooth'});
+                } else if (d.result === 'waitlisted') {
+                    swap('viewWaitlist');
+                    document.getElementById('wlName').textContent = `Salam ${name},`;
+                    window.scrollTo({top:0, behavior:'smooth'});
+                } else if (d.result === 'duplicate') {
+                    showErr('This email is already RSVPed. Check your inbox for the confirmation link.');
+                } else if (d.result === 'closed') {
+                    showErr('RSVP window has closed. Please reach out to the organizer.');
+                } else {
+                    showErr(d.message || 'Something went wrong — please try again.');
+                }
+            }).catch(() => {
+                ld(false);
+                showErr('Network error — please check your connection and retry.');
+            });
+    }
+
+    function showErr(msg) {
+        const er = document.getElementById('formErr');
+        er.textContent = msg;
+        er.classList.add('on');
+        er.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+
+    function swap(id) {
+        document.querySelectorAll('.view').forEach(v => v.classList.remove('on'));
+        document.getElementById(id).classList.add('on');
+    }
+
+    // ============================================================
+    // PORTAL — LOAD & RENDER
+    // ============================================================
+    function loadPortal() {
+        swap('viewPortal');
+        ld(true);
+        fetch(`${API}?q=getProfile&token=${encodeURIComponent(token)}`)
+            .then(r=>r.json())
+            .then(d => {
+                ld(false);
+                if (d.result === 'success') {
+                    portalData = d;
+                    renderPortal();
+                } else if (d.result === 'waitlisted') {
+                    swap('viewWaitlist');
+                    document.getElementById('wlName').textContent = `Salam ${d.name || ''},`;
+                } else if (d.result === 'not_found') {
+                    swap('viewRsvp');
+                    toast('Link not recognized — please RSVP below.');
+                } else {
+                    toast('Could not load your confirmation. Please try again.');
+                }
+            }).catch(()=>{
+                ld(false);
+                toast('Network error — please reload.');
+            });
+    }
+
+    function renderPortal() {
+        if (!portalData || !portalData.yourFamily) return;
+        renderPayment();
+        renderAttendeeCard();
+        renderCommProgress();
+        renderEdiya();
+        renderProfile();
+        renderContribBoard();
+        renderVolunteers();
+        renderWhatsApp();
+    }
+
+    function renderPayment() {
+        const you = portalData.yourFamily;
         const isPaid = you.contribPaid;
+        const hero = document.getElementById('payHero');
         hero.innerHTML = `
             <div class="pay-hero-top">
-                <div class="pay-greeting">Salam ${you.name}</div>
-                <div class="pay-subtitle">Your payment status for the Eid celebration</div>
+                <div class="pay-greeting">Salam ${esc(you.name)}</div>
+                <div class="pay-subtitle">Your Eid Al-Adha celebration dashboard</div>
             </div>
             <div class="pay-hero-body">
                 <div class="pay-your-status ${isPaid ? 'paid' : 'unpaid'}">
                     <div class="pay-status-icon">${isPaid ? '✅' : '💳'}</div>
-                    <div class="pay-status-label ${isPaid ? 'paid-l' : 'unpaid-l'}">${isPaid ? 'Payment Received' : 'Event Contribution Due'}</div>
-                    <div class="pay-status-amt ${isPaid ? 'paid-a' : 'unpaid-a'}">$${you.contribAmount}</div>
-                    <div class="pay-status-note">${isPaid
-                        ? 'JazakAllah Khair — you\'re all set!'
-                        : (you.contribAmount === 85 ? 'Family rate (2+ guests)' : 'Single attendee rate')}</div>
+                    <div class="pay-status-label ${isPaid ? 'paid-l' : 'unpaid-l'}">${isPaid ? 'Payment Confirmed' : 'Contribution Due'}</div>
+                    <div class="pay-status-amt ${isPaid ? 'paid-a' : 'unpaid-a'}">$${CFG.familyContrib}</div>
+                    <div class="pay-status-note">${isPaid ? 'JazakAllah Khair — your spot is locked in!' : 'Send $120 to confirm your family\'s spot'}</div>
                 </div>
                 ${isPaid
-                    ? `<button class="pay-cta already-paid" disabled>✅ Payment Confirmed — JazakAllah Khair!</button>`
-                    : `<button class="pay-cta mark-paid" onclick="markContribPaid()">✓ I've Sent My Payment — Mark as Paid</button>
+                    ? `<button class="pay-cta already-paid" disabled>✅ Confirmed — JazakAllah Khair!</button>`
+                    : `<button class="pay-cta mark-paid" onclick="markContribPaid()">✓ I've Sent $120 — Mark as Paid</button>
                        <div class="pay-method-hint">
-                           Send via <strong>Venmo</strong> or <strong>Zelle</strong> to the organizer, then tap above to confirm.<br>
-                           <span style="color:var(--gold);font-weight:600;">Only ${stats.totalFamilies - stats.paidCount} ${stats.totalFamilies - stats.paidCount === 1 ? 'family' : 'families'} remaining!</span>
+                           Send via <strong>Venmo</strong> or <strong>Zelle</strong> to the event organizer, then tap above to confirm.
                        </div>`
                 }
             </div>`;
+    }
 
-        // === COMMUNITY PROGRESS ===
+    function renderAttendeeCard() {
+        const stats = portalData.stats;
+        const card = document.getElementById('attnCard');
+        const pct = Math.min(100, Math.round((stats.totalAttendees / CFG.capacity) * 100));
+        card.innerHTML = `
+            <div class="attn-top">
+                <div>
+                    <div class="attn-lab">Total Attendees</div>
+                    <div class="attn-num">${stats.totalAttendees}<span style="font-size:1rem;opacity:0.6;"> / ${CFG.capacity}</span></div>
+                    <div class="attn-sub">${stats.totalFamilies} families confirmed • ${stats.totalKids} kids</div>
+                </div>
+                <div class="attn-meta">
+                    <div class="attn-chev">👀 Tap to see who's coming</div>
+                </div>
+            </div>
+            <div class="attn-bar"><div class="attn-bar-fill" style="width:${pct}%"></div></div>`;
+    }
+
+    function toggleAttnList() {
+        const wrap = document.getElementById('attnListWrap');
+        if (wrap.classList.contains('open')) {
+            wrap.classList.remove('open');
+            return;
+        }
+        // Build list
+        const fams = portalData.families.slice();
+        fams.sort((a,b) => (b.isYou - a.isYou) || a.name.localeCompare(b.name));
+        wrap.innerHTML = `
+            <div class="attn-list-head">
+                <h4>Confirmed Families</h4>
+                <span class="lh-cnt">${fams.length} families • ${portalData.stats.totalAttendees} people</span>
+            </div>
+            ${fams.map(f => `
+                <div class="attn-row${f.isYou ? ' you' : ''}">
+                    <div class="ar-av">${esc((f.name||'?')[0].toUpperCase())}</div>
+                    <div class="ar-name">${esc(f.name)}${f.isYou ? ' (You)' : ''}</div>
+                    <div class="ar-cnt">${f.adults}A · ${f.kids}K</div>
+                    <div class="ar-paid ${f.contribPaid ? 'ok' : 'no'}">${f.contribPaid ? '✓ paid' : 'pending'}</div>
+                </div>`).join('')}`;
+        wrap.classList.add('open');
+    }
+
+    function renderCommProgress() {
+        const stats = portalData.stats;
         const cp = document.getElementById('commProgress');
         const pct = stats.totalFamilies > 0 ? Math.round((stats.paidCount / stats.totalFamilies) * 100) : 0;
-        const paidFams = families.filter(f => f.contribPaid);
-        const unpaidFams = families.filter(f => !f.contribPaid);
-
-        // Sort: you first in each group
-        paidFams.sort((a,b) => b.isYou - a.isYou);
-        unpaidFams.sort((a,b) => b.isYou - a.isYou);
+        const fams = portalData.families.slice();
+        const paid = fams.filter(f => f.contribPaid);
+        const unpaid = fams.filter(f => !f.contribPaid);
+        paid.sort((a,b) => b.isYou - a.isYou);
+        unpaid.sort((a,b) => b.isYou - a.isYou);
 
         cp.innerHTML = `
             <div class="cp-header">
-                <h4>Community Progress</h4>
+                <h4>Community Payment Progress</h4>
                 <div class="cp-stat">${stats.paidCount} / ${stats.totalFamilies} paid</div>
             </div>
-            <div class="cp-bar-wrap">
-                <div class="cp-bar-fill" style="width:${pct}%"></div>
-            </div>
+            <div class="cp-bar-wrap"><div class="cp-bar-fill" style="width:${pct}%"></div></div>
             <div class="cp-amounts">
                 <span><strong>$${stats.paidContrib}</strong> collected</span>
-                <span><strong>$${stats.totalContrib}</strong> total needed</span>
+                <span><strong>$${stats.totalContrib}</strong> total expected</span>
             </div>
             <div class="fam-list">
-                ${paidFams.map(f => `
-                    <div class="fam-row paid-row${f.isYou ? ' you-row' : ''}">
-                        <span class="fam-icon">✅</span>
-                        <span class="fam-name">${f.name}${f.isYou ? ' (You)' : ''}</span>
-                        <span class="fam-badge ${f.isYou ? 'badge-you' : 'badge-paid'}">${f.isYou ? '⭐ You' : 'Paid'}</span>
-                        <span class="fam-amt">$${f.contribAmount}</span>
-                    </div>`).join('')}
-                ${unpaidFams.map(f => `
-                    <div class="fam-row unpaid-row${f.isYou ? ' you-row' : ''}">
-                        <span class="fam-icon">⏳</span>
-                        <span class="fam-name">${f.name}${f.isYou ? ' (You)' : ''}</span>
-                        <span class="fam-badge ${f.isYou ? 'badge-you' : 'badge-unpaid'}">${f.isYou ? '⭐ You' : 'Pending'}</span>
-                        <span class="fam-amt">$${f.contribAmount}</span>
-                    </div>`).join('')}
+                ${paid.map(f => famRow(f, true)).join('')}
+                ${unpaid.map(f => famRow(f, false)).join('')}
             </div>`;
+    }
+    function famRow(f, isPaid) {
+        return `
+            <div class="fam-row ${isPaid?'paid-row':'unpaid-row'}${f.isYou?' you-row':''}">
+                <span class="fam-icon">${isPaid?'✅':'⏳'}</span>
+                <span class="fam-name">${esc(f.name)}${f.isYou?' (You)':''}</span>
+                <span class="fam-badge ${f.isYou?'badge-you':(isPaid?'badge-paid':'badge-unpaid')}">${f.isYou?'⭐ You':(isPaid?'Paid':'Pending')}</span>
+                <span class="fam-amt">$${CFG.familyContrib}</span>
+            </div>`;
+    }
 
-        // === EIDEYAA SECTION ===
-        if (you.eideyaaOptIn) {
-            const eidFams = families.filter(f => f.eideyaaOptIn);
-            const eidPaidFams = eidFams.filter(f => f.eideyaaPaid);
-            const eidPct = eidFams.length > 0 ? Math.round((eidPaidFams.length / eidFams.length) * 100) : 0;
+    function renderEdiya() {
+        const you = portalData.yourFamily;
+        if (!you.ediyaOptIn) return;
+        document.getElementById('secEdiya').classList.add('vis');
 
-            document.getElementById('secEideyaa').classList.add('vis');
-            const sec = document.getElementById('eidSection');
-            sec.innerHTML = `
-                <div class="eid-header">
-                    <h4>💵 Eideyaa Pool — $65 per family</h4>
-                    <p>Every child at the celebration receives a $1 bill for each family! Families who opted into Eideyaa contribute $65 each to make this happens.</p>
-                </div>
-                <div class="eid-body">
-                    <div class="eid-your-card ${you.eideyaaPaid ? 'eid-paid' : 'eid-unpaid'}">
-                        <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:1.2px;font-weight:700;color:${you.eideyaaPaid?'var(--success)':'#92600A'}">
-                            ${you.eideyaaPaid ? '✓ Eideyaa Dues Completed' : 'Your Eideyaa Dues'}
-                        </div>
-                        <div class="eid-your-amt ${you.eideyaaPaid ? 'e-paid' : 'e-unpaid'}">$65</div>
-                        <div style="font-size:0.78rem;color:var(--text-muted);">
-                            ${you.eideyaaPaid ? 'JazakAllah Khair — the kids will love it!' : 'Help put smiles on every child\'s face'}
-                        </div>
-                    </div>
+        const ediyaFams = portalData.families.filter(f => f.ediyaOptIn);
+        const totalKids = portalData.stats.totalKids;
+        const ediyaPerFamily = portalData.stats.ediyaPerFamily; // computed by backend (or null if TBD)
 
-                    <div class="eid-progress">
-                        <div class="eid-prog-bar"><div class="eid-prog-fill" style="width:${eidPct}%"></div></div>
-                        <div class="eid-prog-label">${eidPaidFams.length} / ${eidFams.length} families</div>
-                    </div>
+        const sec = document.getElementById('ediyaSection');
+        const tbd = !ediyaPerFamily;
+        const amtTxt = tbd ? 'TBD' : `$${ediyaPerFamily}`;
 
-                    ${you.eideyaaPaid
-                        ? `<button class="eid-cta eid-done" disabled>✅ Eideyaa Payment Confirmed</button>`
-                        : `<button class="eid-cta" onclick="markEideyaaPaid()">✓ I've Sent $65 — Mark Eideyaa as Paid</button>`
-                    }
-
-                    <div class="eid-fam-list" style="margin-top:16px;">
-                        ${eidFams.map(f => `
-                            <span class="eid-chip ${f.isYou ? 'ec-you' : (f.eideyaaPaid ? 'ec-paid' : 'ec-unpaid')}">
-                                ${f.eideyaaPaid ? '✅' : '⏳'} ${f.name}${f.isYou ? ' (You)' : ''}
-                            </span>`).join('')}
-                    </div>
+        let statusCard;
+        if (tbd) {
+            statusCard = `
+                <div class="eid-your-card eid-tbd">
+                    <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:1.2px;font-weight:700;color:var(--text-mid)">Ediya Pool — Per Family</div>
+                    <div class="eid-your-amt e-tbd">TBD</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);">Final amount set once kid count is locked — currently ${totalKids} kid${totalKids===1?'':'s'} expected.</div>
+                </div>`;
+        } else if (you.ediyaPaid) {
+            statusCard = `
+                <div class="eid-your-card eid-paid">
+                    <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:1.2px;font-weight:700;color:var(--success)">✓ Ediya Dues Confirmed</div>
+                    <div class="eid-your-amt e-paid">$${ediyaPerFamily}</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);">JazakAllah Khair — every child gets a smile!</div>
+                </div>`;
+        } else {
+            statusCard = `
+                <div class="eid-your-card eid-unpaid">
+                    <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:1.2px;font-weight:700;color:#92600A">Your Ediya Dues</div>
+                    <div class="eid-your-amt e-unpaid">$${ediyaPerFamily}</div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);">Help put $1 in every child's hand</div>
                 </div>`;
         }
+
+        const paidFams = ediyaFams.filter(f => f.ediyaPaid);
+        const ediyaPct = ediyaFams.length ? Math.round(paidFams.length / ediyaFams.length * 100) : 0;
+
+        sec.innerHTML = `
+            <div class="eid-header">
+                <h4>💵 Ediya Pool — ${amtTxt} per family</h4>
+                <p>Every child at the celebration receives a $1 bill from each participating family. ${tbd ? 'Final amount will be locked once we know the final kid count.' : ''}</p>
+            </div>
+            <div class="eid-body">
+                ${statusCard}
+                ${!tbd ? `
+                    <div class="eid-progress">
+                        <div class="eid-prog-bar"><div class="eid-prog-fill" style="width:${ediyaPct}%"></div></div>
+                        <div class="eid-prog-label">${paidFams.length} / ${ediyaFams.length} families</div>
+                    </div>
+                    ${you.ediyaPaid
+                        ? `<button class="eid-cta eid-done" disabled>✅ Ediya Payment Confirmed</button>`
+                        : `<button class="eid-cta" onclick="markEdiyaPaid()">✓ I've Sent $${ediyaPerFamily} — Mark Ediya as Paid</button>`
+                    }
+                ` : ''}
+                <div class="eid-fam-list" style="margin-top:16px;">
+                    ${ediyaFams.map(f => `
+                        <span class="eid-chip ${f.isYou ? 'ec-you' : (f.ediyaPaid ? 'ec-paid' : 'ec-unpaid')}">
+                            ${f.ediyaPaid ? '✅' : '⏳'} ${esc(f.name)}${f.isYou ? ' (You)' : ''}
+                        </span>`).join('')}
+                </div>
+            </div>`;
     }
 
-    // ============================================================
-    // PAYMENT ACTIONS
-    // ============================================================
-    function markContribPaid() {
-        if (!payData || !payData.yourFamily || payData.yourFamily.contribPaid) return;
-        if (!confirm(`Confirm: You've sent $${payData.yourFamily.contribAmount} for the event contribution?`)) return;
-        ld(true);
-        const em = document.getElementById('emailIn').value.trim().toLowerCase();
-        fetch(API, {
-            method:'POST',
-            body: new URLSearchParams({ action:'markContributionPaid', email:em })
-        }).then(r=>r.json()).then(d=>{
-            ld(false);
-            if(d.result==='success'){
-                payData.yourFamily.contribPaid = true;
-                payData.stats.paidCount++;
-                payData.stats.paidContrib += payData.yourFamily.contribAmount;
-                payData.families.forEach(f => { if(f.isYou) f.contribPaid = true; });
-                renderPaymentDashboard();
-                toast('✅ JazakAllah Khair! Payment confirmed — email sent.');
-            } else {
-                toast('Could not update — please try again.');
-            }
-        }).catch(()=>{ ld(false); toast('Network error.'); });
+    function renderProfile() {
+        const p = portalData.yourFamily;
+        const c = document.getElementById('profCard');
+        const vl = p.contribution && p.contribution !== 'None' && CM[p.contribution]
+            ? `${CM[p.contribution].e} ${CM[p.contribution].l}`
+            : (p.contribution === 'None' || !p.contribution ? 'Nothing yet — pick below!' : p.contribution);
+        c.innerHTML = `
+            <div class="prof-top">
+                <div class="prof-av">${esc((p.name||'?')[0].toUpperCase())}</div>
+                <div><div class="prof-nm">${esc(p.name)}</div></div>
+            </div>
+            <div class="prof-g">
+                <div class="pc"><div class="lb">Adults</div><div class="vl">${p.adults||0}</div></div>
+                <div class="pc"><div class="lb">Children</div><div class="vl">${p.kids||0}</div></div>
+                <div class="pc"><div class="lb">Total</div><div class="vl">${(p.adults||0)+(p.kids||0)} attendees</div></div>
+                <div class="pc"><div class="lb">Ediya</div><div class="vl">${p.ediyaOptIn ? 'Yes' : 'No'}</div></div>
+                <div class="pc w"><div class="lb">Bringing</div><div class="vl">${vl}</div></div>
+                ${p.notes ? `<div class="pc w"><div class="lb">Notes</div><div class="vl">${esc(p.notes)}</div></div>` : ''}
+            </div>`;
+        if (p.contribution) document.getElementById('newCS').value = p.contribution;
     }
 
-    function markEideyaaPaid() {
-        if (!payData || !payData.yourFamily || payData.yourFamily.eideyaaPaid) return;
-        if (!confirm("Confirm: You've sent $65 for the Eideyaa pool?")) return;
-        ld(true);
-        const em = document.getElementById('emailIn').value.trim().toLowerCase();
-        fetch(API, {
-            method:'POST',
-            body: new URLSearchParams({ action:'markEideyaaPaid', email:em })
-        }).then(r=>r.json()).then(d=>{
-            ld(false);
-            if(d.result==='success'){
-                payData.yourFamily.eideyaaPaid = true;
-                payData.stats.eideyaaPaidCount++;
-                payData.families.forEach(f => { if(f.isYou) f.eideyaaPaid = true; });
-                renderPaymentDashboard();
-                toast('✅ Eideyaa dues confirmed — the kids will be thrilled!');
-            } else {
-                toast('Could not update — please try again.');
-            }
-        }).catch(()=>{ ld(false); toast('Network error.'); });
-    }
-
-    // ============================================================
-    // EXISTING RENDER FUNCTIONS (profile, contributions, volunteers, whatsapp)
-    // ============================================================
-    function rWA(){
-        if(!waG||!waG.length)return;
-        const bx=document.getElementById('waBox'),ls=document.getElementById('waLs');
-        ls.innerHTML='';
-        waG.forEach(g=>{const a=document.createElement('a');a.href=g.link;a.target='_blank';a.rel='noopener';a.className='wa-c';a.innerHTML=`<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>${g.name}`;ls.appendChild(a);});
-        bx.classList.add('vis');bx.style.display='block';
-    }
-
-    function rProf(){
-        const p=prof,c=document.getElementById('profCard');
-        const vl=CM[p.volunteer]?`${CM[p.volunteer].e} ${CM[p.volunteer].l}`:(p.volunteer==='None'?'Nothing yet — choose below!':p.volunteer||'—');
-        c.innerHTML=`
-        <div class="prof-top"><div class="prof-av">${(p.name||'?')[0].toUpperCase()}</div><div><div class="prof-nm">${p.name}</div></div></div>
-        <div class="prof-g">
-            <div class="pc"><div class="lb">Adults</div><div class="vl">${p.adults||0}</div></div>
-            <div class="pc"><div class="lb">Children</div><div class="vl">${p.kids||0}</div></div>
-            <div class="pc"><div class="lb">Arrival</div><div class="vl">${p.arrival||'—'}</div></div>
-            <div class="pc"><div class="lb">Eideyaa</div><div class="vl">${p.eideyaa||'No'}</div></div>
-            <div class="pc w"><div class="lb">Bringing / Volunteering</div><div class="vl">${vl}</div></div>
-            ${p.notes?`<div class="pc w"><div class="lb">Notes</div><div class="vl">${p.notes}</div></div>`:''}
-        </div>`;
-    }
-
-    function rCB(){
-        const bd=document.getElementById('cBoard');bd.innerHTML='';
-        const gr={};
-        cList.forEach(c=>{if(!c.volunteer||c.volunteer==='None')return;if(!gr[c.volunteer])gr[c.volunteer]=[];gr[c.volunteer].push(c);});
-        const keys=Object.keys(gr);
-        if(!keys.length){bd.innerHTML='<div style="text-align:center;color:var(--text-muted);padding:24px;font-size:0.9rem;">No contributions yet — you could be the first!</div>';return;}
-        keys.forEach(k=>{
-            const fams=gr[k],m=CM[k]||{e:'✨',l:k},you=fams.some(f=>f.isYou);
-            const el=document.createElement('div');el.className='cg';
-            el.innerHTML=`<div class="cg-h"><div class="cg-e">${m.e}</div><div class="cg-i"><div class="cg-n">${m.l}</div><div class="cg-ct">${fams.length} ${fams.length===1?'family':'families'} signed up</div></div>${you?'<div class="cg-u">✓ You</div>':''}</div>
-            <div class="cg-f">${fams.map(f=>`<span class="cf${f.isYou?' u':''}">${f.name}</span>`).join('')}</div>`;
+    function renderContribBoard() {
+        const bd = document.getElementById('cBoard');
+        bd.innerHTML = '';
+        const gr = {};
+        portalData.families.forEach(f => {
+            if (!f.contribution || f.contribution === 'None') return;
+            if (!gr[f.contribution]) gr[f.contribution] = [];
+            gr[f.contribution].push(f);
+        });
+        const keys = Object.keys(gr);
+        if (!keys.length) {
+            bd.innerHTML = '<div style="text-align:center;color:var(--text-muted);padding:24px;font-size:0.9rem;">No contributions yet — you could be the first!</div>';
+            return;
+        }
+        keys.forEach(k => {
+            const fams = gr[k], m = CM[k] || {e:'✨', l:k}, you = fams.some(f => f.isYou);
+            const el = document.createElement('div');
+            el.className = 'cg';
+            el.innerHTML = `
+                <div class="cg-h">
+                    <div class="cg-e">${m.e}</div>
+                    <div class="cg-i">
+                        <div class="cg-n">${m.l}</div>
+                        <div class="cg-ct">${fams.length} ${fams.length===1?'family':'families'} signed up</div>
+                    </div>
+                    ${you ? '<div class="cg-u">✓ You</div>' : ''}
+                </div>
+                <div class="cg-f">${fams.map(f => `<span class="cf${f.isYou?' u':''}">${esc(f.name)}</span>`).join('')}</div>`;
             bd.appendChild(el);
         });
-        if(prof&&prof.volunteer)document.getElementById('newCS').value=prof.volunteer;
     }
 
-    function toggleCC(){document.getElementById('ccWrap').classList.toggle('open');}
-    function saveCC(){
-        if(!prof)return;const v=document.getElementById('newCS').value;ld(true);
-        fetch(API,{method:'POST',body:new URLSearchParams({action:'updateContribution',email:prof.emailKey||document.getElementById('emailIn').value.trim().toLowerCase(),newVolunteer:v})})
-        .then(r=>r.json()).then(d=>{ld(false);if(d.result==='success'){prof.volunteer=v;cList=d.contributions||cList;rProf();rCB();toggleCC();toast('✅ Updated! Confirmation email sent.');}else toast('Could not update — please try again.');})
-        .catch(()=>{ld(false);toast('Network error.');});
-    }
-
-    function rVC(){
-        const w=document.getElementById('vCards');w.innerHTML='';
-        VD.forEach(df=>{
-            const sg=vRoles.filter(v=>v.roleId===df.id),ct=sg.length,fl=ct>=df.nd,me=sg.some(v=>v.isYou);
-            const c=document.createElement('div');c.className=`vc${me?' sg':''}${fl&&!me?' fl':''}`;
-            let btn;if(me)btn=`<button class="bv on" onclick="tV('${df.id}',false)">✓ Signed Up</button>`;else if(fl)btn=`<button class="bv" disabled>Fully Covered</button>`;else btn=`<button class="bv" onclick="tV('${df.id}',true)">Count Me In</button>`;
-            c.innerHTML=`<div class="vt"><div class="vt-e">${df.e}</div><div class="vt-i"><div class="vt-n">${df.n}</div><div class="vt-t">${df.t}</div></div></div>
-            <div class="vt-d">${df.d}</div>
-            <div class="vp"><div class="vp-bg"><div class="vp-f${fl?' ok':''}" style="width:${Math.min(100,(ct/df.nd)*100)}%"></div></div><div class="vp-l">${ct} / ${df.nd} ${df.u}</div></div>
-            ${sg.length?`<div class="vch">${sg.map(v=>`<span class="vci${v.isYou?' u':''}">${v.name}</span>`).join('')}</div>`:''}
-            <div class="va">${btn}</div>`;
+    function renderVolunteers() {
+        const w = document.getElementById('vCards');
+        w.innerHTML = '';
+        VD.forEach(df => {
+            const sg = (portalData.volunteers||[]).filter(v => v.roleId === df.id);
+            const ct = sg.length, fl = ct >= df.nd, me = sg.some(v => v.isYou);
+            const c = document.createElement('div');
+            c.className = `vc${me?' sg':''}${fl && !me?' fl':''}${df.urgent && !fl?' urgent':''}`;
+            let btn;
+            if (me) btn = `<button class="bv on" onclick="toggleVolunteer('${df.id}', false)">✓ Signed Up</button>`;
+            else if (fl) btn = `<button class="bv" disabled>Fully Covered</button>`;
+            else btn = `<button class="bv" onclick="toggleVolunteer('${df.id}', true)">Count Me In</button>`;
+            c.innerHTML = `
+                <div class="vt">
+                    <div class="vt-e">${df.e}</div>
+                    <div class="vt-i">
+                        <div class="vt-n">${df.n} ${df.urgent && !fl ? '<span class="vt-badge">Needed</span>' : ''}</div>
+                        <div class="vt-t">${df.t}</div>
+                    </div>
+                </div>
+                <div class="vt-d">${df.d}</div>
+                <div class="vp">
+                    <div class="vp-bg"><div class="vp-f${fl?' ok':''}" style="width:${Math.min(100,(ct/df.nd)*100)}%"></div></div>
+                    <div class="vp-l">${ct} / ${df.nd} ${df.u}</div>
+                </div>
+                ${sg.length ? `<div class="vch">${sg.map(v => `<span class="vci${v.isYou?' u':''}">${esc(v.name)}</span>`).join('')}</div>` : ''}
+                <div class="va">${btn}</div>`;
             w.appendChild(c);
         });
-        const oa=document.createElement('div');oa.className='oa';
-        oa.innerHTML=`<div style="font-size:2rem;margin-bottom:6px;">✨</div><div class="vt-n" style="font-size:1.15rem;margin-bottom:4px;">Got a Fun Idea? Run an Activity!</div><div class="vt-d">Have tools for a kids' activity? Bring them and manage a station!</div>
-        <div class="oa-ideas"><span class="oac">🍬 Cotton Candy</span><span class="oac">🍡 Marshmallow Roast</span><span class="oac">🎈 Balloon Art</span><span class="oac">🫧 Bubble Station</span></div>
-        <button class="boa" onclick="oA()">I've Got Something!</button>`;
-        w.appendChild(oa);
     }
 
-    function tV(id,on){
-        if(!prof)return;ld(true);
-        const em=prof.emailKey||document.getElementById('emailIn').value.trim().toLowerCase();
-        fetch(API,{method:'POST',body:new URLSearchParams({action:'updateVolunteerRole',email:em,roleId:id,signUp:on?'yes':'no'})})
-        .then(r=>r.json()).then(d=>{ld(false);if(d.result==='success'){vRoles=d.volunteerRoles||vRoles;rVC();toast(on?'🎉 JazakAllah Khair! You\'re signed up!':'Removed — thank you anyway!');}else toast('Error — please retry.');})
-        .catch(()=>{ld(false);toast('Network error.');});
-    }
-    function oA(){
-        if(!prof){toast('Look up your RSVP first.');return;}
-        const a=prompt('What activity will you bring? (e.g. "Cotton Candy Machine")');if(!a)return;ld(true);
-        const em=prof.emailKey||document.getElementById('emailIn').value.trim().toLowerCase();
-        fetch(API,{method:'POST',body:new URLSearchParams({action:'updateVolunteerRole',email:em,roleId:'open_activity',signUp:'yes',activityNote:a})})
-        .then(r=>r.json()).then(d=>{ld(false);toast(d.result==='success'?`🎉 "${a}" added! The kids will love it!`:'Error — please retry.');})
-        .catch(()=>{ld(false);toast('Network error.');});
+    function renderWhatsApp() {
+        const wa = portalData.whatsapp || [];
+        if (!wa.length) return;
+        const ls = document.getElementById('waLs');
+        ls.innerHTML = '';
+        wa.forEach(g => {
+            const a = document.createElement('a');
+            a.href = g.link; a.target = '_blank'; a.rel = 'noopener';
+            a.className = 'wa-c';
+            a.innerHTML = `<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>${esc(g.name)}`;
+            ls.appendChild(a);
+        });
+        document.getElementById('waBox').style.display = 'block';
     }
 
-    function sv(id){document.getElementById(id).classList.add('vis');}
-    function ld(on){document.getElementById('ld').classList.toggle('on',on);}
-    function toast(m){const t=document.getElementById('tt');t.textContent=m;t.classList.add('on');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('on'),4000);}
+    // ============================================================
+    // PORTAL ACTIONS
+    // ============================================================
+    function markContribPaid() {
+        if (!portalData || portalData.yourFamily.contribPaid) return;
+        if (!confirm(`Confirm: you've sent $${CFG.familyContrib} for your family's contribution?`)) return;
+        ld(true);
+        fetch(API, { method:'POST', body:new URLSearchParams({action:'markContribPaid', token}) })
+            .then(r=>r.json()).then(d => {
+                ld(false);
+                if (d.result === 'success') {
+                    portalData = d;
+                    renderPortal();
+                    toast('✅ JazakAllah Khair! Payment confirmed.');
+                } else toast('Could not update — please retry.');
+            }).catch(()=>{ ld(false); toast('Network error.'); });
+    }
+
+    function markEdiyaPaid() {
+        if (!portalData || portalData.yourFamily.ediyaPaid) return;
+        const amt = portalData.stats.ediyaPerFamily;
+        if (!amt) return toast('Ediya amount is not yet locked.');
+        if (!confirm(`Confirm: you've sent $${amt} for the Ediya pool?`)) return;
+        ld(true);
+        fetch(API, { method:'POST', body:new URLSearchParams({action:'markEdiyaPaid', token}) })
+            .then(r=>r.json()).then(d => {
+                ld(false);
+                if (d.result === 'success') {
+                    portalData = d;
+                    renderPortal();
+                    toast('✅ Ediya confirmed — the kids will be thrilled!');
+                } else toast('Could not update — please retry.');
+            }).catch(()=>{ ld(false); toast('Network error.'); });
+    }
+
+    function toggleCC() { document.getElementById('ccWrap').classList.toggle('open'); }
+    function saveCC() {
+        const v = document.getElementById('newCS').value;
+        ld(true);
+        fetch(API, { method:'POST', body:new URLSearchParams({action:'updateContribution', token, contribution:v}) })
+            .then(r=>r.json()).then(d => {
+                ld(false);
+                if (d.result === 'success') {
+                    portalData = d;
+                    renderPortal();
+                    toggleCC();
+                    toast('✅ Updated!');
+                } else toast('Could not update.');
+            }).catch(()=>{ ld(false); toast('Network error.'); });
+    }
+
+    function toggleVolunteer(roleId, signUp) {
+        ld(true);
+        fetch(API, { method:'POST', body:new URLSearchParams({action:'updateVolunteer', token, roleId, signUp:signUp?'yes':'no'}) })
+            .then(r=>r.json()).then(d => {
+                ld(false);
+                if (d.result === 'success') {
+                    portalData = d;
+                    renderPortal();
+                    toast(signUp?'🎉 JazakAllah Khair! You\'re signed up!':'Removed — thank you anyway!');
+                } else toast('Could not update.');
+            }).catch(()=>{ ld(false); toast('Network error.'); });
+    }
+
+    // ============================================================
+    // UTILITIES
+    // ============================================================
+    function cd() {
+        const end = new Date(CFG.eventDate).getTime();
+        function tk() {
+            const t = end - Date.now();
+            if (t < 0) { document.querySelector('.cds').innerHTML = '<div style="font-family:Cormorant Garamond,serif;font-style:italic;color:var(--green);font-size:1.15rem;">🎉 The celebration is here! 🎉</div>'; return; }
+            document.getElementById('cD').textContent = String(Math.floor(t/864e5)).padStart(2,'0');
+            document.getElementById('cH').textContent = String(Math.floor((t%864e5)/36e5)).padStart(2,'0');
+            document.getElementById('cM').textContent = String(Math.floor((t%36e5)/6e4)).padStart(2,'0');
+            document.getElementById('cS').textContent = String(Math.floor((t%6e4)/1e3)).padStart(2,'0');
+        }
+        tk(); setInterval(tk, 1000);
+    }
+
+    function sls() { const s = document.querySelectorAll('.sl'); let i = 0; setInterval(()=>{ s[i].classList.remove('on'); i=(i+1)%s.length; s[i].classList.add('on'); }, 4500); }
+
+    function bTL() {
+        const tr = document.getElementById('tlTr'), dt = document.getElementById('tlDt');
+        TL.forEach((it,idx) => {
+            const c = document.createElement('div');
+            c.className = 'tc'; c.dataset.i = idx;
+            c.innerHTML = `<div class="tc-em">${it.e}</div><div class="tc-tm">${it.t}</div><div class="tc-tt">${it.n}</div><div class="tc-ln"></div><div class="tc-ds">${it.d}</div>`;
+            tr.appendChild(c);
+            const dd = document.createElement('div'); dd.className = 'tl-di'; dd.onclick = () => sTc(idx); dt.appendChild(dd);
+        });
+        let ticking = false;
+        tr.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { uCC(); ticking = false; }); } }, { passive: true });
+        setTimeout(() => sTc(0), 150);
+    }
+    function uCC() { const tr=document.getElementById('tlTr'),cs=tr.querySelectorAll('.tc'),ds=document.querySelectorAll('.tl-di'); const cx=tr.scrollLeft+tr.clientWidth/2; let ci=0,cd=Infinity; cs.forEach((c,i)=>{const d=Math.abs(cx-c.offsetLeft-c.offsetWidth/2); if(d<cd){cd=d;ci=i;}}); cs.forEach((c,i)=>c.classList.toggle('ctr',i===ci)); ds.forEach((d,i)=>d.classList.toggle('ac',i===ci)); }
+    function sTc(i) { const tr=document.getElementById('tlTr'),c=tr.children[i]; if(!c)return; tr.scrollTo({left:c.offsetLeft-(tr.clientWidth/2)+(c.offsetWidth/2),behavior:'smooth'}); }
+    function sT(d) { const tr=document.getElementById('tlTr'),ce=tr.querySelector('.tc.ctr'); let i=ce?parseInt(ce.dataset.i):0; i=Math.max(0,Math.min(TL.length-1,i+d)); sTc(i); }
+
+    function ld(on) { document.getElementById('ld').classList.toggle('on', on); }
+    function toast(m) { const t=document.getElementById('tt'); t.textContent=m; t.classList.add('on'); clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove('on'),4000); }
+    function esc(s) { return String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]); }
     </script>
 </body>
 </html>
