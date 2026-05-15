@@ -1348,6 +1348,7 @@
         const stats = portalData.stats;
         const cp = document.getElementById('commProgress');
         const pct = stats.totalFamilies > 0 ? Math.round((stats.paidCount / stats.totalFamilies) * 100) : 0;
+        const pct2 = stats.totalFamilies > 0 ? Math.round((stats.paidCount / 25) * 100) : 0;
         const fams = portalData.families.slice();
         const paid = fams.filter(f => f.contribPaid);
         const unpaid = fams.filter(f => !f.contribPaid);
