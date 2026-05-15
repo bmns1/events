@@ -1163,7 +1163,7 @@
                 if (d.count >= d.capacity) {
                     p.textContent = '✦ EVENT AT FULL CAPACITY ✦';
                 } else {
-                    p.textContent = `✦ ${d.count} / ${d.capacity} ATTENDEES CONFIRMED ✦`;
+                     p.textContent = `✦ ${d.families} ${d.families === 1 ? 'FAMILY' : 'FAMILIES'} OUT OF 25 CONFIRMED ✦`;
                 }
             }
         }).catch(()=>{
