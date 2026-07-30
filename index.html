@@ -244,14 +244,6 @@
     .counter input { flex:1; width:100%; border:none; text-align:center; font-size:1rem; font-weight:700; color:var(--green); padding:0; background:transparent; border-radius:0; }
     .counter input:focus { box-shadow:none; }
 
-    .toggle-group { display:flex; gap:8px; }
-    .toggle-opt {
-        flex:1; padding:12px 8px; border:2px solid var(--border); border-radius:10px; background:#fff;
-        cursor:pointer; text-align:center; transition:all .2s; font-size:0.9rem; font-weight:600; color:var(--text-mid);
-    }
-    .toggle-opt:hover { border-color:var(--gold-muted); background:var(--gold-bg); }
-    .toggle-opt.on { border-color:var(--green); background:var(--green); color:var(--gold-light); }
-
     .chips { display:flex; flex-wrap:wrap; gap:7px; }
     .chip {
         border:2px solid var(--border); background:#fff; border-radius:50px; padding:7px 14px;
@@ -261,20 +253,6 @@
     .chip.on { border-color:var(--green); background:var(--green); color:#fff; }
     .chip .nd { color:var(--gold-light); font-weight:700; margin-left:4px; }
     .chip.on .nd { color:var(--gold-light); }
-
-    .checkrow {
-        display:flex; align-items:flex-start; gap:11px; padding:13px 15px; border:2px solid var(--border);
-        border-radius:10px; background:#fff; cursor:pointer; transition:all .2s; margin-bottom:10px;
-    }
-    .checkrow:hover { border-color:var(--gold-muted); }
-    .checkrow.on { border-color:var(--green); background:#F4FAF7; }
-    .checkrow .cb {
-        width:22px; height:22px; border:2px solid #C9C4B6; border-radius:6px; flex-shrink:0; margin-top:1px;
-        display:flex; align-items:center; justify-content:center; color:transparent; font-size:13px; transition:all .2s;
-    }
-    .checkrow.on .cb { background:var(--green); border-color:var(--green); color:#fff; }
-    .checkrow .ct { font-size:0.86rem; color:var(--text-mid); line-height:1.5; }
-    .checkrow.on .ct { color:var(--text); }
 
     .btn {
         width:100%; padding:16px; border:none; border-radius:12px; font-size:1rem; font-weight:700;
@@ -465,7 +443,12 @@
                     </div>
 
                     <hr class="dv" style="margin:22px 0">
-                    <div class="sh" style="margin-bottom:16px"><h3 style="font-size:1.3rem">What Are You Bringing?</h3><p>Pick a category — categories marked "needed" are still light</p></div>
+                    <div class="sh" style="margin-bottom:16px"><h3 style="font-size:1.3rem">What Are You Bringing?</h3><p>Pick a category, then tell us your dish</p></div>
+
+                    <div class="halal">
+                        <div class="halal-t">🕌 Please note</div>
+                        <p style="font-size:0.88rem;color:var(--text-mid);margin:0">All food shared at the potluck must be <b>Zabiha halal</b>. JazakumAllah khairan.</p>
+                    </div>
 
                     <div class="fg">
                         <label>Dish Category <span class="req">*</span></label>
@@ -496,20 +479,6 @@
                     </div>
 
                     <div class="fg">
-                        <label>Does your dish contain meat or poultry? <span class="req">*</span></label>
-                        <div class="toggle-group" id="meatToggle">
-                            <div class="toggle-opt" data-v="no">No meat</div>
-                            <div class="toggle-opt" data-v="yes">Contains meat</div>
-                        </div>
-                    </div>
-
-                    <div class="fg" id="halalSourceBox" style="display:none;">
-                        <label for="fHalalSource">Zabiha Halal Source <span class="req">*</span></label>
-                        <input type="text" id="fHalalSource" placeholder="e.g. Halal Meat Market, Sunnyvale">
-                        <div class="hint">Where the meat was purchased — all meat must be certified Zabiha halal.</div>
-                    </div>
-
-                    <div class="fg">
                         <label>Contains <span class="opt">(helps families with allergies)</span></label>
                         <div class="chips" id="algChips"></div>
                     </div>
@@ -519,28 +488,7 @@
                         <textarea id="fNotes" placeholder="Questions, dietary needs, or if you'd like to help with setup…"></textarea>
                     </div>
 
-                    <div class="checkrow" id="rowHalal">
-                        <div class="cb">✓</div>
-                        <div class="ct">I confirm my dish is <b>100% Zabiha halal</b> — no pork, no alcohol, and no gelatin or animal by-products from non-Zabiha sources.</div>
-                    </div>
-                    <div class="checkrow" id="rowServe">
-                        <div class="cb">✓</div>
-                        <div class="ct">I'll bring my dish <b>ready to serve</b> with a serving spoon, and label it with its name.</div>
-                    </div>
-
                     <button class="btn" id="btnSubmit" style="margin-top:8px">Reserve Our Spot 🎉</button>
-                </div>
-
-                <div class="halal an d3">
-                    <div class="halal-t">🕌 Our Zabiha Halal Promise</div>
-                    <p style="font-size:0.88rem;color:var(--text-mid)">So every family can eat with complete peace of mind, all food shared at this potluck must be:</p>
-                    <ul>
-                        <li><b>Zabiha halal</b> — all meat and poultry from a certified Zabiha source</li>
-                        <li><b>No pork</b> or pork derivatives of any kind, including bacon bits, lard, and gelatin</li>
-                        <li><b>No alcohol</b> — including in extracts, sauces, and desserts (please use alcohol-free vanilla)</li>
-                        <li>Please <b>label your dish</b> and note any nuts, dairy, egg, or gluten</li>
-                    </ul>
-                    <p style="font-size:0.83rem;color:var(--text-muted);margin-top:10px;font-style:italic">When in doubt, a vegetarian dish is always a safe and very welcome choice. JazakumAllah khairan for helping us keep the table halal for everyone.</p>
                 </div>
 
                 <hr class="dv">
@@ -707,7 +655,7 @@ const ALLERGENS = ['Nuts','Dairy','Egg','Gluten','Soy','Sesame','Spicy'];
 const params = new URLSearchParams(location.search);
 const token  = params.get('token');
 let   portal = null;
-let   sel    = { cat:'', meat:'', allergens:new Set(), halal:false, serve:false };
+let   sel    = { cat:'', allergens:new Set() };
 let   closed = false;
 
 // ============================================================
@@ -718,8 +666,6 @@ document.addEventListener('DOMContentLoaded', () => {
     buildAllergenChips();
     buildIdeas();
     wireCounters(document);
-    wireMeatToggle();
-    wireChecks();
     wireCalendar();
     startCountdown();
     checkDeadline();
@@ -816,6 +762,10 @@ function neededKeys(cats) {
         .map(x => x.k);
 }
 function markNeeded(cats) {
+    // With an empty table every category is "needed", so the badge is noise —
+    // only start nudging once a few dishes are on the board.
+    const total = Object.values(cats).reduce((a, b) => a + b, 0);
+    if (total < 3) return;
     const need = neededKeys(cats);
     need.forEach(k => {
         const chip = document.querySelector(`#catChips .chip[data-v="${k}"]`);
@@ -879,22 +829,6 @@ function wireCounters(root) {
     });
 }
 
-function wireMeatToggle() {
-    document.querySelectorAll('#meatToggle .toggle-opt').forEach(o => o.addEventListener('click', () => {
-        document.querySelectorAll('#meatToggle .toggle-opt').forEach(x => x.classList.remove('on'));
-        o.classList.add('on');
-        sel.meat = o.dataset.v;
-        document.getElementById('halalSourceBox').style.display = (sel.meat === 'yes') ? 'block' : 'none';
-    }));
-}
-
-function wireChecks() {
-    [['rowHalal','halal'], ['rowServe','serve']].forEach(([id, key]) => {
-        const row = document.getElementById(id);
-        row.addEventListener('click', () => { row.classList.toggle('on'); sel[key] = row.classList.contains('on'); });
-    });
-}
-
 // ============================================================
 // SUBMIT
 // ============================================================
@@ -904,16 +838,11 @@ function submitRsvp() {
     const name  = document.getElementById('fName').value.trim();
     const email = document.getElementById('fEmail').value.trim().toLowerCase();
     const dish  = document.getElementById('fDish').value.trim();
-    const src   = document.getElementById('fHalalSource').value.trim();
 
     if (!name) return showErr('Please tell us your family or parent name.');
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return showErr('Please enter a valid email address — that is where your private RSVP link will go.');
-    if (!sel.cat)  return showErr('Please choose a dish category.');
-    if (!dish)     return showErr('Please tell us which dish you are bringing.');
-    if (!sel.meat) return showErr('Please let us know whether your dish contains meat.');
-    if (sel.meat === 'yes' && !src) return showErr('Please tell us where the Zabiha halal meat was purchased.');
-    if (!sel.halal) return showErr('Please confirm your dish is Zabiha halal.');
-    if (!sel.serve) return showErr('Please confirm you will bring your dish ready to serve.');
+    if (!sel.cat) return showErr('Please choose a dish category.');
+    if (!dish)    return showErr('Please tell us which dish you are bringing.');
 
     hideErr(); ld(true);
     const btn = document.getElementById('btnSubmit');
@@ -929,8 +858,6 @@ function submitRsvp() {
         categoryName: CATS[sel.cat].n,
         dish,
         servings:     document.getElementById('fServings').value,
-        containsMeat: sel.meat === 'yes' ? 'Yes' : 'No',
-        halalSource:  src,
         allergens:    [...sel.allergens].join(', '),
         notes:        document.getElementById('fNotes').value.trim(),
         origin:       location.origin + location.pathname
@@ -1002,7 +929,6 @@ function renderPortal() {
         <div class="pr"><span class="pr-l">Bringing</span><span class="pr-v">${cat.e} ${esc(me.dish)}</span></div>
         <div class="pr"><span class="pr-l">Category</span><span class="pr-v">${esc(cat.n)}</span></div>
         <div class="pr"><span class="pr-l">Serves</span><span class="pr-v">about ${esc(me.servings)} people</span></div>
-        <div class="pr"><span class="pr-l">Contains meat</span><span class="pr-v">${esc(me.containsMeat)}${me.halalSource ? ' · ' + esc(me.halalSource) : ''}</span></div>
         ${me.allergens ? `<div class="pr"><span class="pr-l">Contains</span><span class="pr-v">${esc(me.allergens)}</span></div>` : ''}
         ${me.notes ? `<div class="pr"><span class="pr-l">Notes</span><span class="pr-v">${esc(me.notes)}</span></div>` : ''}`;
 
@@ -1027,7 +953,6 @@ function renderPortal() {
     document.getElementById('guestList').innerHTML = g.length ? g.map(x => {
         const c = CATS[x.category] || { e:'🍽️', n:x.categoryName || '' };
         const tags = [];
-        if (x.containsMeat === 'Yes') tags.push('<span class="tg meat">🕌 Zabiha halal</span>');
         String(x.allergens || '').split(',').map(s => s.trim()).filter(Boolean)
             .forEach(a => tags.push('<span class="tg">' + esc(a) + '</span>'));
         return `<div class="gc ${x.mine ? 'mine' : ''}">
